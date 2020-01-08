@@ -5,7 +5,7 @@ import SessionForm from './session_form';
 import React from 'react';
 
 const mSTP = ({ errors }) => ({
-   errors: errors.session,
+   errors: errors.sessionErrors,
    formType: 'signup',
    navLink: <Link to="/login">log in</Link>,
 });
