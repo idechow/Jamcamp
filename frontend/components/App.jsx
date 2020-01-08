@@ -1,15 +1,18 @@
 import React from "react";
-import SignupContainer from './session/signup_container';
-import LoginContainer from './session/login_container';
 import Navbar from './navbar/navbar_container';
+import Modal from './modal/modal';
 import { Route } from 'react-router-dom'
 
 const App = () => (
    <div>
-      <Navbar />
+      <Modal />
+      <header>
+         <Navbar />
+      </header>
       <h1>Jamcamp is cool</h1>
-      <Route path="/signup" component={SignupContainer} />
-      <Route path="/login" component={LoginContainer} />
+      <Route path="/" />
+      {/* <Route path="/signup" component={SignupContainer} /> */}
+      {/* <Route path="/login" component={LoginContainer} /> */}
    </div>
 );
 export default App;
