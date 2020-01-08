@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
-import React from 'react';
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = ({ errors }) => ({
    errors: errors.sessionErrors,
-   formType: 'login',
-   navLink: <Link to="/signup">sign up instead</Link>,
+   formType: 'LOGIN',
+   
 });
 
 const mDTP = dispatch => ({
    processForm: (user) => dispatch(login(user)),
+   openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mSTP, mDTP)(SessionForm);

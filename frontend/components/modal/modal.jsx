@@ -1,9 +1,10 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import ArtistSignupContainer from './session/artist_signup_container';
-import FanSignupContainer from './session/fan_signup_container';
-import LoginContainer from './session/login_container';
+import ArtistSignupContainer from '../session/artist_signup_container';
+import FanSignupContainer from '../session/fan_signup_container';
+import LoginContainer from '../session/login_container';
+import AccountTypeContainer from '../session/account_type_container';
 
 function Modal({ modal, closeModal }) {
    if (!modal) {
@@ -15,7 +16,7 @@ function Modal({ modal, closeModal }) {
          component = <LoginContainer />;
          break;
       case 'SIGNUP':
-         component = <AccountType />;
+         component = <AccountTypeContainer />;
          break;
       case 'FAN_SIGNUP':
          component = <FanSignupContainer />;
@@ -35,16 +36,16 @@ function Modal({ modal, closeModal }) {
    );
 }
 
-const mapStateToProps = state => {
+const mSTP = state => {
    return {
       modal: state.ui.modal
    };
 };
 
-const mapDispatchToProps = dispatch => {
+const mDTP = dispatch => {
    return {
       closeModal: () => dispatch(closeModal())
    };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default connect(mSTP, mDTP)(Modal);
