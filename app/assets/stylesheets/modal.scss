@@ -1,3 +1,9 @@
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: light;
+   // letter-spacing: -4px;
+}
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -22,6 +28,7 @@
    padding: 0;
    font-size: 16px;
    border-radius: 6px;
+   font-family: 'Open Sans', sans-serif;
 }
 
 .session-form h1 {
@@ -38,18 +45,20 @@
    padding: 8px 20px 8px;
    font-weight: 400;
    border-radius: 6px 6px 0 0;
+   cursor: default;
 }
 
 .close-form {
    // display: flex;
    // align-items: baseline;
    font-size: 100%;
-   font-family: inherit;
+   // font-family: inherit;
+   font-family: 'Open Sans', sans-serif;
    border: none;
    outline: none;
    padding: 0;
    position: absolute;
-   top: 5px;
+   top: 10px;
    right: 20px;
    font-size: 24px;
    line-height: 1;
@@ -57,6 +66,10 @@
    color: #aaa;
    text-decoration: none;
    background: none;
+}
+
+.close-form:hover {
+   color: #222;
 }
 
 
@@ -102,6 +115,12 @@
    font-size: 16px;
    color: white;
    margin-top: 30px;
+   outline: none;
+   cursor: pointer;
+   font-weight: bold;
+}
+.session-form input[type="submit"]:hover {
+   text-decoration: underline;
 }
 
 .session-footer {
@@ -150,10 +169,6 @@
    color: #799f43;
 }
 
-
-.music-note-img:before {
-}
-
 .signup-option {
    display: flex;
    flex-direction: column;
@@ -163,6 +178,8 @@
 .signup-text {
    padding-top: 18px;
    margin: 0;
+   font-size: 12px;
+   line-height: 1.5;
 }
 
 .signup-link {
@@ -178,6 +195,12 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   outline: none;
+   cursor: pointer;
+}
+
+.signup-link:hover {
+   text-decoration: underline;
 }
 
 .fan-link{
@@ -188,4 +211,19 @@
 .artist-link{
    color: #799f43;
    border: 1px solid #799f43;
+}
+
+.session-footer-button {
+   border: none;
+   background: none;
+   font-size: inherit;
+   text-decoration: none;
+   color: #00a1c6;
+   padding: 0;
+   outline: none;
+   cursor: pointer;
+}
+
+.session-footer-button:hover {
+   // text-decoration: underline;
 }

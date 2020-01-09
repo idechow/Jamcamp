@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
       return (
          <div className="session-form">
             <h1>{header()}</h1>
-            <button className="close-form" type="button" onClick={closeModal}>x</button>
+            <button className="close-form" type="button" onClick={closeModal}>×</button>
             <form onSubmit={this.handleSubmit} className="signup-form">
                <div className="session-inputs">
                   {formType === 'ARTIST_SIGNUP' ? band() : null}

@@ -3,7 +3,7 @@ import React from 'react';
 const AccountType = ({ openModal, closeModal }) => (
    <div className="session-form">
       <h1>Sign up for a Jamcamp account</h1>
-      <button className="close-form" type="button" onClick={closeModal}>x</button>
+      <button className="close-form" type="button" onClick={closeModal}>×</button>
       <div className="account-form">
          <div className="signup-row">
             <i className="fas fa-headphones"></i>
