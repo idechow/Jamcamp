@@ -22,7 +22,7 @@ const AccountType = ({ openModal, closeModal }) => (
             </div>
          </div>
          <div className="signup-row">
-            <i class="fas fa-guitar"></i>
+            <i className="fas fa-guitar"></i>
             <div className="signup-option">
                <button
                   className="signup-link artist-link"
