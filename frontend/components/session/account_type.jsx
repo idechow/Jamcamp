@@ -1,15 +1,15 @@
 import React from 'react';
 
-const AccountType = ({ openModal }) => (
+const AccountType = ({ openModal, closeModal }) => (
    <div className="session-form">
       <h1>Sign up for a Jamcamp account</h1>
-      <button className="close-form" type="button">x</button>
+      <button className="close-form" type="button" onClick={closeModal}>x</button>
       <div className="account-form">
          <div className="signup-row">
-            <i className="headphones-img"></i>
+            <i className="fas fa-headphones"></i>
             <div className="signup-option">
                <button 
-                  className="fan-signup-link"
+                  className="signup-link fan-link"
                   type="button" 
                   onClick={() => openModal('FAN_SIGNUP')}>
                      Sign up as a fan
@@ -22,10 +22,10 @@ const AccountType = ({ openModal }) => (
             </div>
          </div>
          <div className="signup-row">
-            <i className="music-note-img"></i>
+            <i class="fas fa-guitar"></i>
             <div className="signup-option">
                <button
-                  className="fan-signup-link"
+                  className="signup-link artist-link"
                   type="button" 
                   onClick={() => openModal('ARTIST_SIGNUP')}>
                      Sign up as an artist
@@ -43,7 +43,8 @@ const AccountType = ({ openModal }) => (
          <button 
             className="session-footer-button"
             type="button"
-            onClick={}>
+            // onClick={}
+            >
                demo login
          </button>.
       </p>

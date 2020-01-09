@@ -7,7 +7,7 @@ class SessionForm extends React.Component {
          username: '',
          email: '',
          password: '',
-         band: null,
+         band: undefined,
       };
       this.handleSubmit = this.handleSubmit.bind(this);
    }
@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
    handleSubmit(e) {
       e.preventDefault();
       const user = Object.assign({}, this.state);
-      this.props.processForm(user);
+      this.props.processForm(user).then(this.props.closeModal);
    }
 
    renderErrors() {
@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
 
    render() {
 
-      const { formType, openModal } = this.props;
+      const { formType, openModal, closeModal } = this.props;
 
       const header = () => {
          switch (formType) {
@@ -46,10 +46,10 @@ class SessionForm extends React.Component {
                return 'Log in'
 
             case 'FAN_SIGNUP':
-               return 'Sign up as a fan'
+               return 'Sign up for a Jamcamp fan account'
 
             case 'ARTIST_SIGNUP':
-               return 'Sign up as a artist'
+               return 'Sign up for a Jamcamp artist account'
 
           default:
              return 'Sign in below'
@@ -58,7 +58,6 @@ class SessionForm extends React.Component {
 
       const email = () => (
          <label>Email
-            <br/>
             <input 
                type="email"
                value={this.state.email}
@@ -70,7 +69,6 @@ class SessionForm extends React.Component {
 
       const band = () => (
          <label>Band
-            <br/>
             <input
                type="text"
                value={this.state.band}
@@ -83,13 +81,12 @@ class SessionForm extends React.Component {
       return (
          <div className="session-form">
             <h1>{header()}</h1>
-            <button className="close-form" type="button">x</button>
+            <button className="close-form" type="button" onClick={closeModal}>x</button>
             <form onSubmit={this.handleSubmit} className="signup-form">
                <div className="session-inputs">
                   {formType === 'ARTIST_SIGNUP' ? band() : null}
                   {formType === 'ARTIST_SIGNUP' || formType === 'FAN_SIGNUP' ? email() : null}
                   <label>Username
-                     <br/>
                      <input 
                         type="text"
                         value={this.state.username}
@@ -98,7 +95,6 @@ class SessionForm extends React.Component {
                      />
                   </label>
                   <label>Password
-                     <br/>
                      <input 
                         type="password"
                         value={this.state.password}
@@ -106,7 +102,7 @@ class SessionForm extends React.Component {
                         className="login-input"
                      />
                   </label>
-                  <p className="session-errors">{this.renderErrors()}</p>
+                  <div className="session-errors">{this.renderErrors()}</div>
                   <input
                      className="session-submit" 
                      type="submit" 
@@ -127,7 +123,8 @@ class SessionForm extends React.Component {
                <button
                      className="session-footer-button"
                      type="button"
-                     onClick={}>
+                     // onClick={}
+                     >
                         demo login
                </button>.
                </p>
