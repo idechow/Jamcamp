@@ -17,7 +17,7 @@ const Navbar = ({ currentUser, logout, openModal }) => {
 
    return (
       <header className="nav-bar">
-         <p className="logo">jamcamp</p>
+         <p className="logo">jamcamp without tmp</p>
          <div>
             {display}
          </div>
