@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 const Navbar = ({ currentUser, logout, openModal }) => {
    const display = currentUser ? (
-      <div>
+      <div className="signed-in-nav">
          <p>Hello, {currentUser.username}</p>
          <button onClick={logout}>Logout</button>
       </div>
    ) : (
-         <div>
+         <div className='unassigned-nav'>
             <button className="nav-btn" onClick={() => openModal('SIGNUP')}>Sign up</button>
             <br/>
             <button className="nav-btn" onClick={() => openModal('LOGIN')}>Log in</button>
@@ -26,3 +26,5 @@ const Navbar = ({ currentUser, logout, openModal }) => {
 };
 
 export default Navbar;
+
+// if currentUser.band === typeof(undefined)

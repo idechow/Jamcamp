@@ -12,14 +12,16 @@ body {
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
+  height: 100%;
 }
 
 .modal-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
 }
+
 
 .session-form {
    width: 500px;
@@ -32,8 +34,6 @@ body {
 }
 
 .session-form h1 {
-   // display: flex;
-   // align-items: baseline;
    font-size: 18px;
    box-sizing: border-box;
    text-align: center;
@@ -45,7 +45,7 @@ body {
    padding: 8px 20px 8px;
    font-weight: 400;
    border-radius: 6px 6px 0 0;
-   cursor: default;
+   cursor: move;
 }
 
 .close-form {

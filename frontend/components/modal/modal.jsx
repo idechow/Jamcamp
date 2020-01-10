@@ -5,6 +5,7 @@ import ArtistSignupContainer from '../session/artist_signup_container';
 import FanSignupContainer from '../session/fan_signup_container';
 import LoginContainer from '../session/login_container';
 import AccountTypeContainer from '../session/account_type_container';
+import Draggable from 'react-draggable';
 
 function Modal({ modal, closeModal }) {
    if (!modal) {
@@ -29,9 +30,9 @@ function Modal({ modal, closeModal }) {
    }
    return (
       <div className="modal-background" onClick={closeModal}>
-         <div className="modal-child" onClick={e => e.stopPropagation()}>
-            {component}
-         </div>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
+               {component}
+            </div>
       </div>
    );
 }
