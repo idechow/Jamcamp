@@ -113,7 +113,7 @@ class SessionForm extends React.Component {
                            className="login-input"
                         />
                      </label>
-                     {/* <div className="session-errors">{this.renderErrors()}</div> */}
+                     <div className="session-errors">{this.renderErrors()}</div>
                      <input
                         className="session-submit" 
                         type="submit" 
