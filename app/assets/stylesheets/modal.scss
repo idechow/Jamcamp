@@ -40,6 +40,7 @@ body {
    width: 100%;
    display: block;
    background-color: #f5f5f5;
+   // background: radial-gradient(#02abcd, #799f43);
    border-bottom: 1px solid #ededed;
    margin: 0;
    padding: 8px 20px 8px;
@@ -162,11 +163,13 @@ body {
 }
 
 .fa-headphones {
-   color: #02abcd;
+   color: #1DA0C3;
+   // color: #02abcd;
 }
 
 .fa-guitar {
-   color: #799f43;
+   // color: #799f43;
+   color: #6046FE;
 }
 
 .signup-option {
@@ -204,13 +207,15 @@ body {
 }
 
 .fan-link{
-   color: #02abcd;
-   border: 1px solid #02abcd;
+   color:  #1DA0C3;
+   border: 1px solid #1DA0C3;
+   // #02abcd
 }
 
 .artist-link{
-   color: #799f43;
-   border: 1px solid #799f43;
+   color: #6046FE;
+   border: 1px solid #6046FE;
+   // #799f43
 }
 
 .session-footer-button {

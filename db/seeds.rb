@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.destroy_all
+
+Guest = User.create!(
+  username: "Mr. Terrapin",
+  email: "franklin@turtle.io",
+  password: "DARK@star*1",
+  band: "The Robert Hunter Tribute Band"
+)
