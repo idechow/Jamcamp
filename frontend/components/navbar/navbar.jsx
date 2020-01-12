@@ -25,13 +25,11 @@ class Navbar extends React.Component {
    }
 
    renderDropDown() {
-
       if (this.state.dropdown) {
          return (
-            <button onClick={this.props.logout}>Logout</button>
+            <button className="logout-dropdown" onClick={this.props.logout}>Logout</button>
          )
       }
-
    }
 
    render() {
@@ -40,50 +38,32 @@ class Navbar extends React.Component {
 
       const artistBar= () => (
          <ul className="right-side-nav">
-            <p>Artist</p>
             <li className="nav-element">
-               <button className="icon" >
-                  <i className="fas fa-plus"></i>
-               </button>
+               <i className="fas fa-plus"></i>
             </li>
             <li className="nav-element">
-               <button className="icon" >
-                  <i className="fas fa-heart"></i>
-               </button>
+               <i className="fas fa-heart"></i>
             </li>
-            <li className="nav-element">
-               <div className="icon dropdown">
-                  <i className="fas fa-circle" onClick={this.toggleDropdown}>
+            <li className="nav-element dropdown">
+               <i className="fas fa-circle" onClick={this.toggleDropdown}>
                      {this.renderDropDown()}
-               </i></div>
+               </i>
             </li>
          </ul>
       );
    
       const fanBar = () => (
          <ul className="right-side-nav">
-            <p>FAN</p>
             <li className="nav-element">
-               <button className="icon" >
                   <i className="fas fa-heart"></i>
-               </button>
             </li>
             <li className="nav-element">
-               <button className="icon" >
-                  <i className="fas fa-circle">
-                  </i></button>
+               <i className="fas fa-circle" onClick={this.toggleDropdown}>
+                  {this.renderDropDown()}
+               </i>
             </li>
          </ul>
       );
-
-      // const circleDropdown = () => (
-      //    <ul>
-      //       <li>
-      //          <button onClick={logout}>Logout</button>
-      //       </li>
-      //    </ul>
-      // );
-   
    
       const display = currentUser ? (
          <div className="signed-in-nav">
