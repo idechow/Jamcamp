@@ -2,23 +2,31 @@
    // display: block;
    // margin: auto;
    // height: 540px;
+
+   height: 0;
+   padding-bottom: 37.84%; /* 16:9 */
+   position: relative;
 }
 
 .featured-albums {
-   display: flex;
-   height: 540px;
+   // display: flex;
+   // height: 540px;
+
+   position: absolute;
+   top: 0; left: 0;
+   width: 100%; height: 100%;
 }
 
 .big-feature {
    // display: block;
    // position: absolute;
-   // top: 0;
+   top: 0;
    // width: 100%;
    // height: 100%;
    // text-decoration: none;
    // color: inherit;
    
-   height: 100%;
+   height: 95%;
    width: 74%;
    background-size: cover;
    background-position: center;
@@ -34,13 +42,14 @@
    //  padding: 0 0 0 2px;
    //  margin: 0;
    //  overflow: hidden;
-   //  position: absolute;
-   //  right: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
    //  opacity: 1;
    //  transform: none;
    //  transition: transform 0.2s ease-in, opacity 0.2s ease-in;
 
-   height: 100%;
+   height: 95%;
    width: 26%;
    // position: absolute;
 }
@@ -63,4 +72,9 @@
 
 .c {
    background: blue;
+}
+
+.intro-tag {
+   position: absolute;
+   bottom: 0;
 }
