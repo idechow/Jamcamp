@@ -1,7 +1,9 @@
 import React from "react";
 import Navbar from './navbar/navbar_container';
 import Modal from './modal/modal';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import Footer from './footer/footer';
+import HomeContainer from './home/home_container';
 
 const App = () => (
    <div>
@@ -11,7 +13,9 @@ const App = () => (
       </header>
       
       {/* <h1>Jamcamp is cool</h1> */}
-      <Route path="/" />
+      <Route path="/" component={HomeContainer}/>
+      <Footer />
+
       {/* <Route path="/signup" component={SignupContainer} /> */}
       {/* <Route path="/login" component={LoginContainer} /> */}
       

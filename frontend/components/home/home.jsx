@@ -1,6 +1,6 @@
 import React from 'react';
 import FeaturedAlbumsContainer from './featured_container';
-import NotableAlbumsContainer from './notable_container';
+// import NotableAlbumsContainer from './notable_container';
 
 class HomePage extends React.Component {
    constructor(props) {
@@ -12,7 +12,7 @@ class HomePage extends React.Component {
          <section className="home-page">
             <FeaturedAlbumsContainer />
             <div className="home-page-separator"></div>
-            <NotableAlbumsContainer />
+            {/* <NotableAlbumsContainer /> */}
             <div className="home-page-separator"></div>
          </section>
       );
