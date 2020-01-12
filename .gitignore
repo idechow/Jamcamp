@@ -3,4 +3,4 @@ bundle.js
 bundle.js.map
 /tmp/*
 !/tmp/.keep
-master.key
+config/master.key
