@@ -14,10 +14,9 @@ const App = () => (
       
       {/* <h1>Jamcamp is cool</h1> */}
       <Route path="/" component={HomeContainer}/>
+      {/* <Route path="/albums/:albumId" component={AlbumPageContainer} /> */}
       <Footer />
 
-      {/* <Route path="/signup" component={SignupContainer} /> */}
-      {/* <Route path="/login" component={LoginContainer} /> */}
       
       {/* <Switch>
          <Route path="/artist/id" />

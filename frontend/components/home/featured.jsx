@@ -12,9 +12,9 @@ class FeaturedAlbums extends React.Component {
                <section className="big-feature">
                </section>
                <ul className="small-features">
-                  <li className="fet a">1</li>
-                  <li className="fet b">2</li>
-                  <li className="fet c">3</li>
+                  <li className="fet a"></li>
+                  <li className="fet b"></li>
+                  <li className="fet c"></li>
                </ul>
             </main>
             <p className="intro-tag">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import NotableAlbums from './new_albums';
+import AlbumPage from './featured';
 
 
 const mSTP = (state) => {
@@ -11,4 +11,4 @@ const mDTP = (dispatch) => {
    return {};
 };
 
-export default connect(mSTP, mDTP)(NotableAlbums);
+export default connect(mSTP, mDTP)(AlbumPage);

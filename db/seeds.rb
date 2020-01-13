@@ -15,3 +15,4 @@ Guest = User.create!(
   password: "DARK@star*1",
   band: "The Robert Hunter Tribute Band"
 )
+

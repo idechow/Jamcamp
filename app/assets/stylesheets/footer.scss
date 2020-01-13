@@ -8,10 +8,10 @@
 
 .footer-text{
    align-self: flex-end;
-   padding-bottom: 20px;
-   display: flex;
-   justify-content: space-around;
-   width: 70%;
+   // padding-bottom: 20px;
+   // display: flex;
+   // justify-content: space-around;
+   // width: 70%;
 }
 
 .footer-text, .footer-link {
@@ -19,6 +19,7 @@
    color: black;
    text-decoration: none;
    font-weight: bold;
+   padding: 20px 15px;
 }
 
 .footer-link:hover {
