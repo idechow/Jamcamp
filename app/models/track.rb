@@ -12,7 +12,7 @@
 
 class Track < ApplicationRecord
    validates :title, :track_number, presence: true
-   validates :track_num, uniqueness: { scope: :album }
+   validates :track_number, uniqueness: { scope: :album }
 
    belongs_to :album
    

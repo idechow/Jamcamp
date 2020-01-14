@@ -1,17 +1,17 @@
 class Api::TracksController < ApplicationController
    def index
-      @tracks = Track.where(album_id: params[:albumId]).order("track_number ASC")
-      render "api/songs/index.json.jbuilder"
+      @tracks = Track.all
+      render "api/tracks/index.json.jbuilder"
    end
 
    def show
       @track = Track.find(params[:id])
-      render "api/songs/show.json.jbuilder"
+      render "api/tracks/show.json.jbuilder"
    end
 
    private
 
-   def album_params
+   def track_params
       params.require(:track).permit(
       :album_id,
       :title,

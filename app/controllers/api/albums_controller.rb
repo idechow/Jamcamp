@@ -1,5 +1,4 @@
 class Api::AlbumsController < ApplicationController
-
    def index
       @albums = Album.all
       render "api/albums/index.json.jbuilder"
@@ -35,5 +34,6 @@ class Api::AlbumsController < ApplicationController
       :description,
       :credits,
       :image_url
+    )
   end
 end

@@ -1,3 +1,4 @@
-@albums.each do |album|
-  json.partial! 'api/albums/album', album: album
+@tracks.each do |track|
+   json.partial! 'api/tracks/track', track: track
 end
+
