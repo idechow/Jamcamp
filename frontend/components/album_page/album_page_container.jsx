@@ -1,14 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AlbumPage from './featured';
+import AlbumPage from './album_page';
+import { fetchAlbum } from '../../actions/album_actions';
 
 
-const mSTP = (state) => {
-   return {};
+const mSTP = (state, ownProps) => {
+   return {
+      album: state.entities.albums[ownProps.match.params.albumId],
+      tracks: state.entities.tracks
+   };
 };
 
 const mDTP = (dispatch) => {
-   return {};
+   return {
+      fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
+      fetchTracks: albumId => dispatch(fetchTracks(albumId)),
+   };
 };
 
 export default connect(mSTP, mDTP)(AlbumPage);

@@ -11,6 +11,7 @@ require 'open-uri'
 User.destroy_all
 Album.destroy_all
 
+
 Guest = User.create!(
   username: "Mr. Terrapin",
   email: "franklin@turtle.io",

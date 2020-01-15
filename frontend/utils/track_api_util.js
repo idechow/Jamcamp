@@ -1,16 +1,16 @@
 export const fetchTracks = albumId => (
    $.ajax({
-      url: '/api/tracks/',
+      url: `/api/albums/${albumId}/tracks`,
       method: 'GET'
    })
 );
 
-export const fetchAlbumTracks = albumId => (
-   $.ajax({
-      url: `/api/albums/${albumId}`,
-      method: 'GET', 
-   })
-);
+// export const fetchAlbumTracks = albumId => (
+//    $.ajax({
+//       url: `/api/albums/${albumId}`,
+//       method: 'GET', 
+//    })
+// );
 // export const fetchTrack = ({ albumId, trackNumber }) => (
 //    $.ajax({
 //       url: '/api/tracks/',
@@ -18,9 +18,9 @@ export const fetchAlbumTracks = albumId => (
 //    })
 // );
 
-export const fetchTrack = trackId => (
-   $.ajax({
-      url: `/api/tracks/${trackId}`
-   })
-);
+// export const fetchTrack = trackId => (
+//    $.ajax({
+//       url: `/api/tracks/${trackId}`
+//    })
+// );
    

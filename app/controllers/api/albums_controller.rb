@@ -1,5 +1,8 @@
 class Api::AlbumsController < ApplicationController
    def index
+      if params[:band_id]
+         @album = Album.find(params[:band_id])
+      end
       @albums = Album.all
       render "api/albums/index.json.jbuilder"
    end

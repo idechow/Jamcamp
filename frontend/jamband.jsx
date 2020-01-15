@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from './components/root';
 import configureStore from './store/store';
-import {fetchAlbums} from './actions/album_actions';
-import {fetchTracks, fetchAlbumTracks} from './actions/track_actions';
+import { fetchAlbum, fetchAlbums, fetchArtistAlbums } from './actions/album_actions';
+import {fetchTracks} from './actions/track_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
    let store;
@@ -23,9 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
    window.getState = store.getState;
    window.dispatch = store.dispatch;
+   window.fetchAlbum = fetchAlbum;
    window.fetchAlbums = fetchAlbums;
+   window.fetchArtistAlbums = fetchArtistAlbums;
    window.fetchTracks = fetchTracks;
-   window.fetchAlbumTracks = fetchAlbumTracks; 
 
    ReactDOM.render(<Root store={store} />, root);
 });

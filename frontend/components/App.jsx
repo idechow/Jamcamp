@@ -1,9 +1,10 @@
 import React from "react";
 import Navbar from './navbar/navbar_container';
 import Modal from './modal/modal';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Footer from './footer/footer';
 import HomeContainer from './home/home_container';
+import AlbumPageContainer from './album_page/album_page_container';
 
 const App = () => (
    <div>
@@ -11,10 +12,12 @@ const App = () => (
       <header>
          <Navbar />
       </header>
-      
-      {/* <h1>Jamcamp is cool</h1> */}
-      <Route path="/" component={HomeContainer}/>
-      {/* <Route path="/albums/:albumId" component={AlbumPageContainer} /> */}
+
+      <Switch>
+         <Route path="/albums/:albumId" component={AlbumPageContainer} />
+         <Route path="/" component={HomeContainer} />
+      </Switch>
+
       <Footer />
 
       
