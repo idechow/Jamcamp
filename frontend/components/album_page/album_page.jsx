@@ -9,14 +9,16 @@ class AlbumPage extends React.Component {
    componentDidMount(){
       const albumId = this.props.match.params.albumId;
       this.props.fetchAlbum(albumId).then(() =>
-         this.props.fetchTracks(albumId));
+         this.props.fetchTracks(albumId)).then(() =>
+            this.props.fetchArtistAlbums(this.props.match.params.bandId));
    }
 
    componentDidUpdate(prevProps){
       const albumId = this.props.match.params.albumId;
       if (this.props.match.params.albumId !== prevProps.match.params.albumId){
          this.props.fetchAlbum(albumId).then(() =>
-            this.props.fetchTracks(albumId));
+            this.props.fetchTracks(albumId)).then(() =>
+               this.props.fetchArtistAlbums(this.props.match.params.bandId));
       }
    }
 
@@ -42,9 +44,9 @@ class AlbumPage extends React.Component {
                      </div>
                      <p className="album-description">{album.description}</p>
                   </div>
-                  <div className="album-right">
-                     <img className="album-cover" src={album.photo_url}/>
-                  </div>
+               </div>
+               <div className="album-right">
+                  <img className="album-cover" src={album.photo_url} />
                </div>
             </section>
          </main>

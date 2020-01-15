@@ -15,6 +15,7 @@ const mDTP = (dispatch) => {
    return {
       fetchAlbum: albumId => dispatch(fetchAlbum(albumId)),
       fetchTracks: albumId => dispatch(fetchTracks(albumId)),
+      fetchArtistAlbums: bandId => dispatch(fetchArtistAlbums(bandId))
    };
 };
 

@@ -14,7 +14,7 @@ const App = () => (
       </header>
 
       <Switch>
-         <Route path="/albums/:albumId" component={AlbumPageContainer} />
+         <Route path="/artist/:bandId/album/:albumId" component={AlbumPageContainer} />
          <Route path="/" component={HomeContainer} />
       </Switch>
 

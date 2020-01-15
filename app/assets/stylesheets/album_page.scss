@@ -1,0 +1,39 @@
+.album-page {
+   // margin: 0 auto;
+   // width: 970px;
+   // border: 1px solid rgba(0,0,0,0.1);
+   // border-top: none;
+}
+
+.album-content{
+  display: flex;
+  flex-direction: row;
+//   justify-content: space-between;
+//   width: 100%;
+}
+
+.album-left{
+   display: flex;
+   flex-direction: column;
+   // padding-left: 27px;
+   // width: 380px;
+   // height: 100%;
+   // float: left;
+}
+
+.album-right{
+   display: flex;
+   flex-direction: column;
+   // padding-left: 27px;
+   // width: 380px;
+   // height: 100%;
+   // float: right;
+}
+
+.album-cover {
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+   //  background-position: 50% 50%;
+    margin-bottom: 18px;
+}

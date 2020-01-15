@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
   has_many :albums,
       foreign_key: :band_id,
-      class_name: 'User'
+      class_name: 'Album'
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

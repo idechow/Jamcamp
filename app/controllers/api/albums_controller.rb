@@ -1,16 +1,17 @@
 class Api::AlbumsController < ApplicationController
    def index
-      if params[:band_id]
-         @album = Album.find(params[:band_id])
+      if params[:user_id]
+         @albums = User.find(params[:user_id]).albums
+      else
+         @albums = Album.all
       end
-      @albums = Album.all
       render "api/albums/index.json.jbuilder"
    end
 
    def show
       @album = Album.find(params[:id])
-      @tracks = @album.tracks
-      @artist = @album.artist
+      # @tracks = @album.tracks
+      # @artist = @album.artist
       if @album
          render "api/albums/show.json.jbuilder"
       else

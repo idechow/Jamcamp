@@ -1,12 +1,5 @@
 class Api::UsersController < ApplicationController
 
-   # def index
-   #     if params[:band_id]
-   #       @albums = Album.find(params[:band_id])
-   #    end
-   #    @albums = Album.all
-   #    render "api/albums/index.json.jbuilder"
-   # end
    
    def create
     @user = User.new(user_params)

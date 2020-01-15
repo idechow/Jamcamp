@@ -3,6 +3,7 @@ import * as AlbumApiUtil from '../utils/album_api_util';
 
 export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
+// export const RECEIVE_ARTIST_ALBUMS = "RECEIVE_ARTIST_ALBUMS";
 
 
 export const receiveAlbums = albums => {
@@ -18,6 +19,13 @@ export const receiveAlbum = album => {
       album
    };
 };
+
+// export const receiveArtistAlbums = albums => {
+//    return {
+//       type: RECEIVE_ARTIST_ALBUMS,
+//       albums
+//    };
+// };
 
 export const fetchAlbums = () => dispatch => (
    AlbumApiUtil.fetchAlbums()
