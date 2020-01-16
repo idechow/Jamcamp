@@ -28,6 +28,9 @@ class User < ApplicationRecord
       foreign_key: :band_id,
       class_name: 'Album'
 
+   has_one_attached :photo
+   has_one_attached :band_photo
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user && user.is_password?(password) ? user : nil

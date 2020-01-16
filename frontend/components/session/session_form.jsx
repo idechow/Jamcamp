@@ -39,14 +39,14 @@ class SessionForm extends React.Component {
    demo(e) {
       e.preventDefault();
       this.props.demoLogin({
-         username: "Mr. Terrapin",
-         password: "DARK@star*1"
+         username: "Robert Hunter",
+         password: "terrapin"
       });
    }
 
    demoLogin(e) {
       e.preventDefault();
-      let password = 'DARK@star*1';
+      let password = 'terrapin';
       this.state = {
          username: '',
          password: ''

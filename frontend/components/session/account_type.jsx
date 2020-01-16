@@ -10,8 +10,8 @@ class AccountType extends React.Component {
    demo(e) {
       e.preventDefault();
       this.props.demoLogin({
-         username: "Mr. Terrapin",
-         password: "DARK@star*1"
+         username: "Robert Hunter",
+         password: "terrapin"
       });
    }
 

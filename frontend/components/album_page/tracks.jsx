@@ -55,9 +55,9 @@ class Tracks extends React.Component {
                <span>
                   {track.title}
                </span>
-               <audio controls>
+               {/* <audio controls>
                   <source src={"https://jamcamp-seed.s3-us-west-1.amazonaws.com/1985-09-07+Red+Rocks+Amphitheatre/gd85-09-07.s1t07.mp3"} type="audio/mp3"></source>
-               </audio>
+               </audio> */}
             </div>
          </li>
       )
