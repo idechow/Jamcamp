@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import TrackContainer from './tracks_container';
 
 class AlbumPage extends React.Component {
    constructor(props){
-      super(props)
+      super(props); 
    }
 
    componentDidMount(){
@@ -12,6 +13,16 @@ class AlbumPage extends React.Component {
          this.props.fetchTracks(albumId)).then(() =>
             this.props.fetchArtistAlbums(this.props.match.params.bandId));
    }
+
+   // componentDidMount() {
+   //    const albumId = this.props.match.params.albumId;
+   //    const a = this.props.fetchAlbum(albumId);
+   //    const b = this.props.fetchTracks(albumId);
+   //    const c = this.props.fetchArtistAlbums(this.props.match.params.bandId);
+   //    Promise.all([a, b, c])
+   //       .then(() => this.setState({ loaded: true }))
+   // }
+
 
    componentDidUpdate(prevProps){
       const albumId = this.props.match.params.albumId;
@@ -22,9 +33,19 @@ class AlbumPage extends React.Component {
       }
    }
 
+
    render(){
-      const { album } = this.props;
+      const { album, tracks } = this.props;
       if ( album === undefined ) return null;
+      if ( Object.keys(tracks).length === 0 ) return null;
+   
+
+      const trackList = album.trackArr.sort((x, y) => {
+            return Object.keys(x)[0] < Object.keys(y)[0] ? -1 : 1
+         }).map(trackObj => {
+            const track = tracks[Object.values(trackObj)[0]]
+            return <TrackContainer key={track.id} track={track} />
+      })
 
       return (
          <main className="album-page">
@@ -37,16 +58,18 @@ class AlbumPage extends React.Component {
                         <p className="album-genre">{album.genre}</p>
                      </div>
                      <div className="album-player">
-
+                        <SongPlayerContainer tracks={tracks} />
                      </div>
                      <div className="album-tracks">
-
+                        <ul>
+                           { trackList }
+                        </ul>
                      </div>
                      <p className="album-description">{album.description}</p>
                   </div>
                </div>
                <div className="album-right">
-                  <img className="album-cover" src={album.photo_url} />
+                  <img className="album-cover" src={album.photoUrl} />
                </div>
             </section>
          </main>

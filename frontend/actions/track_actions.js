@@ -1,7 +1,9 @@
 import React from 'react';
 import * as TrackApiUtil from '../utils/track_api_util';
 
+
 export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
+
 
 export const receiveTracks = tracks => ({
    type: RECEIVE_TRACKS,
@@ -14,6 +16,9 @@ export const fetchTracks = albumId => dispatch => (
          return dispatch(receiveTracks(tracks))
       })
 );
+
+
+
 
 // export const RECEIVE_TRACK = 'RECEIVE_TRACK';
 
