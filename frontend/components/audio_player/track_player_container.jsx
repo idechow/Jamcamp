@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import Tracks from './tracks';
+import TrackPlayer from './track_player';
 import { setPlay, setPause, setTrack } from '../../actions/player_actions';
 
 const mSTP = state => ({
@@ -16,4 +16,4 @@ const mDTP = (dispatch) => ({
 });
 
 
-export default withRouter(connect(mSTP, mDTP)(Tracks));
+export default withRouter(connect(mSTP, mDTP)(TrackPlayer));

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TrackContainer from './tracks_container';
+import TrackPlayerContainer from '../audio_player/track_player_container';
 
 class AlbumPage extends React.Component {
    constructor(props){
@@ -58,7 +59,7 @@ class AlbumPage extends React.Component {
                         <p className="album-genre">{album.genre}</p>
                      </div>
                      <div className="album-player">
-                        <SongPlayerContainer tracks={tracks} />
+                        <TrackPlayerContainer tracks={tracks} />
                      </div>
                      <div className="album-tracks">
                         <ul>
