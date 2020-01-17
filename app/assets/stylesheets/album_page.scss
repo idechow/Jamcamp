@@ -1,9 +1,11 @@
 .album-page {
-   height: 750px;
-   // margin: 0 auto;
+   height: 700px;
+   margin: 0 auto;
    // width: 970px;
-   // border: 1px solid rgba(0,0,0,0.1);
-   // border-top: none;
+   width: 814px;
+   border: 1px solid rgba(0,0,0,0.1);
+   border-top: none;
+   padding-top: 25px;
 }
 
 .album-content{
@@ -42,4 +44,54 @@
 .album-shell {
    height: 350px;
    width: 350px;
+}
+
+.album-title {
+  font-size: 28px;
+  margin-top: 5px;
+}
+
+.album-artist, {
+   padding-top: 5px;
+   font-size: 14px;
+}
+
+.album-genre{
+   font-size: 12px;
+}
+
+.album-byline, .player{
+   margin-bottom: 25px;
+}
+
+.album-track-item {
+   font-size: 12px;
+   color: #363636;
+   margin: 12px 0;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 90%;
+}
+
+.album-track-left {
+  display: flex;
+}
+
+.album-track-btn {
+   width: 19px;
+   height: 18px;
+   margin-right: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 9px;
+   border: 1px solid #d9d9d9;
+   box-sizing: border-box;
+   border-radius: 2px;
+   cursor: pointer;
+}
+
+.playpause-list-icon {
+    font-size: 9px;
 }

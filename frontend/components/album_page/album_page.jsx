@@ -72,10 +72,10 @@ class AlbumPage extends React.Component {
                   <div className="ablum-player">
                      <div className="album-byline">
                         <p className="album-title">{album.name}</p>
-                        <p className="album-artist">{album.artist}</p>
+                        <p className="album-artist">by {album.artist}</p>
                         <p className="album-genre">{album.genre}</p>
                      </div>
-                     <div className="album-player">
+                     <div className="player">
                         <TrackPlayerContainer tracks={tracks} />
                      </div>
                      <div className="album-tracks">
