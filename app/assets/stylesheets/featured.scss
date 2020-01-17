@@ -181,6 +181,10 @@
    top: 85%;  
 }
 
+.small-feature-details:hover, .large-feature-details:hover {
+   opacity: .85;
+}
+
 .intro-tag{
    font-weight: bold;
    background-color: black;
