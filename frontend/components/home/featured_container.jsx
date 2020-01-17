@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import FeaturedAlbums from './featured';
-import { fetchAlbums } from '../../utils/album_api_util';
+import { fetchAlbums } from '../../actions/album_actions';
 
 
 const mSTP = state => {

@@ -30,7 +30,20 @@
    width: 74%;
    background-size: cover;
    background-position: center;
-   background: black;
+
+   //  display: flex;
+   //  justify-content: center;
+   //  align-items: center;
+   //  overflow: hidden
+   // background: black;
+}
+
+.big-feature image {
+   background-size: cover;
+//    min-width: 100%;
+// min-height: 100%;
+// width: auto;
+// height: auto;
 }
 
 .small-features {
@@ -77,4 +90,32 @@
 .intro-tag {
    position: absolute;
    bottom: 0;
+}
+
+.large-feature-link {
+  text-decoration: none;
+  color: white;
+  box-sizing: border-box;
+  transition: opacity 0.1s linear;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.large-feature-details {
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+   background-repeat: no-repeat;
+}
+
+.large-feature-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: black;
+}
+
+.large-feature-band {
+  font-size: 20px;
+  color: black;
 }

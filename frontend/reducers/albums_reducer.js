@@ -1,4 +1,5 @@
 import { RECEIVE_ALBUMS, RECEIVE_ALBUM } from '../actions/album_actions';
+import merge from 'lodash/merge';
 
 const albumsReducer = (oldState = {}, action) => {
    Object.freeze(oldState);
@@ -6,7 +7,7 @@ const albumsReducer = (oldState = {}, action) => {
 
    switch (action.type) {
       case RECEIVE_ALBUMS:
-         return action.albums;
+         return merge({}, oldState, action.albums);
       case RECEIVE_ALBUM:
          nextState[action.album.id] = action.album;
          return nextState;

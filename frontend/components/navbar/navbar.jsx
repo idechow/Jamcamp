@@ -19,8 +19,8 @@ class Navbar extends React.Component {
    demo(e) {
       e.preventDefault();
       this.props.demoLogin({
-         username: "Mr. Terrapin",
-         password: "DARK@star*1"
+         username: "Robert Hunter",
+         password: "terrapin"
       });
    }
 
@@ -81,10 +81,10 @@ class Navbar extends React.Component {
          <header id="nav-bar" className="nav-bar-row">
             <div className="nav-content">
                <div className="logo-shell">
-                  <img className="logo" src={window.TerrapinURL} />
+                  <a href="#"><img className="logo" src={window.TerrapinURL}/></a>
                </div>
                <div>
-                  search
+                  {/* search */}
                </div>
                <div>
                   {display}

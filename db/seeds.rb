@@ -42,7 +42,7 @@ phil = User.new(
    band: "Phil Lesh & Friends"
 )
 
-mickey_bill = new(
+mickey_bill = User.new(
    username: "Mickey & Bill",
    email: "wharf@rat.io",
    password: "terrapin",
@@ -54,81 +54,81 @@ mickey_bill = new(
 robert_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/Robert_Hunter.jpg")
 robert.photo.attach(io: robert_photo, filename: "Robert_Hunter.jpg")
 robert_band_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/hunter_and_garcia.jpg")
-robert.band_photo.attach(io: robert_photo, filename: "hunter_and_garcia.jpg")
+robert.band_photo.attach(io: robert_band_photo, filename: "hunter_and_garcia.jpg")
 robert.save!
 
 jerry_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/jerry_with_guitar.jpg")
 jerry.photo.attach(io: jerry_photo, filename: "jerry_with_guitar.jpg")
 jerry_band_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/grateful_dead_band_photo.jpg")
-jerry.band_photo.attach(io: jerry_photo, filename: "grateful_dead_band_photo.jpg")
+jerry.band_photo.attach(io: jerry_band_photo, filename: "grateful_dead_band_photo.jpg")
 jerry.save!
 
 bob_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/Bob_face.jpg")
 bob.photo.attach(io: bob_photo, filename: "Bob_face.jpg")
 bob_band_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/dead_co_banner.jpg")
-bob.band_photo.attach(io: bob_photo, filename: "dead_co_banner.jpg")
+bob.band_photo.attach(io: bob_band_photo, filename: "dead_co_banner.jpg")
 bob.save!
 
 phil_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/Phil+Lesh.jpg")
 phil.photo.attach(io: phil_photo, filename: "Phil+Lesh.jpg")
 phil_band_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/lesh_friends_band_img.jpg")
-phil.band_photo.attach(io: phil_photo, filename: "lesh_friends_band_img.jpg")
+phil.band_photo.attach(io: phil_band_photo, filename: "lesh_friends_band_img.jpg")
 phil.save!
 
 mickey_bill_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/rhythm_devils_young.jpg")
 mickey_bill.photo.attach(io: mickey_bill_photo, filename: "hythm_devils_young.jpg")
 mickey_bill_band_photo = open("https://jamcamp-seed.s3-us-west-1.amazonaws.com/photos/devils_at_drums.jpg")
-mickey_bill.band_photo.attach(io: mickey_bill_photo, filename: "devils_at_drums.jpg")
+mickey_bill.band_photo.attach(io: mickey_bill_band_photo, filename: "devils_at_drums.jpg")
 mickey_bill.save!
 
 #################################
 
 capitoli = Album.new(
-   band_id: Robert.id,
+   band_id: robert.id,
    name: "Capitol Theater Part 1",
-   genre: "rock"
+   genre: "rock",
    release_date: "1970-06-24"
 )
 
 capitolii = Album.new(
-   band_id: Robert.id,
+   band_id: robert.id,
    name: "Capitol Theater Part 2",
-   genre: "rock"
+   genre: "rock",
    release_date: "1970-06-24"
 )
 
 winterland = Album.new(
-   band_id: Jerry.id,
+   band_id: jerry.id,
    name: "Winterland Arena",
-   genre: "rock"
+   genre: "rock",
    release_date: "1975-06-17"
 )
 
 kirby = Album.new(
-   band_id: Phil.id,
+   band_id: phil.id,
    name: "Allen Kirby Field House",
-   genre: "rock"
+   genre: "rock",
    release_date: "1979-05-07"
 )
 
 rainbow = Album.new(
-   band_id: Jerry.id,
+   band_id: jerry.id,
    name: "The Rainbow Theater",
-   genre: "rock"
+   genre: "rock",
    release_date: "1981-10-04"
 )
 
 redrocks = Album.new(
-   band_id: Bob.id,
+   band_id: bob.id,
    name: "Red Rocks Amphitheatre",
-   genre: "rock"
+   genre: "rock",
    release_date: "1985-09-07"
 )
 
 centrum = Album.new(
-   band_id: MickeyBill.id,
+   band_id: mickey_bill.id,
    name: "The Centrum",
-   genre: "rock"
+   genre: "rock",
    release_date: "1988-04-08"
 )
 

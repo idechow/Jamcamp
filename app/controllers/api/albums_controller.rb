@@ -10,6 +10,7 @@ class Api::AlbumsController < ApplicationController
 
    def show
       @album = Album.find(params[:id])
+      # @artist = User.find(params[:user_id])
       # @tracks = @album.tracks
       # @artist = @album.artist
       if @album

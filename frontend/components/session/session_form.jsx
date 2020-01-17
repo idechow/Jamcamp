@@ -44,31 +44,31 @@ class SessionForm extends React.Component {
       });
    }
 
-   demoLogin(e) {
-      e.preventDefault();
-      let password = 'terrapin';
-      this.state = {
-         username: '',
-         password: ''
-      }
-      const newdemo = () => {
-         setTimeout(() => {
-            if (password.length > 0) {
-               this.setState({
-                  username: "Mr. Terrapin",
-                  password: this.state.password.concat(password[0])
-               });
-               password = password.slice(1);
-               newdemo();
-            }
-            else {
-               dispatch(login(this.state))
-                  .then(this.props.closeModal);
-            }
-         }, 100);
-      }
-      newdemo();
-   }
+   // demoLogin(e) {
+   //    e.preventDefault();
+   //    let password = 'terrapin';
+   //    this.state = {
+   //       username: '',
+   //       password: ''
+   //    }
+   //    const newdemo = () => {
+   //       setTimeout(() => {
+   //          if (password.length > 0) {
+   //             this.setState({
+   //                username: "Robert Hunter",
+   //                password: this.state.password.concat(password[0])
+   //             });
+   //             password = password.slice(1);
+   //             newdemo();
+   //          }
+   //          else {
+   //             dispatch(login(this.state))
+   //                .then(this.props.closeModal);
+   //          }
+   //       }, 100);
+   //    }
+   //    newdemo();
+   // }
 
    renderErrors() {
       return (
@@ -170,7 +170,7 @@ class SessionForm extends React.Component {
                   <button
                         className="session-footer-button"
                         type="button"
-                        onClick={formType === 'LOGIN' ? (e) => this.demoLogin(e) : (e) => this.demo(e)}
+                        onClick={(e) => this.demo(e)}
                         >
                            demo login
                   </button>.
@@ -186,3 +186,4 @@ export default SessionForm;
 
 {/* <h1>{formType === 'LOGIN' ? 'Log in' : formType === 'FAN_SIGNUP' ? 'Sign up as a fan' : 'Sign up as a artist'}</h1> */ }
 {/* in label htmlFor"q"  in input: id="q" */ }
+// { formType === 'LOGIN' ? (e) => this.demoLogin(e) : (e) => this.demo(e) }
