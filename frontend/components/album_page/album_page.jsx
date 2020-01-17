@@ -6,6 +6,9 @@ import TrackPlayerContainer from '../audio_player/track_player_container';
 class AlbumPage extends React.Component {
    constructor(props){
       super(props); 
+      // this.state = {
+      //    loaded: false,
+      // }
    }
 
    componentDidMount(){
@@ -28,17 +31,20 @@ class AlbumPage extends React.Component {
    componentDidUpdate(prevProps){
       const albumId = this.props.match.params.albumId;
       if (this.props.match.params.albumId !== prevProps.match.params.albumId){
-         this.props.fetchAlbum(albumId).then(() =>
-            this.props.fetchTracks(albumId)).then(() =>
-               this.props.fetchArtistAlbums(this.props.match.params.bandId));
+            this.props.fetchTracks(albumId).then(() =>
+               this.props.fetchAlbum(albumId)).then(() =>
+                  this.props.fetchArtistAlbums(this.props.match.params.bandId));
       }
    }
 
    // componentDidUpdate(prevProps) {
    //    const albumId = this.props.match.params.albumId;
    //    if (this.props.match.params.albumId !== prevProps.match.params.albumId) {
-   //       this.props.fetchAlbum(albumId);
-   //       this.props.fetchTracks(albumId);
+   //       const a = this.props.fetchAlbum(albumId);
+   //       const b = this.props.fetchTracks(albumId);
+   //       const c = this.props.fetchArtistAlbums(this.props.match.params.bandId);
+   //       Promise.all([a, b, c])
+   //          .then(() => this.setState({ loaded: true }))
    //    }
    // }
 
@@ -58,6 +64,7 @@ class AlbumPage extends React.Component {
             return <TrackContainer key={track.id} track={track} />
       })
 
+      // if (this.state.loaded) {
       return (
          <main className="album-page">
             <section className="album-content">
@@ -87,6 +94,7 @@ class AlbumPage extends React.Component {
             </section>
          </main>
       );
+      // } else { return <div>loading</div> }
    }
 }
 
