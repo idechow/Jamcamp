@@ -84,35 +84,35 @@ mickey_bill.save!
 #################################
 
 capitoli = Album.new(
-   band_id: robert.id,
+   band_id: jerry.id,
    name: "Capitol Theater Part 1",
    genre: "rock",
    release_date: "1970-06-24"
 )
 
 capitolii = Album.new(
-   band_id: robert.id,
+   band_id: jerry.id,
    name: "Capitol Theater Part 2",
    genre: "rock",
    release_date: "1970-06-24"
 )
 
 winterland = Album.new(
-   band_id: jerry.id,
+   band_id: bob.id,
    name: "Winterland Arena",
    genre: "rock",
    release_date: "1975-06-17"
 )
 
 kirby = Album.new(
-   band_id: phil.id,
+   band_id: mickey_bill.id,
    name: "Allen Kirby Field House",
    genre: "rock",
    release_date: "1979-05-07"
 )
 
 rainbow = Album.new(
-   band_id: jerry.id,
+   band_id: phil.id,
    name: "The Rainbow Theater",
    genre: "rock",
    release_date: "1981-10-04"
