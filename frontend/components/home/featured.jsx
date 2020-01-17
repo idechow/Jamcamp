@@ -66,9 +66,9 @@ class FeaturedAlbums extends React.Component {
                   <li className="fet c">{this.smallFet(thirdImg)}</li>
                </ul>
             </main>
-            <p className="intro-tag">
+            {/* <p className="intro-tag">
                Welcome to Jamcamp, a place to experience your favorite jam bands!
-            </p>
+            </p> */}
          </div>
       );
       } else { return <div>loading</div> }
