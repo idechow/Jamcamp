@@ -3,6 +3,7 @@ import * as TrackApiUtil from '../utils/track_api_util';
 
 
 export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
+export const CLEAR_TRACKS = 'CLEAR_TRACKS';
 
 
 export const receiveTracks = tracks => ({
@@ -16,6 +17,10 @@ export const fetchTracks = albumId => dispatch => (
          return dispatch(receiveTracks(tracks))
       })
 );
+
+export const clearTracks = () => ({
+   type: CLEAR_TRACKS,
+})
 
 
 
