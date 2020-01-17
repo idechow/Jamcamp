@@ -107,15 +107,76 @@
    width: 100%;
    height: 100%;
    background-repeat: no-repeat;
+   position: relative;
+   background-position: 50% 0%; 
 }
 
 .large-feature-title {
-  font-size: 28px;
-  font-weight: 700;
-  color: black;
+   font-size: 32px;
+   font-size: 4vw;
+   // font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: black 1px 0 2px;
+  position: absolute;
+  padding-left: 10px;
+//   padding-bottom: 3px;
+  top: 73%;  
 }
 
 .large-feature-band {
-  font-size: 20px;
-  color: black;
+   font-size: 20px;
+   font-size: 3vw;
+   // font-size: 2rem;
+   color: white;
+   text-shadow: black 1px 0 2px;
+   position: absolute;
+   padding-left: 10px;
+   // padding-bottom: 5px;
+   top: 85%;  
+}
+
+
+.small-feature-link {
+  text-decoration: none;
+  color: white;
+  box-sizing: border-box;
+  transition: opacity 0.1s linear;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.small-feature-details {
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+   background-repeat: no-repeat;
+   position: relative;
+   background-position: 50% 0%; 
+}
+
+.small-feature-title {
+   font-size: 32px;
+   font-size: 1.25vw;
+   // font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: black 1px 0 2px;
+  position: absolute;
+  padding-left: 10px;
+//   padding-bottom: 3px;
+  top: 73%;  
+}
+
+.small-feature-band {
+   font-size: 20px;
+   font-size: 1.1vw;
+   // font-size: 2rem;
+   color: white;
+   text-shadow: black 1px 0 2px;
+   position: absolute;
+   padding-left: 10px;
+   // padding-bottom: 5px;
+   top: 85%;  
 }

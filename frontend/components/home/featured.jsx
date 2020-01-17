@@ -15,15 +15,10 @@ class FeaturedAlbums extends React.Component {
    }
 
    backgroundImage(album) {
-      return (
-         {
-            backgroundImage: `url(${album.photoUrl})`,
-            backgroundPosition: "center"
-         }
-      )
+      return ({backgroundImage: `url(${album.photoUrl})`})
    }
 
-   showMain(album) {
+   mainFet(album) {
       return (
          <Link
             className="large-feature-link"
@@ -37,40 +32,38 @@ class FeaturedAlbums extends React.Component {
       )
    }
 
-   // showSide(albums) {
-   //    const albumDetails = albums.map((album, idx) => {
-   //       return (
-   //          <li className="small-feature-wrapper" key={album.id}>
-   //             <Link
-   //                className={`small-feature-link ${"small-feature-" + (idx + 1)}`}
-   //                to={`/albums/${album.id}`}
-   //                style={this.backgroundImage(album)}>
-   //                <div className="small-feature-details">
-   //                   <p className="small-feature-title">{album.title}</p>
-   //                   <p className="small-feature-band">{album.artist}</p>
-   //                </div>
-   //             </Link>
-   //          </li>
-   //       )
-   //    })
-   //    return albumDetails;
-   // }
+   smallFet(album) {
+      return (
+         <Link
+            className="small-feature-link"
+            to={`/artist/${album.bandId}/album/${album.id}`}>
+            <div className="small-feature-details"
+               style={this.backgroundImage(album)}>
+               <p className="small-feature-band">{album.artist}</p>
+               <p className="small-feature-title">{album.name}</p>
+            </div>
+         </Link>
+      )
+   }
 
    render() {
-      
-      let big = this.props.albums[1]
+
+      let big = this.props.albums[2]
+      let firstImg = this.props.albums[3]
+      let secImg = this.props.albums[4]
+      let thirdImg = this.props.albums[5]
+
       if (this.state.loaded){
       return (
          <div className="featured-container">
             <main className="featured-albums">
                <section className="big-feature">
-                  {this.showMain(big)}
+                  {this.mainFet(big)}
                </section>
                <ul className="small-features">
-                  {/* {this.smallFeatures(small)} */}
-                  <li className="fet a"></li>
-                  <li className="fet b"></li>
-                  <li className="fet c"></li>
+                  <li className="fet a">{this.smallFet(firstImg)}</li>
+                  <li className="fet b">{this.smallFet(secImg)}</li>
+                  <li className="fet c">{this.smallFet(thirdImg)}</li>
                </ul>
             </main>
             <p className="intro-tag">

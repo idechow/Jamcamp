@@ -34,17 +34,27 @@ class AlbumPage extends React.Component {
       }
    }
 
+   // componentDidUpdate(prevProps) {
+   //    const albumId = this.props.match.params.albumId;
+   //    if (this.props.match.params.albumId !== prevProps.match.params.albumId) {
+   //       this.props.fetchAlbum(albumId);
+   //       this.props.fetchTracks(albumId);
+   //    }
+   // }
+
 
    render(){
+      
       const { album, tracks } = this.props;
       if ( album === undefined ) return null;
       if ( Object.keys(tracks).length === 0 ) return null;
    
-
+      debugger;
       const trackList = album.trackArr.sort((x, y) => {
             return Object.keys(x)[0] < Object.keys(y)[0] ? -1 : 1
          }).map(trackObj => {
             const track = tracks[Object.values(trackObj)[0]]
+            debugger;
             return <TrackContainer key={track.id} track={track} />
       })
 
