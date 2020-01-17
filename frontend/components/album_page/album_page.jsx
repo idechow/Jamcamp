@@ -49,12 +49,12 @@ class AlbumPage extends React.Component {
       if ( album === undefined ) return null;
       if ( Object.keys(tracks).length === 0 ) return null;
    
-      debugger;
+      // debugger;
       const trackList = album.trackArr.sort((x, y) => {
             return Object.keys(x)[0] < Object.keys(y)[0] ? -1 : 1
          }).map(trackObj => {
             const track = tracks[Object.values(trackObj)[0]]
-            debugger;
+            // debugger;
             return <TrackContainer key={track.id} track={track} />
       })
 
@@ -80,7 +80,9 @@ class AlbumPage extends React.Component {
                   </div>
                </div>
                <div className="album-right">
-                  <img className="album-cover" src={album.photoUrl} />
+                  <div className="album-shell">
+                     <img className="album-cover" src={album.photoUrl} />
+                  </div>
                </div>
             </section>
          </main>

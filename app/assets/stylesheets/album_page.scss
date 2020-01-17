@@ -32,9 +32,14 @@
 }
 
 .album-cover {
-    height: 300px;
-    width: 300px;
-    background-size: cover;
-   //  background-position: 50% 50%;
-    margin-bottom: 18px;
+   background-position: 50% 50%;
+   margin-bottom: 18px;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.album-shell {
+   height: 350px;
+   width: 350px;
 }

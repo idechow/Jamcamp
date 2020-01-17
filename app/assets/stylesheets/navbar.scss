@@ -24,13 +24,14 @@ html, body, div {
    // height: 44px;
    // background-color: #ECECEC;
    // border-top: solid 5px #848484;
-   // border-bottom: solid #afafaf 1px;
+   border-bottom: solid #afafaf 1px;
    height: 60px;
    box-shadow: 0px 1px #EEE;
    // background-color: #ffffff;
-   background: rgb(2,0,36);
+   // background: rgb(2,0,36);
    // background: linear-gradient(260deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-   background: linear-gradient(260deg, #6046FE 0%, #1DA0C3 100%);
+   // background: linear-gradient(260deg, #6046FE 0%, #1DA0C3 100%);
+   background-color: #ECECEC;;
    top: 0;
    transition: top .25s ease-out;
 }
@@ -82,7 +83,8 @@ html, body, div {
 }
 
 li i:hover {
-   color: white;
+   // color: white;
+   color: rgba(0,212,255,1);
    cursor: pointer;
 }
 
@@ -92,6 +94,7 @@ li i {
    font-size: 20px;
    text-align: center;
    position: relative;
+   
 }
 
 
@@ -104,13 +107,15 @@ li i {
 .logout-dropdown{
    position: absolute;
    box-sizing: border-box;
-   background: linear-gradient(260deg, #6046FE 100%, #1DA0C3 100%);
+   // background: linear-gradient(260deg, #6046FE 100%, #1DA0C3 100%);
+   background: #ECECEC;
    // text-align: left;
    border: #EEE 1px solid;
    font-size: 15px; 
    display: block;
    width: 90px;
    color: black;
+   // color: white;
    box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
    line-height: 32px;
    border-radius: 5px;
