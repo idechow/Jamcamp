@@ -86,6 +86,7 @@ class AlbumPage extends React.Component {
                         </ul>
                      </div>
                      <p className="album-description">{album.description}</p>
+                     {/* <p className="album-release-date">{album.release_date}</p> */}
                   </div>
                </div>
                <div className="album-right">
