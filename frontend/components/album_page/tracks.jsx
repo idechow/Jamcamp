@@ -33,9 +33,10 @@ class Tracks extends React.Component {
 
    componentDidUpdate(oldProps) {
       // debugger; 
-      if ((this.props.currentTrack.id !== oldProps.currentTrack.id) && !this.props.isPlaying) {
-         this.props.setPlayPause();
-      }
+      // if ((this.props.currentTrack.id !== oldProps.currentTrack.id) && !this.props.isPlaying) {
+      //    // this.props.setPlayPause();
+      //    this.props.setPause();
+      // }
    }
 
    render() {

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
    }
    const root = document.getElementById('root');
 
-   // window.getState = store.getState;
+   window.getState = store.getState;
    // window.dispatch = store.dispatch;
    // window.fetchAlbum = fetchAlbum;
    // window.fetchAlbums = fetchAlbums;
