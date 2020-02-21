@@ -3,6 +3,7 @@ import * as AlbumApiUtil from '../utils/album_api_util';
 
 export const RECEIVE_ALBUMS = "RECEIVE_ALBUMS";
 export const RECEIVE_ALBUM = "RECEIVE_ALBUM";
+export const CLEAR_ALBUMS = 'CLEAR_ALBUMS';
 // export const RECEIVE_ARTIST_ALBUMS = "RECEIVE_ARTIST_ALBUMS";
 
 
@@ -19,6 +20,10 @@ export const receiveAlbum = album => {
       album
    };
 };
+
+export const clearAlbums = () => ({
+   type: CLEAR_ALBUMS,
+})
 
 // export const receiveArtistAlbums = albums => {
 //    return {

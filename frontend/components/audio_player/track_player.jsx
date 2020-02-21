@@ -5,18 +5,26 @@ class TrackPlayer extends React.Component {
    constructor(props){
       super(props)
       this.state = {
-         queue: Object.values(this.props.tracks),
-         audioLoaded: false
+         sliderPos: 0,
+         bufferWidth: 0,
+         audioLoaded: false,
       }
       this.audio = React.createRef();
+      this.progbar = React.createRef();
+      this.slider = React.createRef();
       this.handlePlay = this.handlePlay.bind(this);
       this.audioLoaded = this.audioLoaded.bind(this);
       this.handleEnd = this.handleEnd.bind(this);
+      this.updatePos = this.updatePos.bind(this);
+
+      this.handleMouseMove = this.handleMouseMove.bind(this);
+      this.handleMouseUp = this.handleMouseUp.bind(this);
+      this.handleMouseDown = this.handleMouseDown.bind(this);
    }
 
    componentDidMount() {
       if (_.isEmpty(this.props.currentTrack)) {
-         this.props.setTrack(this.state.queue[0]);
+         this.props.setTrack(this.props.tracks[0]);
       }
    }
 
@@ -26,11 +34,30 @@ class TrackPlayer extends React.Component {
       } else {
          this.audio.current.pause();
       }
+
+      if (this.props.tracksObj !== prevProps.tracksObj) {
+         this.props.setTrack(this.props.tracks[0]);
+         this.props.setPause();
+      }
+
+      if (this.props.isPlaying !== prevProps.isPlaying){
+         if (this.props.isPlaying) {
+            this.intervalId = setInterval(() => this.updatePos(), 300);
+         } else {
+            clearInterval(this.intervalId);
+         }
+      }
+
+      if (this.props.currentTrack !== prevProps.currentTrack) {
+         clearInterval(this.intervalId);
+         this.setState({ audioLoaded: false, sliderPos: 0, bufferWidth: 0});
+      }
    }
 
    componentWillUnmount() {
       this.props.setTrack();
       this.props.setPause();
+      clearInterval( this.intervalId );
    }
 
    toggleIcon() {
@@ -45,38 +72,101 @@ class TrackPlayer extends React.Component {
       if(this.props.isPlaying) {
          this.audio.current.pause();
          this.props.setPause();
+         clearInterval( this.intervalId );
       } else {
          this.audio.current.play();
          this.props.setPlay();
       }
    }
 
+   updatePos() {
+      if (this.audio.current && this.audio.current.buffered.length) {
+         const progWidth = this.progbar.current.offsetWidth - (this.slider.current.offsetWidth);
+         const progRatio = progWidth * (this.audio.current.currentTime / this.audio.current.duration);
+         let buff = this.audio.current.buffered.length
+         const progBuffer = progWidth * (this.audio.current.buffered.end(buff - 1) / this.audio.current.duration);
+         const progSlider = Math.round(progRatio);
+         this.setState({ sliderPos: progSlider, bufferWidth: progBuffer });
+      }
+   }
+
    audioLoaded() {
-      this.setState({ audioLoaded: true });
+      this.setState({ audioLoaded: true }, () => {
+         if (this.props.isPlaying) this.intervalId = setInterval(() => this.updatePos(), 300);
+      })
    }
 
-   changeTrack(diff) {
-      const nextTrack = this.props.currentTrack.trackNumber + diff;
-      this.props.setTrack(this.state.queue[nextTrack]);
+   changeTrack(num) {
+      const nextTrack = this.props.currentTrack.trackNumber + num;
+      this.props.setTrack(this.props.tracks[nextTrack]);
    }
 
-   handleEnd(e) {
-      if (this.props.currentTrack.trackNumber >= this.state.queue.length) {
-         this.props.setTrack(this.state.queue[0]);
+   handleEnd() {
+      if (this.props.currentTrack.trackNumber >= this.props.tracks.length) {
+         this.props.setTrack(this.props.tracks[0]);
          this.props.setPause();
       } else {
-         // this works bc the current tracknumber is always going to be one more than the its idx in the queue
          this.changeTrack(0);
-         // this.props.setTrack(this.state.queue[this.props.currentTrack.trackNumber]);
       }
+   }
+
+   handleTime() {
+      let current = Math.round(this.audio.current.currentTime);
+      let duration = Math.round(this.audio.current.duration);
+      this.duration = duration;
+
+      let cSec = current % 60;
+      if (cSec < 10) cSec = `0${cSec}`;
+
+      let cMin = Math.floor(current / 60);
+      if (cMin < 10) cMin = `0${cMin}`;
+
+      let dSec = duration % 60;
+      if (dSec < 10) dSec = `0${dSec}`;
+
+      let dMin = Math.floor(duration / 60);
+      if (dMin < 10) dMin = `0${dMin}`;
+      
+      return `${cMin}:${cSec} / ${dMin}:${dSec}`
+   }
+
+   handleMouseMove(e) {
+      let box = this.progbar.current.getBoundingClientRect();
+      let body = document.body;
+      let docEl = document.documentElement;
+      let scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+      let clientLeft = docEl.clientLeft || body.clientLeft || 0;
+      let left = Math.round(box.left + scrollLeft - clientLeft);
+
+      if (e.pageX > left + 237){
+         this.x = this.audio.current.duration - 1;
+      } else {
+         this.x = ((e.pageX - left-12) / 226) * this.audio.current.duration;
+      }
+      
+      this.audio.current.currentTime = this.x;
+   }
+
+   handleMouseDown(e) {
+      this.audio.current.muted = true
+      this.intervalSlide = setInterval(() => this.updatePos(), 30);
+      window.addEventListener('mousemove', this.handleMouseMove);
+      window.addEventListener('mouseup', this.handleMouseUp);
+   }
+
+   handleMouseUp(e) {
+      this.audio.current.muted = false
+      clearInterval(this.intervalSlide);
+      window.removeEventListener('mousemove', this.handleMouseMove);
+      window.removeEventListener('mouseup', this.handleMouseUp);
    }
 
    render(){
       const backDisabled = (this.props.currentTrack.trackNumber === 1) ? true : false;
-      const frwdDisabled = (this.props.currentTrack.trackNumber === (this.state.queue.length)) ? true : false;
+      const frwdDisabled = (this.props.currentTrack.trackNumber === (this.props.tracks.length)) ? true : false;
       return(
          <div className="track-player-shell">
-            <audio controls
+            <audio
                id="audio-player"
                ref={this.audio}
                src={this.props.currentTrack.audioUrl}
@@ -84,36 +174,52 @@ class TrackPlayer extends React.Component {
                type="audio/mp3" 
                onEnded={ this.handleEnd }
                />
-
             <div className="player-controls">
                <button 
                   className="play-pause-btn"
                   onClick={this.handlePlay}>
                      {this.toggleIcon()}
-                  </button>
-               <div className="player-top">
-                  <span className="track-player-title">
-                     {this.props.currentTrack.title}
-                  </span>
-                  <span className="track-player-time">
-                     {this.state.audioLoaded ? "00:00 / 00:00" : "Loading"}
-                  </span>
-               </div>
-               <div className="player-bottom">
-                  <div className="progress-bar"></div>
-                  <div className="progress-slider"></div>
-                  <button 
-                     className="backward-btn"
-                     onClick={() => this.changeTrack(-2)}
-                     disabled={backDisabled}>
-                     <i className="fas fa-fast-backward"></i>
-                  </button>
-                  <button 
-                     className="forward-btn"
-                     onClick={() => this.changeTrack(0)}
-                     disabled={frwdDisabled}>
-                     <i className="fas fa-fast-forward"></i>
-                  </button>
+               </button>
+               <div className="player-right">
+                  <div className="player-top">
+                     <span className="track-player-title">
+                        {this.props.currentTrack.title}
+                     </span>
+                     <span className="track-player-time">
+                        {this.state.audioLoaded ?  this.handleTime() : "00:00 / 00:00"}
+                     </span>
+                  </div>
+                  <div className="player-bottom">
+                     {/* <div className="progress-bar-wrap"> */}
+                        <div 
+                           className="progress-bar"
+                           ref={this.progbar}
+                        />
+                        <div 
+                           className="progress-slider"
+                           ref={this.slider}
+                           onMouseDown={this.handleMouseDown}
+                           style={{ left: this.state.sliderPos || 0 }}
+                        />
+                        <div 
+                           className="progress-buffer"
+                           ref={this.buffer}
+                           style={{ width: this.state.bufferWidth || 0 }}
+                        />
+                     {/* </div> */}
+                     <button 
+                        className="prev-next-btn"
+                        onClick={() => this.changeTrack(-2)}
+                        disabled={backDisabled}>
+                        <i className="fas fa-fast-backward"></i>
+                     </button>
+                     <button 
+                        className="prev-next-btn"
+                        onClick={() => this.changeTrack(0)}
+                        disabled={frwdDisabled}>
+                        <i className="fas fa-fast-forward"></i>
+                     </button>
+                  </div>
                </div>
             </div>
          </div>

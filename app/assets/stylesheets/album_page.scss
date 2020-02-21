@@ -1,8 +1,8 @@
 .album-page {
    height: 700px;
    margin: 0 auto;
-   // width: 970px;
-   width: 814px;
+   width: 975px;
+   // width: 814px;
    border: 1px solid rgba(0,0,0,0.1);
    border-top: none;
    padding-top: 25px;
@@ -94,4 +94,132 @@
 
 .playpause-list-icon {
     font-size: 9px;
+}
+
+// ***** audio player *****
+
+.play-pause-btn {
+   height: 52px;
+   width: 56px;
+   border: 1px solid #d9d9d9;
+   margin-right: 10px;
+   background: #fff;
+   outline: none;
+   cursor: pointer;
+}
+
+.playpause-icon {
+  font-size: 20px;
+}
+ 
+.player-controls {
+  display: flex;
+  width: 380px;
+}
+
+.slider-container {
+  width: 250px;
+}
+
+.slider {
+
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border: 1px solid darkgray;
+  background-color: #9c9c9ca3;
+  outline: none;
+
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 27px;
+    height: 15px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid darkgray;
+}
+
+.slider::-moz-range-thumb {
+    width: 27px;
+    height: 15px;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid darkgray;
+      border-radius: 0;
+}
+
+
+.slider::-moz-range-track {
+  background:transparent;
+  border:0px;
+
+}
+
+.progress-bar {
+  width: 250px;
+  height: 10px;
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  border-radius: 1px;
+  position: relative;
+}
+
+.progress-slider {
+  width: 24px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 1px solid #bebebe;
+  background: #fff;
+  border-radius: 1px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+//   left: 100px;
+}
+
+.progress-buffer{
+   position: absolute;
+   height: 8px;
+   background: #f6f6f6;
+   background-color: rgba(0,0,0,.04);
+}
+
+.player-bottom {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.prev-next-btn {
+  font-size: 14px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #000;
+}
+
+
+// ************************
+
+
+.discog-artwork {
+   width: 120px;
+   height: 120px;
+   object-fit: cover;
+   display: block;
+   margin-bottom: 8px;
+}
+
+.artist-photo {
+   width: 120px;
+   height: 80px;
+   object-fit: cover;
+   display: block;
+   margin-bottom: 8px;
 }

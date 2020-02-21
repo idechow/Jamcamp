@@ -7,6 +7,7 @@ import { setPlay, setPause, setTrack } from '../../actions/player_actions';
 const mSTP = state => ({
    currentTrack: state.ui.currentTrack,
    isPlaying: state.ui.playPause.isPlaying,
+   tracksObj: state.entities.tracks,
 });
 
 const mDTP = (dispatch) => ({

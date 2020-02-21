@@ -1,5 +1,13 @@
 class Api::UsersController < ApplicationController
 
+   def show 
+      @artist = User.find(params[:id])
+      if @artist
+         render "api/artists/show.json.jbuilder"
+      else
+         render json: ["Invalid artist"], status: 422
+      end
+   end
    
    def create
     @user = User.new(user_params)

@@ -7,6 +7,10 @@ class HomePage extends React.Component {
       super(props);
    }
 
+   componentWillUnmount() {
+      this.props.clearAlbums();
+   }
+
    render() {
       return (
          <section className="home-page">
