@@ -1,11 +1,17 @@
+.root-sub {
+   background-color: #f8f8f8;
+}
+
 .album-page {
    height: 700px;
-   margin: 0 auto;
+   margin: 0 auto 40px;
    width: 975px;
    // width: 814px;
    border: 1px solid rgba(0,0,0,0.1);
    border-top: none;
-   padding-top: 25px;
+   background-color: white;
+   padding: 0 0 80px;
+   // padding-top: 25px;
 }
 
 .album-content{
@@ -222,4 +228,22 @@
    object-fit: cover;
    display: block;
    margin-bottom: 8px;
+}
+
+.band-image-wrap {
+   height: 180px;
+   margin-bottom: 44px;
+   border-bottom: solid #e5e5e5 1px;
+}
+
+.band-image-link {
+   display: block;
+   height: 100%;
+}
+
+.band-image {
+   height: 180px;
+   width: 100%;
+   object-fit: cover;
+   object-position: 50% 22%;
 }

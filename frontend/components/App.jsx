@@ -5,9 +5,11 @@ import { Route, Switch } from 'react-router-dom';
 import Footer from './footer/footer';
 import HomeContainer from './home/home_container';
 import AlbumPageContainer from './album_page/album_page_container';
+import Redirect404 from './error_pages/redirect_404'
+import { AuthRoute } from '../utils/route_util';
 
 const App = () => (
-   <div>
+   <div className="root-sub">
       <Modal />
       <header>
          <Navbar />
@@ -15,7 +17,8 @@ const App = () => (
 
       <Switch>
          <Route path="/artist/:bandId/album/:albumId" component={AlbumPageContainer} />
-         <Route path="/" component={HomeContainer} />
+         <Route exact path="/" component={HomeContainer} />
+         <Route path="*" component={Redirect404} />
       </Switch>
 
       <Footer />

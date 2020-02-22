@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import TrackContainer from './tracks_container';
 import TrackPlayerContainer from '../audio_player/track_player_container';
 import Discography from './discography';
@@ -54,6 +55,11 @@ class AlbumPage extends React.Component {
       // if (this.state.loaded) {
       return (
          <main className="album-page">
+            <figure className="band-image-wrap">
+               <Link className="band-image-link" to="/">
+                  <img className="band-image" src={artist.bandPhotoUrl}/>
+               </Link>
+            </figure>
             <section className="album-content">
                <div className="album-left">
                   <div className="ablum-player">
@@ -70,7 +76,7 @@ class AlbumPage extends React.Component {
                            { trackList }
                         </ul>
                      </div>
-                     <p className="album-description">{album.description}</p>
+                     <p className="album-description">{album.description || "description"}</p>
                      {/* <p className="album-release-date">{album.release_date}</p> */}
                   </div>
                </div>
