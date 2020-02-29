@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_16_190746) do
+ActiveRecord::Schema.define(version: 2020_02_29_010218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,24 @@ ActiveRecord::Schema.define(version: 2020_01_16_190746) do
     t.string "release_date"
     t.boolean "featured", default: false
     t.index ["band_id"], name: "index_albums_on_band_id"
+  end
+
+  create_table "collects", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "album_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_collects_on_album_id"
+    t.index ["user_id", "album_id"], name: "index_collects_on_user_id_and_album_id", unique: true
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "band_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_follows_on_band_id"
+    t.index ["user_id", "band_id"], name: "index_follows_on_user_id_and_band_id", unique: true
   end
 
   create_table "tracks", force: :cascade do |t|

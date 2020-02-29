@@ -17,9 +17,10 @@ class Album < ApplicationRecord
 
    has_many :tracks
 
-   belongs_to :artist,
-      foreign_key: :band_id,
-      class_name: 'User'
+   has_many :collects, foreign_key: :user_id, class_name: 'Collect'
+   has_many :collectors, through: :collects, source: :user
+
+   belongs_to :artist, foreign_key: :band_id, class_name: 'User'
 
    has_one_attached :photo
 end
