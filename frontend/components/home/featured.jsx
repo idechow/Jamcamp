@@ -25,8 +25,8 @@ class FeaturedAlbums extends React.Component {
             to={`/artist/${album.bandId}/album/${album.id}`}>
             <div className="large-feature-details"
                style={this.backgroundImage(album)}>
-               <p className="large-feature-band">{album.artist}</p>
-               <p className="large-feature-title">{album.name}</p>
+               <p className="large-feature-band font">{album.artist}</p>
+               <p className="large-feature-title font">{album.name}</p>
             </div>
          </Link>
       )
@@ -39,8 +39,8 @@ class FeaturedAlbums extends React.Component {
             to={`/artist/${album.bandId}/album/${album.id}`}>
             <div className="small-feature-details"
                style={this.backgroundImage(album)}>
-               <p className="small-feature-band">{album.artist}</p>
-               <p className="small-feature-title">{album.name}</p>
+               <p className="small-feature-band font">{album.artist}</p>
+               <p className="small-feature-title font">{album.name}</p>
             </div>
          </Link>
       )
@@ -71,7 +71,7 @@ class FeaturedAlbums extends React.Component {
             </p> */}
          </div>
       );
-      } else { return <div>loading</div> }
+      } else { return <div></div> }
    }
 
 }

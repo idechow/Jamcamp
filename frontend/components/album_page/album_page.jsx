@@ -65,8 +65,8 @@ class AlbumPage extends React.Component {
                   <div className="ablum-player">
                      <div className="album-byline">
                         <p className="album-title">{album.name}</p>
-                        <p className="album-artist">by {album.artist}</p>
-                        <p className="album-genre">{album.genre}</p>
+                        <p className="album-artist">by <Link className="artist-discog-link" to="/">{album.artist}</Link></p>
+                        {/* <p className="album-genre">{album.genre}</p> */}
                      </div>
                      <div className="player">
                         <TrackPlayerContainer tracks={tracks}/>
@@ -85,15 +85,17 @@ class AlbumPage extends React.Component {
                      <img className="album-cover" src={album.photoUrl} />
                   </div>
                </div>
-               <aside>
+               <aside className="album-aside">
                   <div>
                      <img className="artist-photo" src={artist.photoUrl}/>
-                     <p>{artist.band}</p>
-                     <p>{artist.location || "SF"}</p>
-                     <p>{artist.about || "about"}</p>
-                     <p>{artist.weblink || "link"}</p>
+                     <p className="artist-name" >{artist.band}</p>
+                     <p className="artist-location">{artist.location || "San Francisco, CA"}</p>
+                     <button className="artist-follow">Following</button>
+                     <p className="artist-about">{artist.about || "Khruangbin is a three-piece band from Texas, formed of Laura Lee on bass, Mark Speer on guitar, and Donald Johnson on drums."}</p>
+                     <p className="artist-page-link">{artist.weblink || "gratefuldead.com"}</p>
                   </div>
                   <ul>
+                     <p className="artist-discog-title">discography</p>
                      { discogList }
                   </ul>
                </aside>

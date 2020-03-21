@@ -9,7 +9,6 @@ class Tracks extends React.Component {
 
    changeTrack(e) {
       e.preventDefault(); 
-      // debugger; 
       if (this.props.currentTrack.id === this.props.track.id) {
          if (this.props.isPlaying === true) {
             this.props.setPause(); 
@@ -23,7 +22,6 @@ class Tracks extends React.Component {
    }
 
    renderIcon() {
-      // debugger; 
       if (this.props.isPlaying && this.props.currentTrack.id === this.props.track.id) {
          return <i className="fas fa-pause playpause-list-icon" />
       } else {
@@ -31,34 +29,31 @@ class Tracks extends React.Component {
       }
    }
 
-   componentDidUpdate(oldProps) {
-      // debugger; 
-      // if ((this.props.currentTrack.id !== oldProps.currentTrack.id) && !this.props.isPlaying) {
-      //    // this.props.setPlayPause();
-      //    this.props.setPause();
-      // }
-   }
-
    render() {
-
       const track = this.props.track;
       return (
          <li className="album-track-item">
-            <div className="album-track-left">
+            <div className="album-track-wrap">
                <span
                   className="album-track-btn"
                   onClick={this.changeTrack}>
                   {this.renderIcon()}
                </span>
-               <span>
+               <span className='album-track'>
                   {track.trackNumber}.&nbsp;
                </span>
-               <span>
+               <span className='album-track'>
                   {track.title}
                </span>
-               {/* <audio controls>
-                  <source src={"https://jamcamp-seed.s3-us-west-1.amazonaws.com/1985-09-07+Red+Rocks+Amphitheatre/gd85-09-07.s1t07.mp3"} type="audio/mp3"></source>
-               </audio> */}
+            </div>
+            <div className="album-track-wrap">
+               <a
+                  className="album-track-dl"
+                  href={track.audioUrl}
+                  target="_blank"
+                  download="test">
+                  download
+               </a>
             </div>
          </li>
       )

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Navbar extends React.Component {
    constructor(props) {
@@ -34,7 +35,7 @@ class Navbar extends React.Component {
 
    render() {
 
-      const { currentUser, logout, openModal } = this.props;
+      const { currentUser, openModal } = this.props;
 
       const artistBar= () => (
          <ul className="right-side-nav">
@@ -42,7 +43,9 @@ class Navbar extends React.Component {
                <i className="fas fa-plus"></i>
             </li>
             <li className="nav-element">
-               <i className="fas fa-heart"></i>
+               <Link to={`/user/${currentUser.id}`}>
+                  <i className="fas fa-heart"></i>
+               </Link>
             </li>
             <li className="nav-element dropdown">
                <i className="fas fa-circle" onClick={this.toggleDropdown}>
@@ -55,7 +58,9 @@ class Navbar extends React.Component {
       const fanBar = () => (
          <ul className="right-side-nav">
             <li className="nav-element">
+               <Link to={`/user/${currentUser.id}`}>
                   <i className="fas fa-heart"></i>
+               </Link>
             </li>
             <li className="nav-element">
                <i className="fas fa-circle" onClick={this.toggleDropdown}>

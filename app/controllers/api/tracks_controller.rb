@@ -7,13 +7,7 @@ class Api::TracksController < ApplicationController
       render "api/tracks/index.json.jbuilder"
    end
 
-   # def show
-   #    @track = Track.find(params[:id])
-   #    render "api/tracks/show.json.jbuilder"
-   # end
-
    private
-
    def track_params
       params.require(:track).permit(
       :album_id,

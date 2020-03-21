@@ -1,6 +1,14 @@
 class Api::UsersController < ApplicationController
+   def show
+      @user = User.find(params[:id])
+      if @user
+         render "api/users/show.json.jbuilder"
+      else
+         render json: ["Invalid user"], status: 422
+      end
+   end
 
-   def show 
+   def artists_show 
       @artist = User.find(params[:id])
       if @artist
          render "api/artists/show.json.jbuilder"

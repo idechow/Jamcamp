@@ -7,7 +7,7 @@ const Discography = ({ artistAlbum }) => {
          <Link to={`/artist/${artistAlbum.bandId}/album/${artistAlbum.id}`}>
             <img className="discog-artwork" src={artistAlbum.photoUrl}/>
          </Link>
-         <Link to={`/artist/${artistAlbum.bandId}/album/${artistAlbum.id}`}>
+         <Link className="discog-album-name" to={`/artist/${artistAlbum.bandId}/album/${artistAlbum.id}`}>
             <p>{artistAlbum.name}</p>
          </Link>
       </div>

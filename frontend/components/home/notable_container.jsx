@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import NotableAlbums from './new_albums';
+import NotableAlbums from './notable';
 
 
 const mSTP = (state) => {

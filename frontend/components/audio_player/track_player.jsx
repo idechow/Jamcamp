@@ -208,13 +208,13 @@ class TrackPlayer extends React.Component {
                         />
                      {/* </div> */}
                      <button 
-                        className="prev-next-btn"
+                        className="prev-next-btn prev"
                         onClick={() => this.changeTrack(-2)}
                         disabled={backDisabled}>
                         <i className="fas fa-fast-backward"></i>
                      </button>
                      <button 
-                        className="prev-next-btn"
+                        className="prev-next-btn next"
                         onClick={() => this.changeTrack(0)}
                         disabled={frwdDisabled}>
                         <i className="fas fa-fast-forward"></i>

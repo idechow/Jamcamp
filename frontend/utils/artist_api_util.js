@@ -1,7 +1,6 @@
 
-
 export const fetchArtist = bandId => (
    $.ajax({
-      url: `/api/users/${bandId}`
+      url: `/api/artists/${bandId}`
    })
 );

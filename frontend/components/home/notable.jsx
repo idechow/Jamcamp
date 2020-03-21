@@ -1,5 +1,4 @@
 import React from 'react';
-import AlbumItemContainer from './new_album_item_container';
 
 class NotableAlbums extends React.Component {
 
@@ -9,7 +8,14 @@ class NotableAlbums extends React.Component {
 
    
    render() {
-      return null;
+      return (
+         <section className="notable-container">
+            <div className="notable-title">NOTABLE SETS</div>
+            <ul className="notable-albums">
+
+            </ul>
+         </section>
+      );
    }
 }
 

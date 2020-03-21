@@ -1,3 +1,8 @@
+.featured-wrap {
+   background-color: #222222;
+   max-height: 540px;
+}
+
 .featured-container {
    // display: block;
    // margin: auto;
@@ -6,6 +11,9 @@
    height: 0;
    padding-bottom: 37.84%; /* 16:9 */
    position: relative;
+   max-width: 1440px;
+   left: 50%;
+   transform: translateX(-50%)
 }
 
 .featured-albums {
@@ -13,8 +21,11 @@
    // height: 540px;
 
    position: absolute;
-   top: 0; left: 0;
-   width: 100%; height: 100%;
+   top: 0; 
+   left: 0;
+   width: 100%; 
+   height: 100%;
+   max-height: 540px;
 }
 
 .big-feature {
@@ -40,7 +51,9 @@
 }
 
 .big-feature image {
-   background-size: cover;
+   // don't think i need this
+   // background-size: cover;
+
 //    min-width: 100%;
 // min-height: 100%;
 // width: auto;
@@ -74,18 +87,24 @@
    height: 33.33333%;
    flex-direction: column;
    justify-content: flex-end;
+   box-sizing: border-box;
+   border-left: #222 2px solid;
 }
 
 .a {
    background: brown;
+   border-bottom: #222 1px solid;
 }
 
 .b {
    background: brown;
+   border-top: #222 1px solid;
+   border-bottom: #222 1px solid;
 }
 
 .c {
    background: brown;
+   border-top: #222 1px solid;
 }
 
 .intro-tag {
@@ -113,28 +132,19 @@
 }
 
 .large-feature-title {
-   font-size: 32px;
-   font-size: 4vw;
-   // font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  text-shadow: black 1px 0 2px;
-  position: absolute;
-  padding-left: 10px;
-//   padding-bottom: 3px;
-  top: 73%;  
+   font-size: clamp(10px, 4vw, 45px);
+   font-weight: bold;
+   position: absolute;
+   padding-left: 30px;
+   top: 72%;
 }
 
 .large-feature-band {
-   font-size: 20px;
-   font-size: 3vw;
-   // font-size: 2rem;
-   color: white;
-   text-shadow: black 1px 0 2px;
+   font-size: clamp(10px, 3vw, 30px);
    position: absolute;
-   padding-left: 10px;
-   // padding-bottom: 5px;
-   top: 85%;  
+   padding-left: 30px;
+   top: 85%;
+   text-transform: uppercase;
 }
 
 
@@ -158,28 +168,19 @@
 }
 
 .small-feature-title {
-   font-size: 32px;
-   font-size: 1.25vw;
-   // font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  text-shadow: black 1px 0 2px;
-  position: absolute;
-  padding-left: 10px;
-//   padding-bottom: 3px;
-  top: 73%;  
+   font-size: clamp(1px, 1.25vw, 18px);
+   font-weight: bold;
+   position: absolute;
+   padding-left: 10px;
+   top: 70%;  
 }
 
 .small-feature-band {
-   font-size: 20px;
-   font-size: 1.1vw;
-   // font-size: 2rem;
-   color: white;
-   text-shadow: black 1px 0 2px;
+   font-size: clamp(1px, 1.1vw, 13px);
    position: absolute;
    padding-left: 10px;
-   // padding-bottom: 5px;
-   top: 85%;  
+   top: 85%;
+   text-transform: uppercase;
 }
 
 .small-feature-details:hover, .large-feature-details:hover {
@@ -193,3 +194,43 @@
    align-self: center;
    padding: 5px;
 }
+
+.home-page-separator{
+   font-size: 18px;
+   line-height: 24px;
+   padding: 36px 0 36px;
+   position: relative;
+   text-align: center;
+   font-weight: 400;
+   font-family: Helvetica, Arial, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   background: #ECECEC;
+}
+
+.banner-bold {
+   font-weight: 600;
+}
+
+.notable-container {
+   padding: 36px 0;
+   margin: 0 auto;
+   width: 1230px;
+   // width: 1106px;
+
+}
+
+.notable-title {
+   font-size: 16px;
+   color: #408ea3;
+   padding: 0 0 40px 0;
+   font-family: Helvetica, Arial, sans-serif;
+}
+
+.font {
+   font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   text-shadow: 0px 0px 5px black;
+   color: white;
+   letter-spacing: .07vw;
+}
+
+// "HelveticaNeue-Light", "Helvetica Neue Light", 

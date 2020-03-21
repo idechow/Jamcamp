@@ -3,7 +3,7 @@
 }
 
 .album-page {
-   height: 700px;
+   // height: 700px;
    margin: 0 auto 40px;
    width: 975px;
    // width: 814px;
@@ -15,17 +15,19 @@
 }
 
 .album-content{
-  display: flex;
-  flex-direction: row;
+   display: flex;
+   flex-direction: row;
 //   justify-content: space-between;
-  width: 100%;
+   width: 100%;
+   padding: 0 30px 0;
+   box-sizing: border-box;
 }
 
 .album-left{
    display: flex;
    flex-direction: column;
-   padding-left: 27px;
-   width: 380px;
+   // padding-left: 27px;
+   width: 376px;
    height: 100%;
    // float: left;
 }
@@ -33,8 +35,8 @@
 .album-right{
    display: flex;
    flex-direction: column;
-   padding-left: 27px;
-   width: 380px;
+   padding-left: 30px;
+   width: 350px;
    height: 100%;
    // float: right;
 }
@@ -53,35 +55,62 @@
 }
 
 .album-title {
-  font-size: 28px;
-  margin-top: 5px;
+   font-size: 28px;
+   margin: -3px 0 8px;
+   color: #363030;
 }
 
 .album-artist {
-   padding-top: 5px;
    font-size: 14px;
+   color: #363030;
+}
+
+.artist-discog-link {
+   text-decoration: none;
+   color: #00238A;
+}
+
+.artist-discog-link:hover {
+   text-decoration: underline;
 }
 
 .album-genre {
    font-size: 12px;
 }
 
-.album-byline, .player{
-   margin-bottom: 25px;
+.player{
+   margin: 24px 0 24px;
 }
 
 .album-track-item {
    font-size: 12px;
-   color: #363636;
-   margin: 12px 0;
+   color: #363030;
+   padding-bottom: 12px;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   width: 90%;
+   width: 100%;
 }
 
-.album-track-left {
+.album-track-wrap {
   display: flex;
+}
+
+.album-track-item:hover .album-track-dl {
+  visibility: visible;
+  opacity: 1;
+}
+
+.album-track-dl {
+   text-decoration: none;
+   visibility: hidden;
+   opacity: 0;
+   transition: visibility 0.05s, opacity 0.05s linear;
+   color: #00238A;
+}
+
+.album-track-dl:hover {
+   text-decoration: underline, 
 }
 
 .album-track-btn {
@@ -91,15 +120,33 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 9px;
    border: 1px solid #d9d9d9;
    box-sizing: border-box;
    border-radius: 2px;
    cursor: pointer;
 }
 
+.album-track {
+   margin-top: 3px;
+   padding-right: 2px;
+   color: #50494B;
+}
+
 .playpause-list-icon {
-    font-size: 9px;
+    font-size: 7px;
+    margin-left: 1px;
+    color: #363030;
+}
+
+.playpause-list-icon:hover {
+   color: rgba(0,212,255,1);
+}
+
+.album-description {
+   font-size: 12px;
+   line-height: 1.25em;
+   margin-top: 12px;
+   color: #363030;
 }
 
 // ***** audio player *****
@@ -108,6 +155,7 @@
    height: 52px;
    width: 56px;
    border: 1px solid #d9d9d9;
+   border-radius: 2px;
    margin-right: 10px;
    background: #fff;
    outline: none;
@@ -116,6 +164,12 @@
 
 .playpause-icon {
   font-size: 20px;
+  margin-left: 3px;
+  color: #363030;
+}
+
+.playpause-icon:hover {
+   color: rgba(0,212,255,1);
 }
  
 .player-controls {
@@ -128,7 +182,6 @@
 }
 
 .slider {
-
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
@@ -136,7 +189,6 @@
   border: 1px solid darkgray;
   background-color: #9c9c9ca3;
   outline: none;
-
 }
 
 .slider::-webkit-slider-thumb {
@@ -166,12 +218,12 @@
 }
 
 .progress-bar {
-  width: 250px;
-  height: 10px;
-  box-sizing: border-box;
-  border: 1px solid #d9d9d9;
-  border-radius: 1px;
-  position: relative;
+   width: 250px;
+   height: 10px;
+   box-sizing: border-box;
+   border: 1px solid #d9d9d9;
+   border-radius: 1px;
+   position: relative;
 }
 
 .progress-slider {
@@ -194,6 +246,26 @@
    background-color: rgba(0,0,0,.04);
 }
 
+.player-right {
+   width: 310px;
+}
+
+.player-top {
+   font-size: 12px;
+   margin-top: 10px;
+   margin-bottom: 8px;
+}
+
+.track-player-title {
+   font-weight: 500;
+   padding-right: 0.7em;
+   color: #363030;
+}
+
+.track-player-time {
+   color: #50494B;;
+}
+
 .player-bottom {
   display: flex;
   align-items: center;
@@ -201,25 +273,61 @@
 }
 
 .prev-next-btn {
-  font-size: 14px;
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin-left: 5px;
-  color: #000;
+   font-size: 12px;
+   background: none;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   color: #363030;
+   transform: scale(1.4, 1);
+}
+
+.prev-next-btn:hover {
+   color: rgba(0,212,255,1);
+}
+
+.prev-next-btn:disabled {
+   color: #c7c7c7;
+   cursor: default;
+}
+
+.prev {
+   margin-left: 15px;
+}
+
+.next {
+   margin-left: 18px;
 }
 
 
 // ************************
 
+.album-aside {
+   width: 120px;
+   padding-left: 39px;
+}
 
 .discog-artwork {
    width: 120px;
    height: 120px;
    object-fit: cover;
    display: block;
-   margin-bottom: 8px;
+   // margin-bottom: 8px;
+}
+
+.discog-album-name {
+   margin: 0.5em 0 1em;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: block;
+   font-size: 12px;
+   color: #00238A;
+   line-height: 1.25em;
+   text-decoration: none;
+}
+
+.discog-album-name:hover {
+   text-decoration: underline;
 }
 
 .artist-photo {
@@ -227,7 +335,71 @@
    height: 80px;
    object-fit: cover;
    display: block;
-   margin-bottom: 8px;
+   margin-bottom: 14px;
+}
+
+.artist-name {
+   font-size: 14px;
+   font-weight: bold;
+   border-top: 0;
+   margin: 0 0 3px;
+   display: block;
+   color: #363030;
+}
+
+.artist-location {
+   font-size: 12px;
+   color: #50494B;
+   display: block;
+   line-height: 1.25em;
+   margin: 0 0 12px;
+}
+
+.artist-follow {
+   font-size: 12px;
+   width: 100%;
+   border: solid 1px rgba(0, 0, 0, 0.25);
+   border-radius: 3px;
+   font-weight: bold;
+   padding: 6px 5px 5px 5px;
+   line-height: 1.25em;
+   margin-bottom: 12px;
+   outline: none;
+   background: #619aa9;
+   border-color: #619aa9;
+   color: #fff;
+   cursor: pointer;
+}
+
+.artist-about {
+   font-size: 12px;
+   line-height: 1.25em;
+   color: #363030;
+   word-wrap: break-word;
+   margin-top: 0;
+   margin-bottom: 1em;
+   display: block;
+}
+
+.artist-page-link {
+   font-size: 12px;
+   display: block;
+   line-height: 1.25em;
+   margin: 0 0 21px;
+   text-decoration: none;
+   color: #00238A;
+   word-wrap: break-word;
+}
+
+.artist-page-link:hover {
+   text-decoration: underline;
+}
+
+.artist-discog-title {
+   font-size: 14px;
+   font-weight: normal;
+   margin: 0 0 1.25em;
+   color: #363030;
 }
 
 .band-image-wrap {
@@ -247,3 +419,5 @@
    object-fit: cover;
    object-position: 50% 22%;
 }
+
+//******************************

@@ -47,6 +47,7 @@ body {
    font-weight: 400;
    border-radius: 6px 6px 0 0;
    cursor: move;
+   line-height: 1.5;
 }
 
 .close-form {
@@ -89,7 +90,9 @@ body {
    text-align: left;
    font-weight: 400;
    margin-top: 20px;
-   font-size: 14px;
+   font-size: 16px;
+   font-family: 'Open Sans', Arial, sans-serif;
+   line-height: 1.5;
 }
 
 .session-form input {
@@ -184,6 +187,7 @@ body {
    margin: 0;
    font-size: 12px;
    line-height: 1.5;
+   font-family: 'Open Sans', Arial, sans-serif;
 }
 
 .signup-link {
@@ -194,6 +198,7 @@ body {
    font-size: 16px;
    margin-top: 30px;
    font-weight: 400;
+   font-family: 'Open Sans', Arial, sans-serif;
    text-decoration: none;
    height: 35px;
    display: flex;
