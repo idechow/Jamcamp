@@ -8,6 +8,8 @@ import Discography from './discography';
 class AlbumPage extends React.Component {
    constructor(props){
       super(props); 
+      this.handleCollect = this.handleCollect.bind(this);
+      this.handleFollow = this.handleFollow.bind(this);
       // this.state = {
       //    loaded: false
       // }
@@ -36,6 +38,90 @@ class AlbumPage extends React.Component {
       this.props.clearTracks();
       this.props.clearAlbums();
       this.props.clearArtists();
+   }
+
+   handleCollect(e) {
+      const collectData = {
+         user_id: this.props.currentUser.id,
+         album_id: this.props.album.id,
+      };
+      if (this.props.currentUser.collection[this.props.album.id]) {
+         this.props.removeCollect(this.props.album.id);
+      } else {
+         this.props.addCollect(collectData);
+      }
+   }
+
+   collectButton() {
+      if (!!this.props.currentUser) {
+         return (
+            <>
+               <button 
+                  className="album-collect-btn"
+                  onClick={this.handleCollect}>
+                  <span className="album-collect-icon-wrap">
+                     {this.props.currentUser.collection[this.props.album.id]
+                     ? <i className="fas fa-heart album-collect-icon"></i>
+                     : <i className="far fa-heart album-collect-icon"></i>}
+                  </span>
+                  <span className="album-collect-text">
+                     {this.props.currentUser.collection[this.props.album.id]
+                     ? "In Collection" : "Add to Collection"}
+                  </span>
+               </button>
+               <span className="album-collect-link-wrap">
+                  {this.props.currentUser.collection[this.props.album.id] 
+                  ?  <>
+                     <span className="album-collect-dash"> - </span>
+                     <Link 
+                        className="album-collect-link" 
+                        to={`/user/${this.props.currentUser.id}`}>
+                        view
+                     </Link> 
+                  </>
+                  : null }
+               </span>
+            </>
+         );
+      } else {
+         return null;
+      }
+   }
+
+   handleFollow(e) {
+      const followData = {
+         user_id: this.props.currentUser.id,
+         band_id: this.props.artist.id,
+      };
+      if (this.props.currentUser.followees[this.props.artist.id]) {
+         this.props.removeFollow(this.props.artist.id);
+      } else {
+         this.props.addFollow(followData);
+      }
+   }
+
+   followButton() {
+      if (!!this.props.currentUser) {
+         if (this.props.currentUser.followees[this.props.artist.id]) {
+            return (
+               <button
+                  className="artist-flw-btn unfollow"
+                  onClick={this.handleFollow}>
+                  <span>Following</span>
+               </button>
+            );
+         } else {
+            return (
+               <button
+                  className="artist-flw-btn follow"
+                  onClick={this.handleFollow}>
+                  <span>Follow</span>
+               </button>
+            );
+         }
+      } else {
+         return null;
+      }
    }
 
 
@@ -84,20 +170,26 @@ class AlbumPage extends React.Component {
                   <div className="album-shell">
                      <img className="album-cover" src={album.photoUrl} />
                   </div>
+                  <div className="album-collect-wrap">
+                     { this.collectButton() }
+                  </div>
                </div>
                <aside className="album-aside">
                   <div>
                      <img className="artist-photo" src={artist.photoUrl}/>
                      <p className="artist-name" >{artist.band}</p>
                      <p className="artist-location">{artist.location || "San Francisco, CA"}</p>
-                     <button className="artist-follow">Following</button>
+                     { this.followButton() }
+                     {/* <button className="artist-follow">Following</button> */}
                      <p className="artist-about">{artist.about || "Khruangbin is a three-piece band from Texas, formed of Laura Lee on bass, Mark Speer on guitar, and Donald Johnson on drums."}</p>
                      <p className="artist-page-link">{artist.weblink || "gratefuldead.com"}</p>
                   </div>
+                  { discog.length > 1 ?
                   <ul>
                      <p className="artist-discog-title">discography</p>
                      { discogList }
-                  </ul>
+                  </ul> 
+                  : null }
                </aside>
             </section>
          </main>

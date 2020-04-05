@@ -17,7 +17,7 @@ class Album < ApplicationRecord
 
    has_many :tracks
 
-   has_many :collects, foreign_key: :user_id, class_name: 'Collect'
+   has_many :collects, foreign_key: :album_id, class_name: 'Collect'
    has_many :collectors, through: :collects, source: :user
 
    belongs_to :artist, foreign_key: :band_id, class_name: 'User'

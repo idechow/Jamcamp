@@ -43,7 +43,6 @@
 
 .album-cover {
    background-position: 50% 50%;
-   margin-bottom: 18px;
    width: 100%;
    height: 100%;
    object-fit: cover;
@@ -355,20 +354,39 @@
    margin: 0 0 12px;
 }
 
-.artist-follow {
+.artist-flw-btn {
    font-size: 12px;
    width: 100%;
-   border: solid 1px rgba(0, 0, 0, 0.25);
    border-radius: 3px;
    font-weight: bold;
    padding: 6px 5px 5px 5px;
    line-height: 1.25em;
    margin-bottom: 12px;
    outline: none;
-   background: #619aa9;
-   border-color: #619aa9;
-   color: #fff;
    cursor: pointer;
+}
+
+.follow {
+   border: solid 1px #c6c6c6;
+   color: #00238A;
+}
+
+.follow:hover span {
+   text-decoration: underline;
+}
+
+.unfollow {
+   border: solid 1px #619aa9;
+   background: #619aa9;
+   color: #fff;
+}
+
+.unfollow:hover span {
+   display: none
+}
+
+.unfollow:hover:before {
+   content: "Unfollow"
 }
 
 .artist-about {
@@ -421,3 +439,54 @@
 }
 
 //******************************
+
+.album-collect-wrap {
+   margin: 15px 0 7px;
+}
+
+.album-collect-btn {
+   font-size: 13px;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.album-collect-icon-wrap {
+   margin-right: 8px;
+}
+
+.album-collect-icon.fas {
+   color: #ff9c00;
+   font-size: 13px;
+}
+
+.album-collect-icon.far {
+   color: #959595;
+   font-size: 13px;
+}
+
+.album-collect-text {
+   color: #00238A;
+   text-decoration: none;
+}
+
+.album-collect-text:hover {
+   text-decoration: underline;
+}
+
+.album-collect-link-wrap {
+   font-size: 12px;
+   cursor: pointer;
+}
+
+.album-collect-dash {
+   color: #363030;
+}
+
+.album-collect-link {
+   text-decoration: none;
+   color: #00238A;
+}
+
+.album-collect-link:hover {
+   text-decoration: underline;
+}

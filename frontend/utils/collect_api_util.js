@@ -5,11 +5,11 @@ export const fetchAlbumCollects = albumId => (
    })
 );
 
-export const createCollect = data => (
+export const createCollect = collect => (
    $.ajax({
       method: 'POST',
-      url: '/api/collects',
-      data
+      url: 'api/collects',
+      data: { collect }
    })
 );
 

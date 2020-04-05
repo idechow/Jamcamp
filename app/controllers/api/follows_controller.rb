@@ -29,7 +29,7 @@ class Api::FollowsController < ApplicationController
 
    def destroy
       @follow = current_user.followed_bands.find_by(
-         band_id: params[:id]
+         band_id: params[:id],
          # user_id: current_user.id
       )
       @follow.destroy

@@ -6,10 +6,13 @@ import { fetchTracks, clearTracks } from '../../actions/track_actions';
 import { fetchArtist, clearArtists } from '../../actions/artist_actions';
 import { setTrack } from '../../actions/player_actions';
 import { sortedTracksArr, sortedDiscogArr } from '../../reducers/selectors';
+import { createCollect, deleteCollect } from '../../actions/collect_actions';
+import { createFollow, deleteFollow } from '../../actions/follow_actions';
 
 
 const mSTP = (state, ownProps) => {
    return {
+      currentUser: state.entities.users[state.session.id],
       artist: state.entities.artists[ownProps.match.params.bandId],
       album: state.entities.albums[ownProps.match.params.albumId],
       tracks: sortedTracksArr(state),
@@ -25,7 +28,11 @@ const mDTP = (dispatch) => {
       clearAlbums: () => dispatch(clearAlbums()),
       clearTracks: () => dispatch(clearTracks()),
       clearArtists: () => dispatch(clearArtists()),
-      setTrack: (track) => dispatch(setTrack(track)),
+      setTrack: track => dispatch(setTrack(track)),
+      addCollect: data => dispatch(createCollect(data)),
+      removeCollect: albumId => dispatch(deleteCollect(albumId)),
+      addFollow: data => dispatch(createFollow(data)),
+      removeFollow: bandId => dispatch(deleteFollow(bandId)),
    };
 };
 

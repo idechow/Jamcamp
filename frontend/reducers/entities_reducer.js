@@ -11,7 +11,7 @@ const entitiesReducer = combineReducers({
    artists: artistsReducer,
    albums: albumsReducer,
    tracks: tracksReducer,
-   collects: collectsReducer,
+   collectors: collectsReducer,
    profiles: profilesReducer,
 });
 

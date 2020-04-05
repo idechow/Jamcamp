@@ -1,6 +1,11 @@
 class Api::UsersController < ApplicationController
    def show
-      @user = User.find(params[:id])
+      @user = User.includes(
+            :collects,
+            :collected_albums,
+            :followed_bands,
+            :followees,
+         ).find(params[:id])
       if @user
          render "api/users/show.json.jbuilder"
       else

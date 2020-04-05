@@ -26,13 +26,13 @@ class User < ApplicationRecord
 
    has_many :albums, foreign_key: :band_id, class_name: 'Album'
 
-   has_many :collects, foreign_key: :album_id, class_name: 'Collect'
+   has_many :collects, foreign_key: :user_id, class_name: 'Collect'
    has_many :collected_albums, through: :collects, source: :album
 
-   has_many :followed_bands, foreign_key: :band_id, class_name: 'Follow'
+   has_many :followed_bands, foreign_key: :user_id, class_name: 'Follow'
    has_many :followees, through: :followed_bands, source: :band
 
-   has_many :following_users, foreign_key: :user_id, class_name: 'Follow'
+   has_many :following_users, foreign_key: :band_id, class_name: 'Follow'
    has_many :followers, through: :following_users, source: :user
 
    has_one_attached :photo
