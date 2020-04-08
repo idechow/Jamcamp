@@ -8,7 +8,10 @@ const UserInfo = ({ user, toggleUserEdit }) => {
       <div className='user-info'>
          <div className='info-top-line'>
             {user.username}
-            {follow}
+            {user.location}
+            {user.about}
+            {user.website}
+            {/* {follow} */}
          </div>
       </div>
    )

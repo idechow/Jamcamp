@@ -38,9 +38,22 @@ class User < ApplicationRecord
    has_one_attached :photo
    has_one_attached :band_photo
 
+   #image sizes
+   def self.sizes
+      { 
+         profile: { resize: "220x220>" }, 
+         thumb: { resize: "72x72>" } 
+      }
+   end
+
    def self.find_by_credentials(username, password)
       user = User.find_by(username: username)
       user && user.is_password?(password) ? user : nil
+   end
+
+   # for resizing photo
+   def sized(size)
+      self.photo.variant(User.sizes[size]).processed
    end
 
    def password=(password)

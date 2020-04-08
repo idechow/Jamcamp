@@ -1,4 +1,5 @@
 import React from 'react';
+import UserInfo from './user_info';
 
 class ProfilePage extends React.Component {
    constructor(props) {
@@ -10,7 +11,7 @@ class ProfilePage extends React.Component {
 
    componentDidMount() {
       const a = this.props.fetchUser(this.props.match.params.userId);
-      Promise.all([a]).then(() => this.setState({ loaded: true }))
+      Promise.all([a]).then(() => this.setState({ loaded: true }));
    }
 
    render() {
@@ -23,11 +24,11 @@ class ProfilePage extends React.Component {
             
          />;
 
-         if (userEdit) {
-            userInfo = <UserEditFormContainer
-               toggleUserEdit={this.props.toggleUserEdit}
-            />;
-         }
+         // if (userEdit) {
+         //    userInfo = <UserEditFormContainer
+         //       toggleUserEdit={this.props.toggleUserEdit}
+         //    />;
+         // }
 
          return(
             <main className='profile-main'>
