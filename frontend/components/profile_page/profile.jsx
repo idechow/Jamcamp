@@ -66,25 +66,25 @@ class ProfilePage extends React.Component {
                      <li>
                         <NavLink to={profileUrl} exact>
                            collection
-                           <span className='total'>{profile.counts.collectedCount}</span>
+                           <span className='total'>{profile.collectors.length}</span>
                         </NavLink>
                      </li>
-                     <li className={profile.counts.discogCount < 1 ? 'hide-link' : ''}>
+                     <li className={profile.discog.length < 1 ? 'hide-link' : ''}>
                         <NavLink to={profileUrl + '/discography'}>
                            discography
-                           <span className='total'>{profile.counts.discogCount}</span>
+                           <span className='total'>{profile.discog.length}</span>
                         </NavLink>
                      </li>
-                     <li className={profile.counts.followerCount < 1 ? 'hide-link' : ''}>
+                     <li className={profile.followers.length < 1 ? 'hide-link' : ''}>
                         <NavLink to={profileUrl + '/followers'}>
                            followers
-                           <span className='total'>{profile.counts.followerCount}</span>
+                           <span className='total'>{profile.followers.length}</span>
                         </NavLink>
                      </li>
-                     <li className={profile.counts.followeeCount < 1 ? 'hide-link' : ''}>
+                     <li className={profile.followees.length < 1 ? 'hide-link' : ''}>
                         <NavLink to={profileUrl + '/following'}>
                            following
-                           <span className='total'>{profile.counts.followeeCount}</span>
+                           <span className='total'>{profile.followees.length}</span>
                         </NavLink>
                      </li>
                   </ul>

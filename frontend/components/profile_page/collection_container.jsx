@@ -5,9 +5,7 @@ import { createCollect, deleteCollect } from '../../actions/collect_actions';
 
 const mSTP = (state, ownProps) => ({
    type: 'collection',
-   // albumIds: Object.keys(state.entities.profiles.collectors) || [],
-   // albums: state.entities.profiles.collectors || {},
-   what: state.entities.profiles.what || [],
+   albums: state.entities.profiles.collectors,
 });
 
 const mDTP = (dispatch) => ({

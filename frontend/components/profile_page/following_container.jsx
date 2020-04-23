@@ -5,7 +5,7 @@ import { createFollow, deleteFollow } from '../../actions/follow_actions';
 
 const mSTP = (state, ownProps) => ({
    type: 'follows',
-   users: state.entities.profiles.followees || {},
+   users: state.entities.profiles.followees,
 });
 
 const mDTP = (dispatch) => ({

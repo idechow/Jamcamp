@@ -24,15 +24,15 @@ class User < ApplicationRecord
 
    after_initialize :ensure_session_token
 
-   has_many :albums, foreign_key: :band_id, class_name: 'Album'
+   has_many :albums, -> { order(created_at: :desc) }, foreign_key: :band_id, class_name: 'Album'
 
    has_many :collects, -> { order(created_at: :desc) }, foreign_key: :user_id, class_name: 'Collect'
    has_many :collected_albums, through: :collects, source: :album
 
-   has_many :followed_bands, foreign_key: :user_id, class_name: 'Follow'
+   has_many :followed_bands, -> { order(created_at: :desc) }, foreign_key: :user_id, class_name: 'Follow'
    has_many :followees, through: :followed_bands, source: :band
 
-   has_many :following_users, foreign_key: :band_id, class_name: 'Follow'
+   has_many :following_users, -> { order(created_at: :desc) }, foreign_key: :band_id, class_name: 'Follow'
    has_many :followers, through: :following_users, source: :user
 
    has_one_attached :photo

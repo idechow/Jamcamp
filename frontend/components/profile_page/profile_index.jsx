@@ -8,53 +8,50 @@ class ProfileIndex extends React.Component {
    collectionItem(album){
 
       return(
-         <div key={album.id}>yup{album.id}</div>
+         <div key={album.id}>collect{album.id}</div>
       );
    }
 
    discogItem(album){
 
       return (
-         <div></div>
+         <div key={album.id}>discog{album.id}</div>
       );
    }
 
    followsItem(user){
 
       return (
-         <div></div>
+         <div key={user.id}>follow{user.id}</div>
       );
    }
 
 
    render() {
-      const {type, albumIds, albums, users, what} = this.props;
+      const {type, albums, users} = this.props;
       let grid;
 
       switch (type) {
          case 'collection':
-            grid = what.map(album => {
+            grid = albums.map(album => {
                return this.collectionItem(album);
             });
-
-            // grid = Object.keys(albums).map(id => {
-            //    return this.collectionItem(albums[id]);
-            // });
-
-            // for (const id in albums) {
-            //    return this.collectionItem(albums[id]);
-            // }
             break;
 
          case 'discog':
-            // grid = albums.map(album => {
-            //    return this.discogItem(album);
-            // })
+            grid = albums.map(album => {
+               return this.discogItem(album);
+            });
             break;
 
          case 'follows':
+            grid = users.map(user => {
+               return this.followsItem(user);
+            });
+            break;
 
          default:
+            grid = null;
             break;
       }
 

@@ -4,7 +4,7 @@ import ProfileIndex from './profile_index';
 
 const mSTP = (state, ownProps) => ({
    type: 'discog',
-   albums: state.entities.profiles.discog || {},
+   albums: state.entities.profiles.discog,
 });
 
 const mDTP = (dispatch) => ({
