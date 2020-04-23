@@ -19,3 +19,8 @@ export const fetchArtist = bandId => dispatch => (
    ArtistApiUtil.fetchArtist(bandId)
       .then(artist => dispatch(receiveArtist(artist)))
 );
+
+export const updateArtist = (userId, data) => dispatch => (
+   ArtistApiUtil.updateArtist(userId, data)
+      .then(artist => dispatch(receiveArtist(artist)))
+);

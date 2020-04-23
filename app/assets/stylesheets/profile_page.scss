@@ -9,10 +9,14 @@
 }
 
 .user-image{
-   width: 100px;
-   height: 100px;
+   width: 210px;
+   height: 210px;
    background-size: cover;
    background-repeat: no-repeat;
-   // background-position: 50% 22%;
+   background-position: 50%;
    position: relative;
+}
+
+.hide-link {
+   display: none;
 }

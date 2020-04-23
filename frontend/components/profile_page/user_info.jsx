@@ -13,6 +13,7 @@ const UserInfo = ({ user, toggleUserEdit }) => {
             {user.website}
             {/* {follow} */}
          </div>
+         <button onClick={toggleUserEdit}>EDIT PROFILE</button>
       </div>
    )
 }

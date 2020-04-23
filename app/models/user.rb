@@ -26,7 +26,7 @@ class User < ApplicationRecord
 
    has_many :albums, foreign_key: :band_id, class_name: 'Album'
 
-   has_many :collects, foreign_key: :user_id, class_name: 'Collect'
+   has_many :collects, -> { order(created_at: :desc) }, foreign_key: :user_id, class_name: 'Collect'
    has_many :collected_albums, through: :collects, source: :album
 
    has_many :followed_bands, foreign_key: :user_id, class_name: 'Follow'
@@ -41,8 +41,8 @@ class User < ApplicationRecord
    #image sizes
    def self.sizes
       { 
-         profile: { resize: "220x220>" }, 
-         thumb: { resize: "72x72>" } 
+         profile: { resize: "220x220^" }, 
+         thumb: { resize: "72x72^" } 
       }
    end
 
