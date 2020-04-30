@@ -1,6 +1,6 @@
 import React from 'react';
 import Draggable from 'react-draggable';
-import { login } from '../../actions/session_actions';
+// import { login } from '../../actions/session_actions';
 
 class SessionForm extends React.Component {
    constructor(props) {

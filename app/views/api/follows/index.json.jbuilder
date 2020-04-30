@@ -2,7 +2,7 @@
 
 json.collectors do
    json.array! @user.collected_albums do |album|
-      json.extract! album, :id, :name
+      json.extract! album, :id, :band_id, :name
       json.artist album.artist.band
       json.photo_url url_for(album.photo) if album.photo.attached?
    end
@@ -24,7 +24,7 @@ end
 
 json.discog do
    json.array! @user.albums.each do |album|
-      json.extract! album, :id, :name
+      json.extract! album, :id, :band_id, :name
       json.artist album.artist.band
       json.photo_url url_for(album.photo) if album.photo.attached?
    end

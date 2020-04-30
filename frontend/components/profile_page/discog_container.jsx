@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 
-import ProfileIndex from './profile_index';
+import DiscogItem from './discog_item';
+import { createCollect, deleteCollect } from '../../actions/collect_actions';
+import { openModal } from '../../actions/modal_actions';
 
-const mSTP = (state, ownProps) => ({
-   type: 'discog',
-   albums: state.entities.profiles.discog,
+const mSTP = (state) => ({
+   currentUser: state.entities.users[state.session.id],
 });
 
 const mDTP = (dispatch) => ({
-   // edit/update album
+   // edit/delete album buttons
+   addCollect: data => dispatch(createCollect(data)),
+   removeCollect: albumId => dispatch(deleteCollect(albumId)),
+   openModal: modal => dispatch(openModal(modal)),
 });
 
-export default connect(mSTP, mDTP)(ProfileIndex);
+export default connect(mSTP, mDTP)(DiscogItem);

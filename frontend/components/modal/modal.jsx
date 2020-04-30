@@ -5,7 +5,8 @@ import ArtistSignupContainer from '../session/artist_signup_container';
 import FanSignupContainer from '../session/fan_signup_container';
 import LoginContainer from '../session/login_container';
 import AccountTypeContainer from '../session/account_type_container';
-import Draggable from 'react-draggable';
+import RedirectContainer from './redirect_container';
+// import Draggable from 'react-draggable';
 
 function Modal({ modal, closeModal }) {
    if (!modal) {
@@ -24,6 +25,9 @@ function Modal({ modal, closeModal }) {
          break;
       case 'ARTIST_SIGNUP':
          component = <ArtistSignupContainer />;
+         break;
+      case 'REDIRECT':
+         component = <RedirectContainer />;
          break;
       default:
          return null;

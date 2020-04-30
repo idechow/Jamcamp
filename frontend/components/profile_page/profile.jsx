@@ -1,12 +1,11 @@
 import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Link } from 'react-router-dom';
 
 import UserInfo from './user_info';
 import ProfileEditContainer from './profile_edit_container';
 import DiscogContainer from './discog_container';
 import CollectionContainer from './collection_container';
-import FollowersContainer from './followers_container';
-import FollowingContainer from './following_container';
+import FollowsContainer from './follows_container';
 
 class ProfilePage extends React.Component {
    constructor(props) {
@@ -30,9 +29,44 @@ class ProfilePage extends React.Component {
       }
    }
 
+   profileIndex() {
+      let grid;
+
+      if (this.props.profile.collectors.length > 0){
+         grid = this.props.profile.collectors.map(album => {
+            return <CollectionContainer key={album.id} album={album} />
+         });
+      } else if (this.props.profile.discog.length > 0) {
+         grid = this.props.profile.discog.map(album => {
+            return <DiscogContainer key={album.id} album={album} />
+         });
+      } else if (this.props.profile.followers.length > 0) {
+         grid = this.props.profile.followers.map(user => {
+            return <FollowsContainer key={user.id} user={user} />
+         });
+      } else if (this.props.profile.followees.length > 0) {
+         grid = this.props.profile.followees.map(user => {
+            return <FollowsContainer key={user.id} user={user} />
+         });
+      } else {
+         grid = null;
+      }
+
+      return grid;
+   }
+   
+   emptyCollection() {
+      return (
+         <div>
+            <p>You don't have a collection – yet! Start digging:</p>
+            <Link to='/'>Find cool music on Jamcamp</Link>
+         </div>
+      )
+   }
+
    render() {
       if (this.state.loaded && this.props.user) {
-         const { userEdit, profile } = this.props;
+         const { userEdit, profile, user, currentUser } = this.props;
          const profileUrl = `/user/${this.props.match.params.userId}`;
 
          let userInfo = <UserInfo
@@ -63,7 +97,10 @@ class ProfilePage extends React.Component {
                   </div>
 
                   <ul className='user-tabs'>
-                     <li>
+                     <li className={profile.collectors.length > 0 ? '' 
+                        : !currentUser ? 'hide-link' 
+                        : currentUser.id === user.id ? '' 
+                        : 'hide-link'}>
                         <NavLink to={profileUrl} exact>
                            collection
                            <span className='total'>{profile.collectors.length}</span>
@@ -91,12 +128,30 @@ class ProfilePage extends React.Component {
 
                   <div className='user-content-wrap'>
                      <div className='user-content'>
-                        <Route path='/user/:userId' exact component={CollectionContainer} />
-                        {/* inside collection if collets count is 0 then have tag line and a link to the discovery section */}
-                        {/* classname={profile.counts.collectedCount < 1 ? 'hide-link' : ''} */}  
-                        <Route path='/user/:userId/discography' component={DiscogContainer} />
-                        <Route path='/user/:userId/followers' component={FollowersContainer} />
-                        <Route path='/user/:userId/following' component={FollowingContainer} />
+                        <ul>
+                           <Route path='/user/:userId' exact
+                              render={profile.collectors.length < 1 && currentUser && currentUser.id === user.id ?
+                                 () => this.emptyCollection() : () => this.profileIndex()
+                              } />
+                           <Route path='/user/:userId/discography'
+                              render={() =>
+                                 profile.discog.map(album => {
+                                    return <DiscogContainer key={album.id} album={album} />
+                                 })
+                              } />
+                           <Route path='/user/:userId/followers' 
+                              render={() =>
+                                 profile.followers.map(user => {
+                                    return <FollowsContainer key={user.id} user={user} />
+                                 })
+                              } />
+                           <Route path='/user/:userId/following' 
+                              render={() =>
+                                 profile.followees.map(user => {
+                                    return <FollowsContainer key={user.id} user={user} />
+                                 })
+                              } />
+                        </ul>
                      </div>
                   </div>
                </section>
