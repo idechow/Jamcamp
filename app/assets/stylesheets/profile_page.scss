@@ -1,5 +1,9 @@
-  
-.profile-banner{
+
+.profile-main {
+   background-color: #ffffff;
+}
+
+.profile-banner {
    width: 100%;
    height: 100px;
    background-size: cover;
@@ -8,15 +12,104 @@
    position: relative;
 }
 
-.user-image{
+.profile-content {
+   margin: 0 auto;
+}
+
+@media (max-width: 980px) { .profile-content { width: 736px; } }
+@media (min-width: 980px) { .profile-content { width: 986px; } }
+@media (min-width: 1232px) { .profile-content { width: 1234px; } }
+
+.user-about {
+   margin: 0 11px;
+   display: flex;
+   padding-bottom: 16px;
+}
+
+.user-image {
    width: 210px;
    height: 210px;
+   margin: -30px 38px 0px 0px;
    background-size: cover;
    background-repeat: no-repeat;
    background-position: 50%;
    position: relative;
 }
 
+@media (max-width: 980px) {
+  .user-image {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+///////////////////
+
+//user info/edit
+
+///////////////////
+
+
+.user-tabs {
+   display: flex;
+   border-bottom: 1px solid #ddd;
+   font-weight: 600;
+   font-size: 15px;
+   margin-top: 20px;
+   margin: 0 11px;
+}
+
+.user-tabs > li {
+
+}
+
+.user-tabs a {
+  color: blue;
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.user-tabs a:hover {
+//   text-decoration: none;
+  border-bottom: 2px solid blue;
+}
+.user-tabs .active {
+  border-bottom: 2px solid #333333;
+  color: #333333;
+  cursor: default;
+}
+
 .hide-link {
    display: none;
+}
+
+.total {
+
+}
+
+.user-content {
+
+}
+
+.user-grid {
+
+}
+
+.user-grid li {
+
+}
+
+////////////////////
+
+.empty-grid {
+   height: 30px;
+}
+
+.empty-grid p {
+   
+}
+
+.empty-grid a {
+   
 }

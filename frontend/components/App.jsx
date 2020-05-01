@@ -20,6 +20,7 @@ const App = () => (
          <Route path="/user/:userId" component={UserProfileContainer}/>
          <Route path="/artist/:bandId/album/:albumId" component={AlbumPageContainer} />
          <Route exact path="/" component={HomeContainer} />
+         {/* <Route exact path="redirect" component={Redirect404} /> */}
          <Route path="*" component={Redirect404} />
       </Switch>
 

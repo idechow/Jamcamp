@@ -6,7 +6,7 @@ import { updateArtist } from '../../actions/artist_actions';
 import ProfileEditForm from './profile_edit_form';
 
 const mSTP = (state, ownProps) => ({
-   user:ownProps.user,
+   user: ownProps.user,
    toggleUserEdit: ownProps.toggleUserEdit,
    userId: ownProps.match.params.userId,
 });
