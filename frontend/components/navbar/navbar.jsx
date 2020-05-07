@@ -40,15 +40,15 @@ class Navbar extends React.Component {
       const artistBar= () => (
          <ul className="right-side-nav">
             <li className="nav-element">
-               <i className="fas fa-plus"></i>
+               <i className="fas fa-plus nav-icon"></i>
             </li>
             <li className="nav-element">
                <Link to={`/user/${currentUser.id}`}>
-                  <i className="fas fa-heart"></i>
+                  <i className="fas fa-heart nav-icon"></i>
                </Link>
             </li>
             <li className="nav-element dropdown">
-               <i className="fas fa-circle" onClick={this.toggleDropdown}>
+               <i className="fas fa-circle nav-icon" onClick={this.toggleDropdown}>
                      {this.renderDropDown()}
                </i>
             </li>
@@ -59,11 +59,11 @@ class Navbar extends React.Component {
          <ul className="right-side-nav">
             <li className="nav-element">
                <Link to={`/user/${currentUser.id}`}>
-                  <i className="fas fa-heart"></i>
+                  <i className="fas fa-heart nav-icon"></i>
                </Link>
             </li>
             <li className="nav-element">
-               <i className="fas fa-circle" onClick={this.toggleDropdown}>
+               <i className="fas fa-circle nav-icon" onClick={this.toggleDropdown}>
                   {this.renderDropDown()}
                </i>
             </li>

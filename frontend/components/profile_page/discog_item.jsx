@@ -75,10 +75,10 @@ class CollectionItem extends React.Component {
       const { album } = this.props;
 
       return (
-         <li>
-            <div>
+         <li className='collect-li'>
+            <div className='collect-links-wrap'>
                <Link to={`/artist/${album.bandId}/album/${album.id}`}>
-                  <img src={album.photoUrl} />
+                  <img className='album-cover-collect' src={album.photoUrl} />
                </Link>
                <Link to={`/artist/${album.bandId}/album/${album.id}`}>
                   collectname{album.name}

@@ -16,14 +16,14 @@ class FollowsItem extends React.Component {
    //    setTimeout(() => this.setState({ follow: !this.state.follow }), 200);
    // }
 
-   handleFollow(userId, e) {
+   handleFollow(e) {
       e.preventDefault();
       const followData = {
          user_id: this.props.currentUser.id,
-         band_id: userId,
+         band_id: this.props.user.id,
       };
       if (this.state.follow) {
-         this.props.removeFollow(userId)
+         this.props.removeFollow(this.props.user.id)
             .then(() => {
                // asychonous
                this.setState({ follow: false })
@@ -36,21 +36,29 @@ class FollowsItem extends React.Component {
       }
    }
 
-   followButton(userId) {
+   followButton() {
       if (!!this.props.currentUser) {
-         if (this.state.follow) {
+         if (this.props.currentUser.id === this.props.user.id) {
+            return (
+               <div className="profile-flw-btn thats-you">
+                  <span>That's you!</span>
+               </div>
+            );
+         } else if (this.state.follow) {
             return (
                <button
-                  className="artist-flw-btn unfollow"
-                  onClick={(e) => this.handleFollow(userId, e)}>
+                  className="profile-flw-btn p-unfollow"
+                  onClick={(e) => this.handleFollow(e)}>
+                  <i className="fas fa-check check"></i>
                   <span>Following</span>
                </button>
             );
          } else {
             return (
                <button
-                  className="artist-flw-btn follow"
-                  onClick={(e) => this.handleFollow(userId, e)}>
+                  className="profile-flw-btn"
+                  onClick={(e) => this.handleFollow(e)}>
+                  <i className="fas fa-plus plus"></i>
                   <span>Follow</span>
                </button>
             );
@@ -58,8 +66,9 @@ class FollowsItem extends React.Component {
       } else {
          return (
             <button
-               className="artist-flw-btn follow"
+               className="profile-flw-btn"
                onClick={() => this.props.openModal('REDIRECT')}>
+               <i className="fas fa-plus plus"></i>
                <span>Follow</span>
             </button>
          );
@@ -71,23 +80,23 @@ class FollowsItem extends React.Component {
       const { user } = this.props;
       // console.log(this.state.follow)
       return (
-         <li>
-            <div>
+         <li className='follow-li'>
+            <div className='follow-img'>
                <Link to={`/user/${user.id}`}>
                   <img src={user.profilePhotoUrl} />
                </Link>
             </div>
-            <div>
-               <div>
-                  <Link to={`/user/${user.id}`}>
+            <div className='follow-info'>
+               <div className='follow-info-top'>
+                  <Link className='follow-username' to={`/user/${user.id}`}>
                      {user.username}
                   </Link>
-                  <p>
-                     {user.location || 'location?'}
+                  <p className='follow-location'>
+                     {user.location || 'San Francisco, California'}
                   </p>
                </div>
-               <div>
-                  {this.followButton(user.id)}
+               <div className='follow-info-btn'>
+                  {this.followButton()}
                </div>
             </div>
          </li>

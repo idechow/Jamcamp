@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { NavLink, Route, Link, Switch, Redirect } from 'react-router-dom';
 
 import UserInfo from './user_info';
@@ -91,7 +91,7 @@ class ProfilePage extends React.Component {
    emptyCollection() {
       return (
          <div className='empty-grid'>
-            <p>You don't have a collection – yet! Start digging:</p>
+            <p>You don't have a collection — yet! Start digging:</p>
             <Link to='/'>Find cool music on Jamcamp</Link>
          </div>
       );

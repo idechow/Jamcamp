@@ -21,15 +21,23 @@
 @media (min-width: 1232px) { .profile-content { width: 1234px; } }
 
 .user-about {
-   margin: 0 11px;
+   margin: 0 10.5px;
    display: flex;
-   padding-bottom: 16px;
+   padding-bottom: 14px;
+}
+
+@media (max-width: 980px) {
+   .user-about {
+      padding-bottom: 0px;
+   }
 }
 
 .user-image {
    width: 210px;
    height: 210px;
    margin: -30px 38px 0px 0px;
+   outline: 1px solid rgba(0,0,0,0.05);
+   outline-offset: -1px;
    background-size: cover;
    background-repeat: no-repeat;
    background-position: 50%;
@@ -40,12 +48,53 @@
   .user-image {
     width: 160px;
     height: 160px;
+    margin-right: 24px;
   }
 }
 
 ///////////////////
 
 //user info/edit
+
+.info-top-line {
+   margin: 18px 15px 8px 0;
+}
+
+.user-name {
+   margin: 0 20px 0 0;
+   vertical-align: bottom;
+   font-size: 30px;
+   font-weight: bold;
+   color: #333333
+}
+
+.user-edit-btn {
+   border: 1px solid #939497;
+   border-radius: 5px;
+   outline: none;
+   background: white;
+   color: #828282;
+   font-weight: 500;
+   padding: 6px 9px;
+   font-size: 13px;
+   line-height: 15px;
+   text-transform: uppercase;
+   display: inline-block;
+
+   vertical-align: top;
+   margin-top: 1px;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.user-edit-btn span:hover {
+   text-decoration: underline;
+}
+
+.edit-icon {
+   margin-right: 4px;
+   vertical-align: top;
+}
 
 ///////////////////
 
@@ -56,23 +105,32 @@
    font-weight: 600;
    font-size: 15px;
    margin-top: 20px;
-   margin: 0 11px;
+   margin: 0 10.5px;
+
+
+   // list-style: none;
+   //  padding: 0;
+   //  margin: 0 auto;
+   //  border-bottom: 1px solid #ddd;
+   //  font-size: 0;
 }
 
 .user-tabs > li {
-
+   // padding: 10px 20px;
+   margin-top: 13px;
+   margin-bottom: -1px;
 }
 
 .user-tabs a {
-  color: blue;
-  padding: 10px 20px;
-  display: block;
-  text-decoration: none;
+   padding: 10px 20px;
+   color: #00A1C6;
+   display: block;
+   text-decoration: none;
 }
 
 .user-tabs a:hover {
 //   text-decoration: none;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #00A1C6;
 }
 .user-tabs .active {
   border-bottom: 2px solid #333333;
@@ -85,31 +143,215 @@
 }
 
 .total {
-
+   font-weight: 400;
+   padding-left: 5px;
 }
 
 .user-content {
-
+   margin-top: 16px;
 }
 
 .user-grid {
-
+   // font-size: 0;
+   margin-left: -10px;
+   margin-right: -10px;
 }
 
 .user-grid li {
-
+   display: inline-block;
 }
 
+.collect-li {
+   font-size: 12px;
+   vertical-align: top;
+   position: relative;
+   border: solid 1px transparent;
+   word-wrap: break-word;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   margin: 0 10px 15px 11px;
+   list-style-type: none;
+   padding: 0px;
+   width: 230px;
+   min-height: 360px;
+}
+
+.collect-li:hover {
+   -moz-transition: border 0.1s ease-out;
+   -webkit-transition: border 0.1s ease-out;
+   transition: border 0.1s ease-out;
+   border: dotted 1px #ccc;
+}
+
+.follow-li {
+   width: 218px;
+   margin: 13px 0 42px 21px;
+}
 ////////////////////
 
 .empty-grid {
-   height: 30px;
-}
-
-.empty-grid p {
-   
+   min-height: 120px;
+   margin-top: 56px;
+   text-align: center;
+   font-size: 14px;
+   font-style: italic;
 }
 
 .empty-grid a {
-   
+   display: block;
+   border: 1px solid rgb(0,161,198);
+   color: rgb(0,161,198);
+   width: 290px;
+   margin: 0 auto;
+   margin-top: 0px;
+   font-style: normal;
+   font-weight: bold;
+   padding: 19px 0;
+   font-weight: 500;
+   font-size: 15px;
+   border-radius: 6px;
+   margin-top: 22px;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.empty-grid a:hover {
+   text-decoration: underline;
+}
+
+///////////////////////
+
+.collect-links-wrap {
+   display: block;
+   margin: 9px;
+}
+
+.album-cover-collect {
+   width: 210px;
+   height: 210px;
+   object-fit: cover;
+   object-position: 50% 50%;
+   margin-bottom: 10px;
+   outline: 1px solid rgba(0,0,0,0.05);
+   outline-offset: -1px;
+}
+
+.follow-img {
+   display: inline-block;
+   flex-shrink: 0;
+   height: 70px;
+   outline: 1px solid rgba(0,0,0,0.05);
+   outline-offset: -1px;
+}
+
+.follow-img > a {
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.follow-img img {
+   height: 70px;
+   width: 70px;
+   object-fit: cover;
+   object-position: 50% 50%;
+}
+
+.follow-info {
+   margin-left: 13px;
+   vertical-align: top;
+   width: 154;
+   min-height: 55px;
+   display: inline-flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.follow-username {
+   color: #333333;
+   font-weight: bold;
+   font-size: 14px;
+   width: 135px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   flex-grow: 1;
+   display: block;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.follow-username:hover {
+   text-decoration: underline;
+}
+
+.follow-location {
+   color: #828282;
+   font-size: 11px;
+   flex-grow: 6;
+   padding: 3px 0;
+   width: 135px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: block;
+}
+
+.profile-flw-btn {
+   border: 1px solid rgb(0,161,198);
+   border-radius: 5px;
+   outline: none;
+   background: white;
+   color: rgb(0,161,198);
+   font-weight: bold;
+   text-transform: uppercase;
+   padding: 8px 6px 7px 6px;
+   font-size: 11px;
+   min-width: 88px;
+   line-height: 14px;
+   align-self: flex-start;
+   cursor: pointer;
+}
+
+.p-follow:hover span {
+   text-decoration: underline;
+}
+
+.p-unfollow {
+   border: 1px solid rgba(255,255,255,0);
+   padding: 8px 9px 7px 0;
+   color: #828282;
+}
+
+.p-unfollow:hover {
+   border: 1px solid #939497;
+   padding: 8px 10px 7px 10px;
+}
+
+.p-unfollow:hover span, .p-unfollow:hover i{
+   display: none
+}
+
+.p-unfollow:hover:before {
+   content: "Unfollow";
+}
+
+.plus {
+   padding-right: 7px;
+}
+
+.check {
+   padding-right: 6px;
+}
+
+.thats-you {
+   cursor: default;
+   border: 1px solid rgba(255,255,255,0);
+   color: #828282;
+   padding: 8px 9px 7px 0;
+   min-width: 88px;
+}
+
+.thats-you:active {
+   text-decoration: underline;
 }

@@ -83,13 +83,13 @@ html, body, div {
    margin-right: 20px;
 }
 
-li i:hover {
+.nav-icon:hover {
    // color: white;
    color: rgba(0,212,255,1);
    cursor: pointer;
 }
 
-li i {
+.nav-icon {
    cursor: pointer;
    width: 30px;
    font-size: 20px;
@@ -97,7 +97,6 @@ li i {
    position: relative;
    color: black;
 }
-
 
 .right-side-nav {
    list-style: none;

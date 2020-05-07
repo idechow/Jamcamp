@@ -140,6 +140,7 @@ class AlbumPage extends React.Component {
      
       // if (this.state.loaded) {
       return (
+      <div className="album-page-wrap">
          <main className="album-page">
             <figure className="band-image-wrap">
                <Link className="band-image-link" to="/">
@@ -193,6 +194,8 @@ class AlbumPage extends React.Component {
                </aside>
             </section>
          </main>
+         {/* <footer></footer> */}
+      </div>
       );
       // } else { return <div>loading</div> }
    }

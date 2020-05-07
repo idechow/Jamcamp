@@ -24,7 +24,7 @@ const App = () => (
          <Route path="*" component={Redirect404} />
       </Switch>
 
-      <Footer />
+      {/* <Footer /> */}
 
       
       {/* <Switch>

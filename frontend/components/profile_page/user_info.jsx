@@ -7,13 +7,18 @@ const UserInfo = ({ user, toggleUserEdit }) => {
    return (
       <div className='user-info'>
          <div className='info-top-line'>
-            {user.username}
-            {user.location}
-            {user.about}
-            {user.website}
-            {/* {follow} */}
+            <span className='user-name'>{user.username}</span>
+            <button 
+               className='user-edit-btn' 
+               onClick={toggleUserEdit}>
+                  <i className="far fa-edit edit-icon"></i>
+                  <span>EDIT PROFILE</span>
+            </button>
          </div>
-         <button onClick={toggleUserEdit}>EDIT PROFILE</button>
+         {/* {user.location}
+         {user.about}
+         {user.website} */}
+         {/* {follow} */}
       </div>
    )
 }
