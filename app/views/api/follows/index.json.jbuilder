@@ -1,10 +1,17 @@
 #json.extract! @user, :id
 
-json.collectors do
+json.collects do
    json.array! @user.collected_albums do |album|
       json.extract! album, :id, :band_id, :name
       json.artist album.artist.band
       json.photo_url url_for(album.photo) if album.photo.attached?
+      json.num_collectors album.collects.length
+      #json.collectors do
+      #   json.array! album.collectors do |collector|
+      #      json.extract! collector, :id, :username, :location
+      #      json.profile_photo_url url_for(collector.sized(:profile)) if collector.photo.attached?
+      #   end
+      #end
    end
 end
 

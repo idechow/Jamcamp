@@ -33,8 +33,8 @@ class ProfilePage extends React.Component {
    profileIndex() {
       let grid;
 
-      if (this.props.profile.collectors.length > 0){
-         grid = this.props.profile.collectors.map(album => {
+      if (this.props.profile.collects.length > 0){
+         grid = this.props.profile.collects.map(album => {
             return <CollectionContainer key={album.id} album={album} />
          });
       } else if (this.props.profile.discog.length > 0) {
@@ -59,7 +59,7 @@ class ProfilePage extends React.Component {
    activePath(path) {
       const paths = new RegExp(/discography|followers|followees/);
       // const paths = ['discog', 'followers', 'followees'];
-      if (this.props.profile.collectors.length < 1 && 
+      if (this.props.profile.collects.length < 1 && 
          (!this.props.currentUser || this.props.user.id !== this.props.currentUser.id) &&
          !paths.test(this.props.location.pathname)){
          // !paths.some(str => this.props.location.pathname.includes(str))){
@@ -130,13 +130,13 @@ class ProfilePage extends React.Component {
                   </div>
 
                   <ol className='user-tabs'>
-                     <li className={profile.collectors.length > 0 ? '' 
+                     <li className={profile.collects.length > 0 ? '' 
                         : !currentUser ? 'hide-link' 
                         : currentUser.id === user.id ? '' 
                         : 'hide-link'}>
                         <NavLink to={profileUrl} exact>
                            collection
-                           <span className='total'>{profile.collectors.length}</span>
+                           <span className='total'>{profile.collects.length}</span>
                         </NavLink>
                      </li>
                      <li className={profile.discog.length < 1 ? 'hide-link' : ''}>
@@ -166,7 +166,7 @@ class ProfilePage extends React.Component {
                      <ol className='user-grid'>
                         <Switch>
                            <Route exact path='/user/:userId'
-                              render={profile.collectors.length < 1 && currentUser && currentUser.id === user.id ?
+                              render={profile.collects.length < 1 && currentUser && currentUser.id === user.id ?
                                  () => this.emptyCollection() : () => this.profileIndex()
                               } />
                            <Route path='/user/:userId/discography'
