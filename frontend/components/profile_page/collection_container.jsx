@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+// import { withRouter } from 'react-router-dom';
 
 import CollectionItem from './collection_item';
 import { createCollect, deleteCollect } from '../../actions/collect_actions';

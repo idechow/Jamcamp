@@ -59,12 +59,18 @@ class AlbumPage extends React.Component {
                <button 
                   className="album-collect-btn"
                   onClick={this.handleCollect}>
-                  <span className="album-collect-icon-wrap">
+                  <span className="album-collect-icon-wrap"
+                     title={this.props.currentUser.collection[this.props.album.id]
+                        ? "Remove this album from your collection"
+                        : "Add this album to your collection"}>
                      {this.props.currentUser.collection[this.props.album.id]
                      ? <i className="fas fa-heart album-collect-icon"></i>
                      : <i className="far fa-heart album-collect-icon"></i>}
                   </span>
-                  <span className="album-collect-text">
+                  <span className="album-collect-text"
+                     title={this.props.currentUser.collection[this.props.album.id]
+                        ? "Remove this album from your collection" 
+                        : "Add this album to your collection"}>
                      {this.props.currentUser.collection[this.props.album.id]
                      ? "In Collection" : "Add to Collection"}
                   </span>
@@ -143,7 +149,7 @@ class AlbumPage extends React.Component {
       <div className="album-page-wrap">
          <main className="album-page">
             <figure className="band-image-wrap">
-               <Link className="band-image-link" to="/">
+                  <Link className="band-image-link" to={`/user/${artist.id}`}>
                   <img className="band-image" src={artist.bandPhotoUrl}/>
                </Link>
             </figure>
@@ -152,7 +158,13 @@ class AlbumPage extends React.Component {
                   <div className="ablum-player">
                      <div className="album-byline">
                         <p className="album-title">{album.name}</p>
-                        <p className="album-artist">by <Link className="artist-discog-link" to="/">{album.artist}</Link></p>
+                           <p className="album-artist">by&nbsp;
+                              <Link 
+                                 className="artist-discog-link" 
+                                 to={`/user/${artist.id}`}>
+                                    {album.artist}
+                              </Link>
+                           </p>
                         {/* <p className="album-genre">{album.genre}</p> */}
                      </div>
                      <div className="player">

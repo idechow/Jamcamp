@@ -12,6 +12,13 @@ class FollowsItem extends React.Component {
       // this.toggleState = this.toggleState.bind(this);
    }
 
+   componentDidUpdate(prevProps) {
+      if (this.props.currentUser !== prevProps.currentUser) {
+         let newState = this.props.currentUser ? !!this.props.currentUser.followees[this.props.user.id] : false;
+         this.setState({ follow: newState });
+      }
+   }
+
    // toggleState(){
    //    setTimeout(() => this.setState({ follow: !this.state.follow }), 200);
    // }

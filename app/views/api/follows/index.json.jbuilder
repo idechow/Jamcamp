@@ -34,5 +34,6 @@ json.discog do
       json.extract! album, :id, :band_id, :name
       json.artist album.artist.band
       json.photo_url url_for(album.photo) if album.photo.attached?
+      json.num_collectors album.collects.length
    end
 end

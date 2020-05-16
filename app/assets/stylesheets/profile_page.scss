@@ -1,4 +1,11 @@
 
+.profile-main-wrap {
+   width: 100%;
+   min-height: 100%;
+   position: absolute;
+   background-color: white;
+}
+
 .profile-main {
    background-color: #ffffff;
 }
@@ -132,6 +139,7 @@
 //   text-decoration: none;
   border-bottom: 2px solid #00A1C6;
 }
+
 .user-tabs .active {
   border-bottom: 2px solid #333333;
   color: #333333;
@@ -149,6 +157,7 @@
 
 .user-content {
    margin-top: 16px;
+   margin-bottom: 160px;
 }
 
 .user-grid {
@@ -175,6 +184,7 @@
    padding: 0px;
    width: 230px;
    min-height: 360px;
+   // min-height: 320px;
 }
 
 .collect-li:hover {
@@ -224,7 +234,7 @@
 
 .collect-links-wrap {
    display: block;
-   margin: 9px;
+   margin: 9px 9px 35px;
 }
 
 .album-cover-collect {
@@ -236,6 +246,106 @@
    outline: 1px solid rgba(0,0,0,0.05);
    outline-offset: -1px;
 }
+
+.collect-tag-link {
+   color: #505958;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.collect-tag-link:hover {
+   text-decoration: underline
+}
+
+.collect-name {
+   font-size: 14px;
+   line-height: 16px;
+   font-weight: bold;
+   margin-bottom: 2px;  
+}
+
+.collect-artist {
+   font-size: 1em;
+   margin-bottom: 10px;
+}
+
+.collect-details-wrap {
+   margin: 9px;
+}
+
+.collect-btn-wrap {
+   visibility: hidden;
+   margin-bottom: 13px;
+}
+
+.collect-li:hover .collect-btn-wrap {
+   visibility: visible;
+   -moz-transition: visibility 0.1s ease-out;
+   -webkit-transition: visibility 0.1s ease-out;
+   transition: visibility 0.1s ease-out;
+}
+
+///////////////
+///start here  
+.pfl-collect-btn {
+   font-size: 12px;
+   font-weight: normal;
+   cursor: pointer;
+}
+
+.pfl-collect-icon-wrap {
+   padding-right: 0.45em;
+}
+
+.pfl-collect-icon.fas {
+   color: #ff9c00;
+   font-size: 12px;
+}
+
+.pfl-collect-icon.far {
+   color: #959595;
+   font-size: 12px;
+}
+
+.pfl-collect-text {
+   color: #00A1C6;
+   text-decoration: none;
+}
+
+.pfl-collect-text:hover {
+   text-decoration: underline;
+}
+
+.pfl-collect-dot {
+   font-size: 12px;
+   color: #999999;
+   padding: 0 0.25em;
+}
+
+.pfl-collect-link {
+   text-decoration: none;
+   color: #00A1C6;
+}
+
+.pfl-collect-link:hover {
+   text-decoration: underline;
+}
+
+.collect-count {
+   font-size: 12px;
+   color: #999999
+}
+
+.collect-count span {
+   color: #505958;
+   cursor: default;
+}
+
+.collect-count span:active {
+   text-decoration: underline;
+}
+
+///////////////
 
 .follow-img {
    display: inline-block;

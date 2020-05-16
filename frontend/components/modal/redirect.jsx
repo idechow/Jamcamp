@@ -27,7 +27,7 @@ class Redirect extends React.Component {
                   onClick={closeModal}
                   value='×' />
                <div className=''>
-                  To continue, please &nbsp;
+                  To continue, please&nbsp;
                   <span><input
                      className='text-btn'
                      type='button'

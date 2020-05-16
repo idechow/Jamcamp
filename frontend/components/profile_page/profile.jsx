@@ -6,6 +6,7 @@ import ProfileEditContainer from './profile_edit_container';
 import DiscogContainer from './discog_container';
 import CollectionContainer from './collection_container';
 import FollowsContainer from './follows_container';
+import NarrowFooter from '../footer/narrow_footer';
 
 class ProfilePage extends React.Component {
    constructor(props) {
@@ -28,6 +29,7 @@ class ProfilePage extends React.Component {
          const resetProfile = this.props.fetchProfile(this.props.match.params.userId);
          Promise.all([resetUser, resetProfile]).then(() => this.setState({ loaded: true }));
       }
+      // if (this.props.currentUser !== prevProps.currentUser) {}
    }
 
    profileIndex() {
@@ -35,19 +37,20 @@ class ProfilePage extends React.Component {
 
       if (this.props.profile.collects.length > 0){
          grid = this.props.profile.collects.map(album => {
-            return <CollectionContainer key={album.id} album={album} />
+            return <CollectionContainer key={album.id} album={album} 
+               pathId ={this.props.user.id}/>
          });
       } else if (this.props.profile.discog.length > 0) {
          grid = this.props.profile.discog.map(album => {
             return <DiscogContainer key={album.id} album={album} />
          });
       } else if (this.props.profile.followers.length > 0) {
-         grid = this.props.profile.followers.map(user => {
-            return <FollowsContainer key={user.id} user={user} />
+         grid = this.props.profile.followers.map(follow => {
+            return <FollowsContainer key={follow.id} user={follow} />
          });
       } else if (this.props.profile.followees.length > 0) {
-         grid = this.props.profile.followees.map(user => {
-            return <FollowsContainer key={user.id} user={user} />
+         grid = this.props.profile.followees.map(follow => {
+            return <FollowsContainer key={follow.id} user={follow} />
          });
       } else {
          grid = <div className='empty-grid'></div>;
@@ -114,85 +117,88 @@ class ProfilePage extends React.Component {
                toggleUserEdit={this.props.toggleUserEdit}
             />;
          }
-
+         
          return(
-            <main className='profile-main'>
-               <figure className='profile-banner'
-                  style={ { backgroundImage: `url(${this.props.user.bandPhotoUrl})`} }>
-               </figure>
-               
-               <section className='profile-content'>
-                  <div className='user-about'>
-                     <div className='user-image'
-                        style={{ backgroundImage: `url(${this.props.user.profilePhotoUrl})` }}>
+            <div className='profile-main-wrap'>
+               <main className='profile-main'>
+                  <figure className='profile-banner'
+                     style={ { backgroundImage: `url(${this.props.user.bandPhotoUrl})`} }>
+                  </figure>
+                  
+                  <section className='profile-content'>
+                     <div className='user-about'>
+                        <div className='user-image'
+                           style={{ backgroundImage: `url(${this.props.user.profilePhotoUrl})` }}>
+                        </div>
+                        { userInfo }
                      </div>
-                     { userInfo }
-                  </div>
 
-                  <ol className='user-tabs'>
-                     <li className={profile.collects.length > 0 ? '' 
-                        : !currentUser ? 'hide-link' 
-                        : currentUser.id === user.id ? '' 
-                        : 'hide-link'}>
-                        <NavLink to={profileUrl} exact>
-                           collection
-                           <span className='total'>{profile.collects.length}</span>
-                        </NavLink>
-                     </li>
-                     <li className={profile.discog.length < 1 ? 'hide-link' : ''}>
-                        <NavLink to={profileUrl + '/discography'} 
-                           className={this.activePath('discog')}>
-                           discography
-                           <span className='total'>{profile.discog.length}</span>
-                        </NavLink>
-                     </li>
-                     <li className={profile.followers.length < 1 ? 'hide-link' : ''}>
-                        <NavLink to={profileUrl + '/followers'} 
-                           className={this.activePath('followers')}>
-                           followers
-                           <span className='total'>{profile.followers.length}</span>
-                        </NavLink>
-                     </li>
-                     <li className={profile.followees.length < 1 ? 'hide-link' : ''}>
-                        <NavLink to={profileUrl + '/following'} 
-                           className={this.activePath('followees')}>
-                           following
-                           <span className='total'>{profile.followees.length}</span>
-                        </NavLink>
-                     </li>
-                  </ol>
-
-                  <div className='user-content'>
-                     <ol className='user-grid'>
-                        <Switch>
-                           <Route exact path='/user/:userId'
-                              render={profile.collects.length < 1 && currentUser && currentUser.id === user.id ?
-                                 () => this.emptyCollection() : () => this.profileIndex()
-                              } />
-                           <Route path='/user/:userId/discography'
-                              render={profile.discog.length < 1 ? () => this.emptyGrid() :
-                                 () => profile.discog.map(album => {
-                                    return <DiscogContainer key={album.id} album={album} />
-                                 })
-                              } />
-                           <Route path='/user/:userId/followers' 
-                              render={profile.followers.length < 1 ? () => this.emptyGrid() :
-                                 () => profile.followers.map(user => {
-                                    return <FollowsContainer key={user.id} user={user} />
-                                 })
-                              } />
-                           <Route path='/user/:userId/following' 
-                              render={profile.followees.length < 1 ? () => this.emptyGrid() :
-                                 () => profile.followees.map(user => {
-                                    return <FollowsContainer key={user.id} user={user} />
-                                 })
-                              } />
-                           <Route path='/user/:userId/*'><Redirect to={`/user/${user.id}`} /></Route>
-                        </Switch>
+                     <ol className='user-tabs'>
+                        <li className={profile.collects.length > 0 ? '' 
+                           : !currentUser ? 'hide-link' 
+                           : currentUser.id === user.id ? '' 
+                           : 'hide-link'}>
+                           <NavLink to={profileUrl} exact>
+                              collection
+                              <span className='total'>{profile.collects.length}</span>
+                           </NavLink>
+                        </li>
+                        <li className={profile.discog.length < 1 ? 'hide-link' : ''}>
+                           <NavLink to={profileUrl + '/discography'} 
+                              className={this.activePath('discog')}>
+                              discography
+                              <span className='total'>{profile.discog.length}</span>
+                           </NavLink>
+                        </li>
+                        <li className={profile.followers.length < 1 ? 'hide-link' : ''}>
+                           <NavLink to={profileUrl + '/followers'} 
+                              className={this.activePath('followers')}>
+                              followers
+                              <span className='total'>{profile.followers.length}</span>
+                           </NavLink>
+                        </li>
+                        <li className={profile.followees.length < 1 ? 'hide-link' : ''}>
+                           <NavLink to={profileUrl + '/following'} 
+                              className={this.activePath('followees')}>
+                              following
+                              <span className='total'>{profile.followees.length}</span>
+                           </NavLink>
+                        </li>
                      </ol>
-                  </div>
-               </section>
-            </main>
+
+                     <div className='user-content'>
+                        <ol className='user-grid'>
+                           <Switch>
+                              <Route exact path='/user/:userId'
+                                 render={profile.collects.length < 1 && currentUser && currentUser.id === user.id ?
+                                    () => this.emptyCollection() : () => this.profileIndex()
+                                 } />
+                              <Route path='/user/:userId/discography'
+                                 render={profile.discog.length < 1 ? () => this.emptyGrid() :
+                                    () => profile.discog.map(album => {
+                                       return <DiscogContainer key={album.id} album={album} />
+                                    })
+                                 } />
+                              <Route path='/user/:userId/followers' 
+                                 render={profile.followers.length < 1 ? () => this.emptyGrid() :
+                                    () => profile.followers.map(follow => {
+                                       return <FollowsContainer key={follow.id} user={follow} />
+                                    })
+                                 } />
+                              <Route path='/user/:userId/following' 
+                                 render={profile.followees.length < 1 ? () => this.emptyGrid() :
+                                    () => profile.followees.map(follow => {
+                                       return <FollowsContainer key={follow.id} user={follow} />
+                                    })
+                                 } />
+                              <Route path='/user/:userId/*'><Redirect to={`/user/${user.id}`} /></Route>
+                           </Switch>
+                        </ol>
+                     </div>
+                  </section>
+               </main>
+               <NarrowFooter />
+            </div>
          );
       } else { return <div></div> }
    }

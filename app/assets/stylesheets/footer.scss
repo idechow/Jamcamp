@@ -33,3 +33,19 @@
   font-weight: bold;
   font-size: 10pt;
 }
+
+///////////////////
+///narrow
+
+.narrow-footer-body {
+   background-color: #848484;
+   color: white;
+   -webkit-font-smoothing: antialiased;
+   width: 100%;
+   position: absolute;
+   bottom: 0;
+   font-size: 100%;
+   z-index: 110;
+   -moz-osx-font-smoothing: grayscale;
+   transform: translateZ(0);
+}

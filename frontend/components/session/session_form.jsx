@@ -166,7 +166,7 @@ class SessionForm extends React.Component {
                   </button>.
                   </p>
                   <p className="session-footer">
-                     Can't commit? Explore our site with a &nbsp;
+                     Can't commit? Explore our site with a&nbsp;
                   <button
                         className="session-footer-button"
                         type="button"
