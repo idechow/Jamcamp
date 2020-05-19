@@ -14,7 +14,8 @@ const NarrowFooter = () => {
             <ul className='nf-links-wrap'>
                <li>
                   <span className="nf-text">
-                     based on:
+                     {/* based on: */}
+                     modeled after:
                   </span>
                   <a className="nf-link"
                      href="https://bandcamp.com/"

@@ -63,7 +63,7 @@ class FollowsItem extends React.Component {
          } else {
             return (
                <button
-                  className="profile-flw-btn"
+                  className="profile-flw-btn p-follow"
                   onClick={(e) => this.handleFollow(e)}>
                   <i className="fas fa-plus plus"></i>
                   <span>Follow</span>
@@ -73,7 +73,7 @@ class FollowsItem extends React.Component {
       } else {
          return (
             <button
-               className="profile-flw-btn"
+               className="profile-flw-btn p-follow"
                onClick={() => this.props.openModal('REDIRECT')}>
                <i className="fas fa-plus plus"></i>
                <span>Follow</span>
@@ -90,7 +90,7 @@ class FollowsItem extends React.Component {
          <li className='follow-li'>
             <div className='follow-img'>
                <Link to={`/user/${user.id}`}>
-                  <img src={user.profilePhotoUrl} />
+                  <img src={user.photoUrl} />
                </Link>
             </div>
             <div className='follow-info'>

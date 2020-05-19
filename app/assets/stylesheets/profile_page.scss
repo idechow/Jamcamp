@@ -27,22 +27,33 @@
 @media (min-width: 980px) { .profile-content { width: 986px; } }
 @media (min-width: 1232px) { .profile-content { width: 1235px; } }
 
+.edit-top {
+   border-bottom: 1px solid #e4e4e4;
+   background-color: #fbfbfb;
+   margin-bottom: 40px;
+}
+
 .user-about {
-   margin: 0 10.5px;
-   display: flex;
+   // margin: 0 10.5px;
+   margin: 0 auto;
    padding-bottom: 14px;
+   position: relative;
 }
 
 @media (max-width: 980px) {
    .user-about {
+      width: 714px;
       padding-bottom: 0px;
    }
 }
+@media (min-width: 980px) { .user-about { width: 965px; } }
+@media (min-width: 1232px) { .user-about { width: 1214px; } }
 
 .user-image {
+   display: inline-block;
    width: 210px;
    height: 210px;
-   margin: -30px 38px 0px 0px;
+   margin: -30px 38px 8px 0px;
    outline: 1px solid rgba(0,0,0,0.05);
    outline-offset: -1px;
    background-size: cover;
@@ -60,19 +71,93 @@
 }
 
 ///////////////////
+//user-info
 
-//user info/edit
+@media (max-width: 980px) { 
+   .user-info { width: 510px; }
+   .profile-input-area { width: 510px }
+   .info-top-line { width: 510px; }
+   .wide { display: none; }
+   // putting the parent element first lets the media query override
+   .user-about .info-about { margin: 16px 0 0 0; }
+   .edit-website { margin-top: 20px; }
+   .edit-info .edit-website input { width: 304px }
+}
+@media (min-width: 980px) { 
+   .user-info { width: 698px; }
+   .profile-input-area { width: 698px; }
+   .info-top-line { width: 698px; }
+   .skinny { display: none; }
+}
+@media (min-width: 1232px) { 
+   .user-info { width: auto; }
+   .profile-input-area { width: auto; }
+   .info-top-line { width: 718px; }
+   .wide { width: 718px; }
+   .skinny { display: none; }
+}
+
+.user-info {
+   display: inline-block;
+   margin-top: 18px;
+   margin-right: 15px;
+   vertical-align: top;
+}
 
 .info-top-line {
-   margin: 18px 15px 8px 0;
+   margin: 0 0 8px;
 }
 
 .user-name {
    margin: 0 20px 0 0;
    vertical-align: bottom;
    font-size: 30px;
+   display: inline-block;
    font-weight: bold;
    color: #333333
+}
+
+.info-location {
+   margin-top: 11px;
+   display: block;
+   color: #333333;
+   font-size: 13px;
+   line-height: 16px;
+}
+
+.info-location span {
+   display: inline-block;
+   color: #828282;
+   margin: 4px 0;
+}
+
+.info-about {
+   font-size: 15px;
+   line-height: 22px;
+   margin: 8px 0 0 0;
+   color: #333333;
+}
+
+.info-website {
+   font-size: 15px;
+   line-height: 22px;
+   color: #333333;
+}
+
+.info-website a {
+   color: rgb(0,161,198);
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.info-website a:hover {
+   text-decoration: underline;
+}
+
+.user-btn-wrap {
+   display: inline-block;
+   vertical-align: top;
+   margin-top: 4px;
 }
 
 .user-edit-btn {
@@ -82,17 +167,21 @@
    background: white;
    color: #828282;
    font-weight: 500;
-   padding: 6px 9px;
-   font-size: 13px;
+   padding: 5px 9px;
+   font-size: 11px;
    line-height: 15px;
    text-transform: uppercase;
    display: inline-block;
-
-   vertical-align: top;
-   margin-top: 1px;
-   text-decoration: none;
    cursor: pointer;
 }
+
+.user-edit-btn span {
+   text-decoration: none;
+   vertical-align: middle;
+   font-size: 13px;
+   font-weight: 500;
+}
+
 
 .user-edit-btn span:hover {
    text-decoration: underline;
@@ -100,7 +189,8 @@
 
 .edit-icon {
    margin-right: 4px;
-   vertical-align: top;
+   vertical-align: text-top;
+   font-size: 14px;
 }
 
 ///////////////////
@@ -438,6 +528,10 @@
    padding: 8px 10px 7px 10px;
 }
 
+.p-unfollow:active {
+   text-decoration: underline;
+}
+
 .p-unfollow:hover span, .p-unfollow:hover i{
    display: none
 }
@@ -464,4 +558,89 @@
 
 .thats-you:active {
    text-decoration: underline;
+}
+
+////////////////////
+//profile edit form
+
+.profile-edit-form {
+   display: inline-block;
+   vertical-align: top;
+   color: #333333;
+}
+
+.profile-input-area {
+   display: inline-block;
+   margin-top: 18px;
+   margin-right: 15px;
+}
+
+.edit-info {
+   margin-top: 26px;
+}
+
+.edit-location {
+   margin-right: 14px;
+   display: inline-block;
+   vertical-align: top;
+}
+
+.edit-website {
+   display: inline-block;
+   vertical-align: top;
+}
+
+.edit-about {
+   margin-top: 20px;
+}
+
+.hint {
+   color: #929292;
+   font-size: 12px;
+   font-weight: 500;
+   margin-bottom: 6px;
+   display: block;
+}
+
+.profile-input-field {
+   font-family: 'Helvetica Neue', Helvetica, sans-serif;
+   color: #333333;
+   border: 1px solid #a7a7a7;
+   padding: 0 8px;
+}
+
+.edit-name input {
+   width: 446px;
+   height: 32px;
+   font-size: 24px;
+   font-weight: 600;
+}
+
+.edit-location input {
+   width: 304px;
+   height: 32px;
+   font-size: 13px;
+ }
+
+.edit-website input {
+   width: 290px;
+   height: 32px;
+   font-size: 13px;
+}
+
+.edit-about textarea {
+   max-width: 630px;
+   min-height: 115px;
+   border: 1px solid #a7a7a7;
+   padding: 8px;
+   width: 100%;
+   // color: #333333;
+   font: 13px/1.461 'Helvetica Neue',Helvetica,sans-serif;
+}
+
+.edit-focus input:focus,
+.edit-focus textarea:focus {
+   outline: none;
+   border-color: #50a1e6;
+   box-shadow: 0 0 5px #b4d7f9;
 }

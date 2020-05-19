@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Route, Link, Switch, Redirect } from 'react-router-dom';
 
-import UserInfo from './user_info';
+import UserInfoContainer from './user_info_container';
 import ProfileEditContainer from './profile_edit_container';
 import DiscogContainer from './discog_container';
 import CollectionContainer from './collection_container';
@@ -105,16 +105,15 @@ class ProfilePage extends React.Component {
          const { userEdit, profile, user, currentUser } = this.props;
          const profileUrl = `/user/${this.props.match.params.userId}`;
 
-         let userInfo = <UserInfo
+         let userInfo = <UserInfoContainer 
             user={this.props.user}
-            toggleUserEdit={this.props.toggleUserEdit}
-            
+            currentUser={this.props.currentUser}
          />;
 
          if (userEdit) {
             userInfo = <ProfileEditContainer
                user={this.props.user}
-               toggleUserEdit={this.props.toggleUserEdit}
+               currentUser={this.props.currentUser}
             />;
          }
          
@@ -125,14 +124,17 @@ class ProfilePage extends React.Component {
                      style={ { backgroundImage: `url(${this.props.user.bandPhotoUrl})`} }>
                   </figure>
                   
-                  <section className='profile-content'>
-                     <div className='user-about'>
-                        <div className='user-image'
-                           style={{ backgroundImage: `url(${this.props.user.profilePhotoUrl})` }}>
+                  <section className=''>
+                     <div className={userEdit ? 'edit-top' : ''}>
+                        <div className='user-about'>
+                           <div className='user-image'
+                              style={{ backgroundImage: `url(${this.props.user.photoUrl})` }}>
+                           </div>
+                           { userInfo }
                         </div>
-                        { userInfo }
                      </div>
-
+                  </section>
+                  <section className='profile-content'>
                      <ol className='user-tabs'>
                         <li className={profile.collects.length > 0 ? '' 
                            : !currentUser ? 'hide-link' 

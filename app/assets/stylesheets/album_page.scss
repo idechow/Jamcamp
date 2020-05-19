@@ -1,11 +1,14 @@
 .album-page-wrap {
    background-color: #f8f8f8;
    padding-bottom: 40px;
+   width: 100%;
+   min-height: 100%;
+   position: absolute;
 }
 
 .album-page {
    // height: 700px;
-   margin: 0 auto 40px;
+   margin: 0 auto 80px;
    width: 975px;
    // width: 814px;
    border: 1px solid rgba(0,0,0,0.1);

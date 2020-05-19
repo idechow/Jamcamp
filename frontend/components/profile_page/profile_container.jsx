@@ -5,8 +5,6 @@ import ProfilePage from './profile';
 
 import { fetchArtist } from '../../actions/artist_actions';
 import { fetchProfile } from '../../actions/user_actions';
-import { toggleDropdown } from '../../actions/dropdown_actions';
-import { openModal } from '../../actions/modal_actions';
 
 
 const mSTP = (state, ownProps) => {
@@ -22,8 +20,6 @@ const mDTP = (dispatch) => {
    return {
       fetchUser: userId => dispatch(fetchArtist(userId)),
       fetchProfile: userId => dispatch(fetchProfile(userId)),
-      toggleUserEdit: () => dispatch(toggleDropdown('userEdit')),
-      openModal: modal => dispatch(openModal(modal)),
    };
 };
 

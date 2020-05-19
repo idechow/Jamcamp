@@ -72,7 +72,7 @@
 
 .nf-links-wrap > li {
    display: inline-block;
-   padding: 10px 5px;
+   padding: 11px 5px;
    margin: 0;
    font-size: 13px;
    line-height: 16px;
@@ -99,6 +99,7 @@
    font-size: 13px;
    color: #cccccc;
    padding-right: 4px;
+   vertical-align: .1em;
 }
 
 .nf-link {
@@ -114,6 +115,7 @@
 
 .nf-icon {
    padding-left: 3px;
+   vertical-align: .1em;
 }
 
 .nf-icon > i {
@@ -123,6 +125,7 @@
 .nf-link-text {
    font-size: 13px;
    padding-left: 3px;
+   vertical-align: .1em;
 }
 
 .nf-end-icon {

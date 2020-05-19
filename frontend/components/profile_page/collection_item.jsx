@@ -34,6 +34,7 @@ class CollectionItem extends React.Component {
             this.props.removeCollect(this.props.album.id)
                .then(() => {
                   this.setState({ collect: false })
+                  //!!this.props.currentUser.collection[this.props.album.id]
                });
          } else {
             this.props.addCollect(collectData)

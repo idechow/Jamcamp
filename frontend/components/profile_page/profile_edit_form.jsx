@@ -18,16 +18,18 @@ class ProfileEditForm extends React.Component {
    }
 
    update(field) {
-      return e => this.setState({ [feild]: e.target.value });
+      return e => this.setState({
+         [field]: e.currentTarget.value
+      });
    }
 
    render() {
       return (
          <form className='profile-edit-form' onSubmit={this.handleSubmit}>
+            {/* <div className='profile-photo-edit'></div> */}
             <div className='profile-input-area'>
-
-               <div className='profile-field-wrap'>
-                  <label>your name</label>
+               <div className='edit-name edit-focus'>
+                  <label className='hint'>your name</label>
                   <input 
                      className='profile-input-field'
                      type='text'
@@ -35,31 +37,32 @@ class ProfileEditForm extends React.Component {
                      onChange={this.update('username')}
                   />
                </div>
-
-               <div className='profile-field-wrap'>
-                  <label>location</label>
-                  <input
-                     className='profile-input-field'
-                     type='text'
-                     value={this.state.location}
-                     onChange={this.update('location')}
-                  />
+               <div className='edit-info'>
+                  <div className='edit-location edit-focus'>
+                     <label className='hint'>location</label>
+                     <input
+                        className='profile-input-field'
+                        type='text'
+                        value={this.state.location}
+                        onChange={this.update('location')}
+                     />
+                  </div>
+                  <div className='edit-website edit-focus'>
+                     <label className='hint'>
+                        link to your website or blog
+                     </label>
+                     <input
+                        className='profile-input-field'
+                        type='text'
+                        value={this.state.wenlink}
+                        onChange={this.update('weblink')}
+                     />
+                  </div>
                </div>
 
-               <div className='profile-field-wrap'>
-                  <label>link to your website or blog</label>
-                  <input
-                     className='profile-input-field'
-                     type='text'
-                     value={this.state.wenlink}
-                     onChange={this.update('weblink')}
-                  />
-               </div>
-
-               <div className='profile-textarea-wrap'>
-                  <label>about you</label>
+               <div className='edit-about edit-focus'>
+                  <label className='hint'>about you</label>
                   <textarea
-                     className='profile-input-textarea'
                      value={this.state.about}
                      onChange={this.update('about')}
                   />

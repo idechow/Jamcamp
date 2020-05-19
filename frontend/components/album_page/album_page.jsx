@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import TrackContainer from './tracks_container';
 import TrackPlayerContainer from '../audio_player/track_player_container';
 import Discography from './discography';
+import NarrowFooter from '../footer/narrow_footer';
 
 class AlbumPage extends React.Component {
    constructor(props){
@@ -206,7 +207,7 @@ class AlbumPage extends React.Component {
                </aside>
             </section>
          </main>
-         {/* <footer></footer> */}
+         <NarrowFooter />
       </div>
       );
       // } else { return <div>loading</div> }
