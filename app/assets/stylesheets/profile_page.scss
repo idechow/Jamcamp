@@ -19,6 +19,10 @@
    position: relative;
 }
 
+.disabled {
+   opacity: 0.5;
+}
+
 // .profile-content {
 //    margin: 0 auto;
 // }
@@ -512,6 +516,10 @@
    display: block;
 }
 
+.follow-info-btn {
+   margin-top: 2px;
+}
+
 .profile-flw-btn {
    border: 1px solid rgb(0,161,198);
    border-radius: 5px;
@@ -520,7 +528,8 @@
    color: rgb(0,161,198);
    font-weight: bold;
    text-transform: uppercase;
-   padding: 8px 6px 7px 6px;
+   // padding: 8px 6px 7px 6px;
+   padding: 7px 6px 6px 6px;
    font-size: 11px;
    min-width: 88px;
    line-height: 14px;
@@ -534,13 +543,15 @@
 
 .p-unfollow {
    border: 1px solid rgba(255,255,255,0);
-   padding: 8px 9px 7px 0;
+   // padding: 8px 9px 7px 0;
+   padding: 7px 9px 6px 0;
    color: #828282;
 }
 
 .p-unfollow:hover {
    border: 1px solid #939497;
-   padding: 8px 10px 7px 10px;
+   // padding: 8px 10px 7px 10px;
+   padding: 7px 10px 6px 10px;
 }
 
 .p-unfollow:active {
@@ -567,7 +578,8 @@
    cursor: default;
    border: 1px solid rgba(255,255,255,0);
    color: #828282;
-   padding: 8px 9px 7px 0;
+   // padding: 8px 9px 7px 0;
+   padding: 7px 9px 6px 0;
    min-width: 88px;
 }
 

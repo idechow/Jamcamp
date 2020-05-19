@@ -131,7 +131,7 @@ class ProfilePage extends React.Component {
                         { userInfo }
                      </div>
                   </section>
-                  <section className='profile-content'>
+                  <section className={userEdit ? 'disabled' : 'profile-content'}>
                      <div className='user-tabs-wrap'>
                         <ol className='user-tabs'>
                            <li className={profile.collects.length > 0 ? '' 
