@@ -59,7 +59,6 @@ class ProfileEditForm extends React.Component {
                      />
                   </div>
                </div>
-
                <div className='edit-about edit-focus'>
                   <label className='hint'>about you</label>
                   <textarea
@@ -67,16 +66,15 @@ class ProfileEditForm extends React.Component {
                      onChange={this.update('about')}
                   />
                </div>
-
-               <div className='profile-submit-wrap'>
-                  <button className='submit-edit-btn'
+               <div className='edit-submit'>
+                  <button className='edit-submit-btn'
                      type='submit'>
                         SAVE CHANGES
                   </button>
-                  <a className='cancel-edit-btn' 
+                  <button className='edit-cancel-btn' 
                      onClick={this.props.toggleUserEdit}>
                         CANCEL
-                  </a>
+                  </button>
                </div>
             </div>
          </form>

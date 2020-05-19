@@ -123,52 +123,50 @@ class ProfilePage extends React.Component {
                   <figure className='profile-banner'
                      style={ { backgroundImage: `url(${this.props.user.bandPhotoUrl})`} }>
                   </figure>
-                  
-                  <section className=''>
-                     <div className={userEdit ? 'edit-top' : ''}>
-                        <div className='user-about'>
-                           <div className='user-image'
-                              style={{ backgroundImage: `url(${this.props.user.photoUrl})` }}>
-                           </div>
-                           { userInfo }
+                  <section className={userEdit ? 'edit-top' : 'top'}>
+                     <div className='user-about'>
+                        <div className='user-image'
+                           style={{ backgroundImage: `url(${this.props.user.photoUrl})` }}>
                         </div>
+                        { userInfo }
                      </div>
                   </section>
                   <section className='profile-content'>
-                     <ol className='user-tabs'>
-                        <li className={profile.collects.length > 0 ? '' 
-                           : !currentUser ? 'hide-link' 
-                           : currentUser.id === user.id ? '' 
-                           : 'hide-link'}>
-                           <NavLink to={profileUrl} exact>
-                              collection
-                              <span className='total'>{profile.collects.length}</span>
-                           </NavLink>
-                        </li>
-                        <li className={profile.discog.length < 1 ? 'hide-link' : ''}>
-                           <NavLink to={profileUrl + '/discography'} 
-                              className={this.activePath('discog')}>
-                              discography
-                              <span className='total'>{profile.discog.length}</span>
-                           </NavLink>
-                        </li>
-                        <li className={profile.followers.length < 1 ? 'hide-link' : ''}>
-                           <NavLink to={profileUrl + '/followers'} 
-                              className={this.activePath('followers')}>
-                              followers
-                              <span className='total'>{profile.followers.length}</span>
-                           </NavLink>
-                        </li>
-                        <li className={profile.followees.length < 1 ? 'hide-link' : ''}>
-                           <NavLink to={profileUrl + '/following'} 
-                              className={this.activePath('followees')}>
-                              following
-                              <span className='total'>{profile.followees.length}</span>
-                           </NavLink>
-                        </li>
-                     </ol>
-
-                     <div className='user-content'>
+                     <div className='user-tabs-wrap'>
+                        <ol className='user-tabs'>
+                           <li className={profile.collects.length > 0 ? '' 
+                              : !currentUser ? 'hide-link' 
+                              : currentUser.id === user.id ? '' 
+                              : 'hide-link'}>
+                              <NavLink to={profileUrl} exact>
+                                 collection
+                                 <span className='total'>{profile.collects.length}</span>
+                              </NavLink>
+                           </li>
+                           <li className={profile.discog.length < 1 ? 'hide-link' : ''}>
+                              <NavLink to={profileUrl + '/discography'} 
+                                 className={this.activePath('discog')}>
+                                 discography
+                                 <span className='total'>{profile.discog.length}</span>
+                              </NavLink>
+                           </li>
+                           <li className={profile.followers.length < 1 ? 'hide-link' : ''}>
+                              <NavLink to={profileUrl + '/followers'} 
+                                 className={this.activePath('followers')}>
+                                 followers
+                                 <span className='total'>{profile.followers.length}</span>
+                              </NavLink>
+                           </li>
+                           <li className={profile.followees.length < 1 ? 'hide-link' : ''}>
+                              <NavLink to={profileUrl + '/following'} 
+                                 className={this.activePath('followees')}>
+                                 following
+                                 <span className='total'>{profile.followees.length}</span>
+                              </NavLink>
+                           </li>
+                        </ol>
+                     </div>
+                     <div className='user-grid-wrap'>
                         <ol className='user-grid'>
                            <Switch>
                               <Route exact path='/user/:userId'

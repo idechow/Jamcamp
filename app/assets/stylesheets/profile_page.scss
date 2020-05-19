@@ -19,13 +19,13 @@
    position: relative;
 }
 
-.profile-content {
-   margin: 0 auto;
-}
+// .profile-content {
+//    margin: 0 auto;
+// }
 
-@media (max-width: 980px) { .profile-content { width: 736px; } }
-@media (min-width: 980px) { .profile-content { width: 986px; } }
-@media (min-width: 1232px) { .profile-content { width: 1235px; } }
+// @media (max-width: 980px) { .profile-content { width: 736px; } }
+// @media (min-width: 980px) { .profile-content { width: 986px; } }
+// @media (min-width: 1232px) { .profile-content { width: 1235px; } }
 
 .edit-top {
    border-bottom: 1px solid #e4e4e4;
@@ -45,9 +45,20 @@
       width: 714px;
       padding-bottom: 0px;
    }
+   .user-tabs-wrap { width: 714px; }
+   .user-grid-wrap { width: 736px; }
 }
-@media (min-width: 980px) { .user-about { width: 965px; } }
-@media (min-width: 1232px) { .user-about { width: 1214px; } }
+@media (min-width: 980px) { 
+   .user-about { width: 965px; }
+   .user-tabs-wrap { width: 965px; }
+   .user-grid-wrap { width: 986px; }
+}
+@media (min-width: 1232px) { 
+   .user-about { width: 1214px; }
+   .user-tabs-wrap { width: 1214px; }
+   .user-grid-wrap { width: 1234px; }
+   .user-grid { width: 1256px; }
+}
 
 .user-image {
    display: inline-block;
@@ -195,14 +206,17 @@
 
 ///////////////////
 
+.user-tabs-wrap {
+   margin: 0 auto;
+}
 
 .user-tabs {
    display: flex;
    border-bottom: 1px solid #ddd;
    font-weight: 600;
    font-size: 15px;
-   margin-top: 20px;
-   margin: 0 10.5px;
+   // margin-top: 20px;
+   // margin: 0 10.5px;
 
 
    // list-style: none;
@@ -245,9 +259,10 @@
    padding-left: 5px;
 }
 
-.user-content {
-   margin-top: 16px;
-   margin-bottom: 160px;
+.user-grid-wrap {
+   // margin-top: 16px;
+   // margin-bottom: 160px;
+   margin: 16px auto 160px;
 }
 
 .user-grid {
@@ -580,7 +595,7 @@
 }
 
 .edit-location {
-   margin-right: 14px;
+   margin-right: 18px;
    display: inline-block;
    vertical-align: top;
 }
@@ -643,4 +658,47 @@
    outline: none;
    border-color: #50a1e6;
    box-shadow: 0 0 5px #b4d7f9;
+}
+
+.edit-submit {
+   margin: 28px 0 24px 0;
+}
+
+.edit-submit-btn {
+   border: none;
+   background: none;
+   text-transform: uppercase;
+   font-size: 13px;
+   font-weight: 600;
+   color: #fff;
+   background-color: rgb(0,161,198);
+   padding: 8px 20px;
+   border-radius: 5px;
+   text-decoration: none;
+   cursor: pointer;
+   margin-right: 4px;
+}
+
+.edit-submit-btn:hover {
+   text-decoration: underline;
+}
+
+.edit-cancel-btn {
+   border: none;
+   background: none;
+   text-transform: uppercase;
+   font-size: 13px;
+   font-weight: bold;
+   color: rgb(0,161,198);
+   padding: 1px 7px 2px;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.edit-cancel-btn:hover {
+   text-decoration: underline;
+}
+
+.edit-cancel-btn:focus {
+   outline: -webkit-focus-ring-color auto 5px;
 }
