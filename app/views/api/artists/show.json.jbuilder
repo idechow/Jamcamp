@@ -1,1 +1,1 @@
-json.partial! "api/artists/artist", artist: @artist
+json.partial! "api/artists/artist", artist: @user

@@ -19,10 +19,9 @@ class ProfileEditForm extends React.Component {
       Object.keys(this.state).forEach(key => {
          userData.append(`user[${key}]`, this.state[key]);
       });
-
-      // this.props.updateUser(this.props.userId, formData).then(
-      //    this.props.toggleEditForm
-      // );
+   
+      this.props.updateUser(this.props.userId, userData)
+         .then(() => this.props.toggleUserEdit());
    }
 
    update(field) {
@@ -62,7 +61,7 @@ class ProfileEditForm extends React.Component {
                      <input
                         className='profile-input-field'
                         type='text'
-                        value={this.state.wenlink}
+                        value={this.state.weblink}
                         onChange={this.update('weblink')}
                      />
                   </div>

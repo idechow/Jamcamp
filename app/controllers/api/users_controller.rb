@@ -14,8 +14,8 @@ class Api::UsersController < ApplicationController
    end
 
    def artists_show 
-      @artist = User.find(params[:id])
-      if @artist
+      @user = User.find(params[:id])
+      if @user
          render "api/artists/show.json.jbuilder"
       else
          render json: ["Invalid artist"], status: 422
@@ -42,7 +42,7 @@ class Api::UsersController < ApplicationController
       @user = User.find_by(id: params[:id])
 
       if @user.update(user_params)
-         render "api/users/show"
+         render "api/artists/show"
       else
          render json: ['update failed'], status: 422
       end
@@ -57,7 +57,7 @@ class Api::UsersController < ApplicationController
          :band, 
          :location,
          :about,
-         :website
+         :weblink
       )
   end
 end

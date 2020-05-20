@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import { updateArtist } from '../../actions/artist_actions';
 import { toggleDropdown } from '../../actions/dropdown_actions';
+import { updateUser } from '../../actions/user_actions';
 
 import ProfileEditForm from './profile_edit_form';
 
@@ -16,6 +17,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch) => ({
    updateProfile: (userId, data) => dispatch(updateArtist(userId, data)),
    toggleUserEdit: () => dispatch(toggleDropdown('userEdit')),
+   updateUser: (userId, data) => dispatch(updateUser(userId, data)),
 });
 
 export default withRouter(connect(mSTP, mDTP)(ProfileEditForm));

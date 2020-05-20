@@ -101,8 +101,8 @@ class UserInfo extends React.Component {
                   <div>{user.about || 'Sustainable photo booth single-origin coffee 90s next level waistcoat wolf. Art party next level marfa williamsburg hammock wes anderson 90s. Schlitz keytar cronut try-hard cray art party chillwave. Retro readymade hashtag cold-pressed sartorial'}</div>
                </div>
                <div className='info-website wide'>
-                  <a href={user.website || 'www.google.com'}>
-                     {user.website || 'www.google.com'}
+                  <a href={user.weblink || 'www.google.com'}>
+                     {user.weblink || 'www.google.com'}
                   </a>
                </div>
             </div>
@@ -110,8 +110,8 @@ class UserInfo extends React.Component {
                <div>{user.about || 'Sustainable photo booth single-origin coffee 90s next level waistcoat wolf. Art party next level marfa williamsburg hammock wes anderson 90s. Schlitz keytar cronut try-hard cray art party chillwave. Retro readymade hashtag cold-pressed sartorial'}</div>
             </div>
             <div className='info-website skinny'>
-               <a href={user.website || 'www.google.com'}>
-                  {user.website || 'www.google.com'}
+               <a href={user.weblink || 'www.google.com'}>
+                  {user.weblink || 'www.google.com'}
                </a>
             </div>
          </>

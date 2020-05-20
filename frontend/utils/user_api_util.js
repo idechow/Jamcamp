@@ -10,3 +10,14 @@ export const fetchUserProfile = userId => (
       url: `/api/users/${userId}/follows`
    })
 );
+
+export const updateUser = (userId, formData) => {
+   return $.ajax({
+      method: 'PATCH',
+      url: `api/users/${userId}`,
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+   });
+};
