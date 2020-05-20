@@ -15,6 +15,14 @@ class ProfileEditForm extends React.Component {
    handleSubmit(e) {
       e.preventDefault();
       const userData = new FormData();
+
+      Object.keys(this.state).forEach(key => {
+         userData.append(`user[${key}]`, this.state[key]);
+      });
+
+      // this.props.updateUser(this.props.userId, formData).then(
+      //    this.props.toggleEditForm
+      // );
    }
 
    update(field) {
@@ -62,9 +70,11 @@ class ProfileEditForm extends React.Component {
                <div className='edit-about edit-focus'>
                   <label className='hint'>about you</label>
                   <textarea
+                     maxLength="400"
                      value={this.state.about}
                      onChange={this.update('about')}
                   />
+                  <p>(max length: 400 characters)</p>
                </div>
                <div className='edit-submit'>
                   <button className='edit-submit-btn'

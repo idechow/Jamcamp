@@ -238,3 +238,107 @@ body {
 .session-footer-button:hover {
    // text-decoration: underline;
 }
+
+
+/////////////////
+//redirect
+
+.redirect-form {
+   width: 500px;
+   background-color: white;
+   box-sizing: border-box;
+   padding: 0;
+   font-size: 16px;
+   border-radius: 6px;
+   font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.redirect-top {
+   padding: 15px 20px 12px;
+   cursor: move;
+}
+
+.redirect-top h1 {
+   font-size: 18px;
+   
+}
+
+.re-close-form {
+   background: transparent;
+   color: #aaa;
+   outline: none;
+   margin: 0;
+   right: 0;
+   top: 0;
+   overflow: hidden;
+   padding: 22px 20px 22px 20px;
+   border: 0;
+   position: absolute;
+   font-size: 24px;
+   line-height: 1px;
+   position: absolute;
+}
+
+.re-close-form:hover {
+   color: #222;
+}
+
+.redirect-main {
+   padding: 0px 30px 30px;
+}
+
+.redirect-text {
+   display: inline-block;
+   color: #333;
+   line-height: 20px;
+   font-size: 16px;
+}
+
+.text-btn {
+   border: none;
+   background: none;
+   font-size: inherit;
+   text-decoration: none;
+   color: #00a1c6;
+   padding: 0;
+   outline: none;
+   cursor: pointer;
+}
+
+.redirect-btns {
+   margin-top: 20px;
+   padding-top: 2px;
+}
+
+.re-big-btn {
+   border-radius: 4px;
+   display: inline-block;
+   font-size: 16px;
+   font-weight: bold;
+   padding: 0 1em;
+   text-align: center;
+   border: none;
+   vertical-align: top;
+   min-height: 36px;
+   width: 136px;
+   outline: none;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.re-big-btn:hover {
+   text-decoration: underline;
+}
+
+.blue { 
+   color: #FFF;
+   background: #00a1c6; 
+}
+
+.white {
+   background-color: #FFF;
+   color: rgb(0,161,198);
+   border: 1px solid rgb(0,161,198);
+   margin-right: 16px;
+}
+
