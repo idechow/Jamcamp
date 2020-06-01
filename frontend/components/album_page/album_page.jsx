@@ -176,7 +176,7 @@ class AlbumPage extends React.Component {
                            { trackList }
                         </ul>
                      </div>
-                     <p className="album-description">{album.description || "description"}</p>
+                        <p className="album-description">{album.description || "A mix of greatest rock, folk, and country-rock, Dead shows are unique works of art. Each show includes improvisations and sonic explorations that are one-of-a-kind."}</p>
                      {/* <p className="album-release-date">{album.release_date}</p> */}
                   </div>
                </div>

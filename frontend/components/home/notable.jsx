@@ -23,7 +23,7 @@ class NotableAlbums extends React.Component {
                </h4>
                <p className='notable-genre'>recorded: {album.releaseDate}</p>
                <p className='notable-description'>
-                  <span>{album.description || 'This dynamite new track from Nigerian artist Kelele, with its bounding rhythms and bright melody, will benefit frontline workers.'}</span>
+                  <span>{album.description || 'A mix of greatest rock, folk, and country-rock, Dead shows are unique works of art. Each show includes improvisations and sonic explorations that are one-of-a-kind.'}</span>
                </p>
             </div>
          </li>
