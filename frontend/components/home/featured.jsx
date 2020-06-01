@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 class FeaturedAlbums extends React.Component {
    constructor(props){
       super(props)
-      this.state = {
-         loaded: false,
-      }
+      // this.state = {
+      //    loaded: false,
+      // }
    }
 
-   componentDidMount() {
-      const a = this.props.fetchAlbums();
-      Promise.all([a]).then(() => this.setState({ loaded: true }))
-   }
+   // componentDidMount() {
+   //    const a = this.props.fetchAlbums();
+   //    Promise.all([a]).then(() => this.setState({ loaded: true }))
+   // }
 
    backgroundImage(album) {
       return ({backgroundImage: `url(${album.photoUrl})`})
@@ -53,7 +53,7 @@ class FeaturedAlbums extends React.Component {
       let secImg = this.props.albums[3]
       let thirdImg = this.props.albums[4]
 
-      if (this.state.loaded){
+      // if (this.state.loaded){
       return (
          <div className="featured-container">
             <main className="featured-albums">
@@ -71,7 +71,7 @@ class FeaturedAlbums extends React.Component {
             </p> */}
          </div>
       );
-      } else { return <div></div> }
+      // } else { return <div></div> }
    }
 
 }

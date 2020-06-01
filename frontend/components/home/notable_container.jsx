@@ -4,7 +4,9 @@ import NotableAlbums from './notable';
 
 
 const mSTP = (state) => {
-   return {};
+   return {
+      // albums: state.entities.albums
+   };
 };
 
 const mDTP = (dispatch) => {

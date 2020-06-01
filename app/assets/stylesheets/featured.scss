@@ -198,32 +198,18 @@
 .home-page-separator{
    font-size: 18px;
    line-height: 24px;
-   padding: 36px 0 36px;
+   // padding: 36px 0 36px;
+   padding: 25px 0 25px;
    position: relative;
    text-align: center;
    font-weight: 400;
    font-family: Helvetica, Arial, sans-serif;
    -webkit-font-smoothing: antialiased;
-   background: #ECECEC;
+   background: #fdfdfd;
 }
 
 .banner-bold {
    font-weight: 600;
-}
-
-.notable-container {
-   padding: 36px 0;
-   margin: 0 auto;
-   width: 1230px;
-   // width: 1106px;
-
-}
-
-.notable-title {
-   font-size: 16px;
-   color: #408ea3;
-   padding: 0 0 40px 0;
-   font-family: Helvetica, Arial, sans-serif;
 }
 
 .font {

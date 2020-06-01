@@ -1,15 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import HomePage from './home';
-import { clearAlbums } from '../../actions/album_actions';
+import { fetchAlbums, clearAlbums } from '../../actions/album_actions';
 
 const mSTP = state => {
-   return {};
+   return {
+      albums: state.entities.albums
+   };
 };
 
 const mDTP = dispatch => {
    return {
       clearAlbums: () => dispatch(clearAlbums()),
+      fetchAlbums: () => dispatch(fetchAlbums())
    };
 };
 
