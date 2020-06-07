@@ -22,10 +22,11 @@ class HomePage extends React.Component {
 
    render() {
       if (this.state.loaded) {
+         const albumArray = Object.values(this.props.albums);
       return (
          <section className="home-page">
             <div className="featured-wrap">
-               <FeaturedAlbumsContainer albums={this.props.albums}/>
+               <FeaturedAlbumsContainer albumArray={albumArray}/>
             </div>
             <div className="home-page-separator">
                The Grateful Dead performed more than
@@ -35,7 +36,7 @@ class HomePage extends React.Component {
                between 1965 and 1995.
             </div>
             {/* <div className='border'></div> */}
-            <NotableAlbumsContainer albums={this.props.albums}/>
+            <NotableAlbumsContainer albumArray={albumArray}/>
             {/* <div className="discover-wrap">
                <DiscoverAlbumsContainer />
             </div> */}

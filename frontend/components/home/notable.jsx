@@ -31,7 +31,7 @@ class NotableAlbums extends React.Component {
    }
 
    mapAlbums() {
-      const ele = Object.values(this.props.albums).map(album => {
+      const ele = this.props.albumArray.map(album => {
          return this.notableAlbum(album, album.id)
       });
       ele.shift();

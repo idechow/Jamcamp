@@ -48,10 +48,10 @@ class FeaturedAlbums extends React.Component {
 
    render() {
 
-      let big = this.props.albums[1]
-      let firstImg = this.props.albums[2]
-      let secImg = this.props.albums[3]
-      let thirdImg = this.props.albums[4]
+      let big = this.props.albumArray[0]
+      let firstImg = this.props.albumArray[1]
+      let secImg = this.props.albumArray[2]
+      let thirdImg = this.props.albumArray[3]
 
       // if (this.state.loaded){
       return (
