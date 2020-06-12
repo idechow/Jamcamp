@@ -41,7 +41,6 @@ class NotableAlbums extends React.Component {
 
    
    render() {
-      console.log(this.props.albums)
       return (
          <section className="notable-container">
             <div className="notable-row">

@@ -95,23 +95,23 @@ class UserInfo extends React.Component {
                   </div>
                </div>
                <div className='info-location'>
-                  <span>{user.location || 'San Francisco, California'}</span>
+                  <span>{user.location}</span>
                </div>
                <div className='info-about wide'>
-                  <div>{user.about || 'Sustainable photo booth single-origin coffee 90s next level waistcoat wolf. Art party next level marfa williamsburg hammock wes anderson 90s. Schlitz keytar cronut try-hard cray art party chillwave. Retro readymade hashtag cold-pressed sartorial'}</div>
+                  <div>{user.about}</div>
                </div>
                <div className='info-website wide'>
-                  <a href={user.weblink || 'www.google.com'}>
-                     {user.weblink || 'www.google.com'}
+                  <a href={user.weblink}>
+                     {user.weblink}
                   </a>
                </div>
             </div>
             <div className='info-about skinny'>
-               <div>{user.about || 'Sustainable photo booth single-origin coffee 90s next level waistcoat wolf. Art party next level marfa williamsburg hammock wes anderson 90s. Schlitz keytar cronut try-hard cray art party chillwave. Retro readymade hashtag cold-pressed sartorial'}</div>
+               <div>{user.about}</div>
             </div>
             <div className='info-website skinny'>
-               <a href={user.weblink || 'www.google.com'}>
-                  {user.weblink || 'www.google.com'}
+               <a href={user.weblink}>
+                  {user.weblink}
                </a>
             </div>
          </>

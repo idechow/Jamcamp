@@ -121,12 +121,16 @@ class ProfilePage extends React.Component {
             <div className='profile-main-wrap'>
                <main className='profile-main'>
                   <figure className='profile-banner'
-                     style={ { backgroundImage: `url(${this.props.user.bandPhotoUrl})`} }>
+                     style={Boolean(this.props.user.bandPhotoUrl)
+                        ? { backgroundImage: `url(${this.props.user.bandPhotoUrl})`}
+                        : { backgroundImage: `url(${window.DefaultBackground})` } }>
                   </figure>
                   <section className={userEdit ? 'edit-top' : 'top'}>
                      <div className='user-about'>
                         <div className='user-image'
-                           style={{ backgroundImage: `url(${this.props.user.photoUrl})` }}>
+                           style={Boolean(this.props.user.photoUrl)
+                              ? { backgroundImage: `url(${this.props.user.photoUrl})` }
+                              : { backgroundImage: `url(${window.TerrapinProfile})` }}>
                         </div>
                         { userInfo }
                      </div>

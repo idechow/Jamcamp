@@ -12,9 +12,9 @@ class Navbar extends React.Component {
    }
 
    toggleDropdown() {
-      console.log(this.state);
-      this.setState({ dropdown: !this.state.dropdown }, () => console.log(this.state));
-      
+      // console.log(this.state);
+      // this.setState({ dropdown: !this.state.dropdown }, () => console.log(this.state));
+      this.setState({ dropdown: !this.state.dropdown });
    }
 
    demo(e) {
@@ -40,7 +40,7 @@ class Navbar extends React.Component {
       const artistBar= () => (
          <ul className="right-side-nav">
             <li className="nav-element">
-               <i className="fas fa-plus nav-icon"></i>
+               <i className="fas fa-plus nav-icon" onClick={() => openModal('UNDER_CON')}></i>
             </li>
             <li className="nav-element">
                <Link to={`/user/${currentUser.id}`}>
@@ -69,10 +69,10 @@ class Navbar extends React.Component {
             </li>
          </ul>
       );
-   
+      
       const display = currentUser ? (
          <div className="signed-in-nav">
-            {currentUser.band ? artistBar() : fanBar() }
+            {Boolean(currentUser.band) ? artistBar() : fanBar() }
          </div>
       ) : (
             <div className='unassigned-nav'>

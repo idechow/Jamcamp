@@ -8,6 +8,7 @@ import { setTrack } from '../../actions/player_actions';
 import { sortedTracksArr, sortedDiscogArr } from '../../reducers/selectors';
 import { createCollect, deleteCollect } from '../../actions/collect_actions';
 import { createFollow, deleteFollow } from '../../actions/follow_actions';
+import { openModal } from '../../actions/modal_actions';
 
 
 const mSTP = (state, ownProps) => {
@@ -33,6 +34,7 @@ const mDTP = (dispatch) => {
       removeCollect: albumId => dispatch(deleteCollect(albumId)),
       addFollow: data => dispatch(createFollow(data)),
       removeFollow: bandId => dispatch(deleteFollow(bandId)),
+      openModal: modal => dispatch(openModal(modal)),
    };
 };
 

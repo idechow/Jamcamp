@@ -6,6 +6,7 @@ import FanSignupContainer from '../session/fan_signup_container';
 import LoginContainer from '../session/login_container';
 import AccountTypeContainer from '../session/account_type_container';
 import RedirectContainer from './redirect_container';
+import UnderConContainer from './under_construction_container';
 // import Draggable from 'react-draggable';
 
 function Modal({ modal, closeModal }) {
@@ -28,6 +29,9 @@ function Modal({ modal, closeModal }) {
          break;
       case 'REDIRECT':
          component = <RedirectContainer />;
+         break;
+      case 'UNDER_CON':
+         component = <UnderConContainer />;
          break;
       default:
          return null;

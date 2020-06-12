@@ -358,6 +358,24 @@
    margin: 0 0 12px;
 }
 
+.artist-thats-me {
+   font-size: 12px;
+   border-radius: 3px;
+   font-weight: bold;
+   padding: 6px 5px 5px 5px;
+   line-height: 1.25em;
+   margin-bottom: 12px;
+   outline: none;
+   text-align: center;
+   cursor: default;
+   border: solid 1px #c6c6c6;
+   color: #00238A;
+}
+
+.artist-thats-me:active {
+   text-decoration: underline;
+}
+
 .artist-flw-btn {
    font-size: 12px;
    width: 100%;

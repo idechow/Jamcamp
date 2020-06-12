@@ -4,7 +4,7 @@ import Redirect from './redirect';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mSTP = state => ({
-   formType: 'REDIRECT',
+   // formType: 'REDIRECT',
 });
 
 const mDTP = dispatch => ({

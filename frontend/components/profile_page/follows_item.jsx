@@ -90,7 +90,7 @@ class FollowsItem extends React.Component {
          <li className='follow-li'>
             <div className='follow-img'>
                <Link to={`/user/${user.id}`}>
-                  <img src={user.photoUrl} />
+                  <img src={user.photoUrl || window.TerrapinProfile} />
                </Link>
             </div>
             <div className='follow-info'>

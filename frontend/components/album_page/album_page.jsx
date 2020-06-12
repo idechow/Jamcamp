@@ -42,60 +42,63 @@ class AlbumPage extends React.Component {
    }
 
    handleCollect(e) {
-      const collectData = {
-         user_id: this.props.currentUser.id,
-         album_id: this.props.album.id,
-      };
-      if (this.props.currentUser.collection[this.props.album.id]) {
-         this.props.removeCollect(this.props.album.id);
+      e.preventDefault();
+      if (!!this.props.currentUser) {
+         const collectData = {
+            user_id: this.props.currentUser.id,
+            album_id: this.props.album.id,
+         };
+         if (this.props.currentUser.collection[this.props.album.id]) {
+            this.props.removeCollect(this.props.album.id);
+         } else {
+            this.props.addCollect(collectData);
+         }
       } else {
-         this.props.addCollect(collectData);
+         this.props.openModal('REDIRECT');
       }
    }
 
    collectButton() {
-      if (!!this.props.currentUser) {
-         return (
-            <>
-               <button 
-                  className="album-collect-btn"
-                  onClick={this.handleCollect}>
-                  <span className="album-collect-icon-wrap"
-                     title={this.props.currentUser.collection[this.props.album.id]
-                        ? "Remove this album from your collection"
-                        : "Add this album to your collection"}>
-                     {this.props.currentUser.collection[this.props.album.id]
-                     ? <i className="fas fa-heart album-collect-icon"></i>
-                     : <i className="far fa-heart album-collect-icon"></i>}
-                  </span>
-                  <span className="album-collect-text"
-                     title={this.props.currentUser.collection[this.props.album.id]
-                        ? "Remove this album from your collection" 
-                        : "Add this album to your collection"}>
-                     {this.props.currentUser.collection[this.props.album.id]
-                     ? "In Collection" : "Add to Collection"}
-                  </span>
-               </button>
-               <span className="album-collect-link-wrap">
-                  {this.props.currentUser.collection[this.props.album.id] 
-                  ?  <>
-                     <span className="album-collect-dash"> - </span>
-                     <Link 
-                        className="album-collect-link" 
-                        to={`/user/${this.props.currentUser.id}`}>
-                        view
-                     </Link> 
-                  </>
-                  : null }
+      let collect = !!this.props.currentUser && this.props.currentUser.collection[this.props.album.id];
+      return (
+         <>
+            <button 
+               className="album-collect-btn"
+               onClick={this.handleCollect}>
+               <span className="album-collect-icon-wrap"
+                  title={collect
+                     ? "Remove this album from your collection"
+                     : "Add this album to your collection"}>
+                  {collect
+                  ? <i className="fas fa-heart album-collect-icon"></i>
+                  : <i className="far fa-heart album-collect-icon"></i>}
                </span>
-            </>
-         );
-      } else {
-         return null;
-      }
+               <span className="album-collect-text"
+                  title={collect
+                     ? "Remove this album from your collection" 
+                     : "Add this album to your collection"}>
+                  {collect
+                  ? "In Collection" : "Add to Collection"}
+               </span>
+            </button>
+            <span className="album-collect-link-wrap">
+               {collect
+               ?  <>
+                  <span className="album-collect-dash"> - </span>
+                  <Link 
+                     className="album-collect-link" 
+                     to={`/user/${this.props.currentUser.id}`}>
+                     view
+                  </Link> 
+               </>
+               : null }
+            </span>
+         </>
+      );
    }
 
    handleFollow(e) {
+      e.preventDefault();
       const followData = {
          user_id: this.props.currentUser.id,
          band_id: this.props.artist.id,
@@ -109,7 +112,13 @@ class AlbumPage extends React.Component {
 
    followButton() {
       if (!!this.props.currentUser) {
-         if (this.props.currentUser.followees[this.props.artist.id]) {
+         if (this.props.currentUser.id === this.props.artist.id) {
+            return (
+               <div className="artist-thats-me">
+                  <span>That's you!</span>
+               </div>
+            );
+         } else if (this.props.currentUser.followees[this.props.artist.id]) {
             return (
                <button
                   className="artist-flw-btn unfollow"
@@ -127,7 +136,13 @@ class AlbumPage extends React.Component {
             );
          }
       } else {
-         return null;
+         return (
+            <button
+               className="artist-flw-btn follow"
+               onClick={() => this.props.openModal('REDIRECT')}>
+               <span>Follow</span>
+            </button>
+         );
       }
    }
 
@@ -150,7 +165,7 @@ class AlbumPage extends React.Component {
       <div className="album-page-wrap">
          <main className="album-page">
             <figure className="band-image-wrap">
-                  <Link className="band-image-link" to={`/user/${artist.id}`}>
+               <Link className="band-image-link" to={`/user/${artist.id}`}>
                   <img className="band-image" src={artist.bandPhotoUrl}/>
                </Link>
             </figure>
