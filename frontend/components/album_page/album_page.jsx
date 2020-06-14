@@ -207,11 +207,11 @@ class AlbumPage extends React.Component {
                   <div>
                      <img className="artist-photo" src={artist.photoUrl}/>
                      <p className="artist-name" >{artist.band}</p>
-                     <p className="artist-location">{artist.location || "San Francisco, CA"}</p>
+                     <p className="artist-location">{artist.location}</p>
                      { this.followButton() }
                      {/* <button className="artist-follow">Following</button> */}
-                     <p className="artist-about">{artist.about || "Khruangbin is a three-piece band from Texas, formed of Laura Lee on bass, Mark Speer on guitar, and Donald Johnson on drums."}</p>
-                     <p className="artist-page-link">{artist.weblink || "gratefuldead.com"}</p>
+                     <p className="artist-about">{artist.about}</p>
+                     <p className="artist-page-link">{artist.weblink}</p>
                   </div>
                   { discog.length > 1 ?
                   <ul>
