@@ -1,6 +1,6 @@
 # Jamcamp
 
-A bandcamp.com duplicate
+A fullstack bandcamp.com replica
 
 [Live Site](https://jamcamp.herokuapp.com/)
 
