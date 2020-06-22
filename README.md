@@ -4,12 +4,12 @@ A bandcamp.com duplicate
 
 [Live Site](https://jamcamp.herokuapp.com/)
 
-## Overview
+### Overview
 
-## Technologies
+### Technologies
 
-## Highlights
+### Highlights
 
-## Features
+### Features
 
-## In Progress
+### In Progress
