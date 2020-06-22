@@ -33,8 +33,16 @@ Jamcamp uses the Ruby on Rails API on the backend with React/Redux as the web fr
 
 ### Highlights
 
+TBC (graphic + code + description)
+
 ### Features
+
+List
 
 ### Walkthrough
 
-### In Progress
+Add video
+
+### Future Features
+
+List
