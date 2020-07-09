@@ -32,10 +32,6 @@ Jamcamp uses the Ruby on Rails API on the backend with React/Redux as the web fr
   * jBuilder for backend requests
   * Styling and animations done with SCSS/CSS
 
-### Highlights
-
-TBC (graphic + code + description)
-
 ### Features
 
 - User Authentication 
@@ -80,10 +76,19 @@ TBC (graphic + code + description)
   * A buffer bar animates how much of the track has buffered. The buffer will update to a new position on the slider, if a user moves ahead in the song. However, if a user rewinds a song, the buffer will stay in its most buffered position. 
   * Event listeners are added to respond to the clicking on, dragging, and releasing of the slider bar.
 
-### Walkthrough
-
-Add video
-
 ### Future Features
 
-List
+- Search
+  * There will be a search bar at the top that allows users to search for either a user/artist, album, or song and links to direct users to those pages. 
+  <p/>
+- Album upload
+  * There will be a page that lets an artist upload music to the site, as well as edit music they have already added to the site.
+  <p/>
+- Photo upload
+  * Users will have the ability to upload/change their profile photos.
+  * Photos will have faster rendering when photo uploads include front-end tools to limit or re-modulate the size of the photo. 
+  * Instead of using variant image checks on the backend, which can be slow using Rails 5.2, photos will instead be attached via AWS attachments and blobs twice, both in large and thumbnail formats.
+  </p>
+- Creative SQL Search for Notable Albums
+  * As more music is uploaded onto the site, Notable Sets will have to rely on a more fine-tuned SQL query that will pull up a limited number of recent albums that incur the most traction through “collections” from users. 
+
