@@ -25,6 +25,7 @@ Jamcamp uses the Ruby on Rails API on the backend with React/Redux as the web fr
   * Database: PostgreSQL
   * Routing, Controllers, and Models: Rails
   * Auth: BCrypt
+  <br/>
 - Frontend technologies
   * React with Redux for state management
   * jQuery(only for AJAX requests)
@@ -39,8 +40,7 @@ TBC (graphic + code + description)
 
 - User Authentication 
   * Effectively logs in user as a fan or an artist 
-  * Users can sign in using the demo log in
-  <br/>
+  * Users can sign in using the demo log in\n
 - Modals
   * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
   * Implemented modals for user auth as well as other pop ups.
