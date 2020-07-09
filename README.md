@@ -41,37 +41,36 @@ TBC (graphic + code + description)
   * Effectively logs in user as a fan or an artist 
   * Users can sign in using the demo log in
 
-- Modals
+* Modals
   * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
   * Implemented modals for user auth as well as other pop ups.
   
-  
-- Profile Page (Editable)
+* Profile Page (Editable)
   * Users can sign up as a fan or artist
   * Users can edit the information presented on their profile page, such as user name, location, website, and bio. 
   * Profile page edit button insights a change in the Redux state to open or close the edit function within the profile page.  
   
-- Profile Page (Grid)
+* Profile Page (Grid)
   * React NavLink tabs route the “grid” section of the page, mapping relevant props to print child components to the window (i.e., collections, discography, followers, and followees).
   * Tabs are only present if a user has one or more elements within those props. The exception to this is the Collections page, which will always appear even with no music, and provides a link to redirect to the home page so user is prompted to find music to add to their collection. 
   * **Child elements in the grid mimic the UI of Bandcamp’s site: When a user removes a collect or a follow from their profile page, the database and state updates but those albums or users remain on the page, allowing users to re-add or re-follow in case their action was unintentional.**
   
-- Collections & Follows
+* Collections & Follows
   * Two separate joins tables that allow the user to collect albums and followers/followees. 
 
-- **Width-responsive CSS**
+* **Width-responsive CSS**
   * The website has responsive CSS. 
   * Using media queries, when a user shrinks or expand the profile page, the grid can scale from having three up to five columns.
   * On the home page, image scaling is responsive to window size change, and the Notable Sets section will also scale based on window size.  
 
-- Logo design
+* Logo design
   * I designed the terrapin logo featured in the header and footer using Adobe Photoshop.
 
-- Redirects
+* Redirects
   * When a user is not logged in and attempts to follow or collect an item, a modal will appear prompting the user to sign up, log in, or use the demo log-in. 
   * If a user types gibberish onto the end of the url, the user will be redirected to an error page with dancing bears, which prompts the user to return to the home page.
 
-- Audio Player
+* Audio Player
   * Album pages feature a custom audio player for users to play Grateful Dead music, which will automatically load the first song in the queue. 
   * Users can set other songs onto the audio player by clicking on tracks in the album list. 
   * Users can move forward and backward through the queue.
