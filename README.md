@@ -40,7 +40,8 @@ TBC (graphic + code + description)
 
 - User Authentication 
   * Effectively logs in user as a fan or an artist 
-  * Users can sign in using the demo log in\n
+  * Users can sign in using the demo log in
+  \n
 - Modals
   * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
   * Implemented modals for user auth as well as other pop ups.
@@ -56,7 +57,7 @@ TBC (graphic + code + description)
   * **Child elements in the grid mimic the UI of Bandcamp’s site: When a user removes a collect or a follow from their profile page, the database and state updates but those albums or users remain on the page, allowing users to re-add or re-follow in case their action was unintentional.**
   <br/>
 - Collections & Follows
-  * Two separate joins tables that allow the user to collect albums and followers/followees.\n
+  * Two separate joins tables that allow the user to collect albums and followers/followees.
   <br/>
 - **Width-responsive CSS**
   * The website has responsive CSS. 
