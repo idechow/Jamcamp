@@ -40,7 +40,7 @@ TBC (graphic + code + description)
 - User Authentication 
   * Effectively logs in user as a fan or an artist 
   * Users can sign in using the demo log in
-<br/>
+  <br/>
 - Modals
   * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
   * Implemented modals for user auth as well as other pop ups.
@@ -54,17 +54,22 @@ TBC (graphic + code + description)
   * React NavLink tabs route the “grid” section of the page, mapping relevant props to print child components to the window (i.e., collections, discography, followers, and followees).
   * Tabs are only present if a user has one or more elements within those props. The exception to this is the Collections page, which will always appear even with no music, and provides a link to redirect to the home page so user is prompted to find music to add to their collection. 
   * **Child elements in the grid mimic the UI of Bandcamp’s site: When a user removes a collect or a follow from their profile page, the database and state updates but those albums or users remain on the page, allowing users to re-add or re-follow in case their action was unintentional.**
+  <br/>
 - Collections & Follows
-  * Two separate joins tables that allow the user to collect albums and followers/followees. 
+  * Two separate joins tables that allow the user to collect albums and followers/followees.
+  <br/>
 - **Width-responsive CSS**
   * The website has responsive CSS. 
   * Using media queries, when a user shrinks or expand the profile page, the grid can scale from having three up to five columns.
-  * On the home page, image scaling is responsive to window size change, and the Notable Sets section will also scale based on window size.  
+  * On the home page, image scaling is responsive to window size change, and the Notable Sets section will also scale based on window size.
+  <br/>
 - Logo design
   * I designed the terrapin logo featured in the header and footer using Adobe Photoshop.
+  <br/>
 - Redirects
   * When a user is not logged in and attempts to follow or collect an item, a modal will appear prompting the user to sign up, log in, or use the demo log-in. 
   * If a user types gibberish onto the end of the url, the user will be redirected to an error page with dancing bears, which prompts the user to return to the home page.
+  <br/>
 - Audio Player
   *  Album pages feature a custom audio player for users to play Grateful Dead music, which will automatically load the first song in the queue. 
   * Users can set other songs onto the audio player by clicking on tracks in the album list. 
@@ -73,6 +78,7 @@ TBC (graphic + code + description)
   * The slider bar allows the user to move to another location in the track. The slider is animated to correlate with a given location in the track. 
   * A buffer bar animates how much of the track has buffered. The buffer will update to a new position on the slider, if a user moves ahead in the song. However, if a user rewinds a song, the buffer will stay in its most buffered position. 
   * Event listeners are added to respond to the clicking on, dragging, and releasing of the slider bar.
+  <br/>
 
 ### Walkthrough
 
