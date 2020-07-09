@@ -78,7 +78,6 @@ TBC (graphic + code + description)
   * The slider bar allows the user to move to another location in the track. The slider is animated to correlate with a given location in the track. 
   * A buffer bar animates how much of the track has buffered. The buffer will update to a new position on the slider, if a user moves ahead in the song. However, if a user rewinds a song, the buffer will stay in its most buffered position. 
   * Event listeners are added to respond to the clicking on, dragging, and releasing of the slider bar.
-  <br/>
 
 ### Walkthrough
 
