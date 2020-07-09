@@ -38,16 +38,18 @@ TBC (graphic + code + description)
 ### Features
 
 - User Authentication 
-    * Effectively logs in user as a fan or an artist 
-    * Users can sign in using the demo log in
-    <br/>
+  * Effectively logs in user as a fan or an artist 
+  * Users can sign in using the demo log in
+<br/>
 - Modals
-    * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
-    * Implemented modals for user auth as well as other pop ups.
+  * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
+  * Implemented modals for user auth as well as other pop ups.
+<br/>
 - Profile Page (Editable)
-    * Users can sign up as a fan or artist
-    * Users can edit the information presented on their profile page, such as user name, location, website, and bio. 
-    * Profile page edit button insights a change in the Redux state to open or close the edit function within the profile page.  
+  *  Users can sign up as a fan or artist
+  *  Users can edit the information presented on their profile page, such as user name, location, website, and bio. 
+  *  Profile page edit button insights a change in the Redux state to open or close the edit function within the profile page.
+<br/>
 - Profile Page (Grid)
   * React NavLink tabs route the “grid” section of the page, mapping relevant props to print child components to the window (i.e., collections, discography, followers, and followees).
   * Tabs are only present if a user has one or more elements within those props. The exception to this is the Collections page, which will always appear even with no music, and provides a link to redirect to the home page so user is prompted to find music to add to their collection. 
@@ -64,7 +66,7 @@ TBC (graphic + code + description)
   * When a user is not logged in and attempts to follow or collect an item, a modal will appear prompting the user to sign up, log in, or use the demo log-in. 
   * If a user types gibberish onto the end of the url, the user will be redirected to an error page with dancing bears, which prompts the user to return to the home page.
 - Audio Player
-  * Album pages feature a custom audio player for users to play Grateful Dead music, which will automatically load the first song in the queue. 
+  *  Album pages feature a custom audio player for users to play Grateful Dead music, which will automatically load the first song in the queue. 
   * Users can set other songs onto the audio player by clicking on tracks in the album list. 
   * Users can move forward and backward through the queue.
   * The player features a clock at the top, indicating the listener’s location in the track.
