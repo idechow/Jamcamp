@@ -21,12 +21,11 @@ In the Jamcamp product environment, users can:
 
 Jamcamp uses the Ruby on Rails API on the backend with React/Redux as the web framework on the frontend.
 
-- Backend technologies
+- **Backend technologies**
   * Database: PostgreSQL
   * Routing, Controllers, and Models: Rails
   * Auth: BCrypt
-  <br/>
-- Frontend technologies
+- **Frontend technologies**
   * React with Redux for state management
   * jQuery(only for AJAX requests)
   * jBuilder for backend requests
