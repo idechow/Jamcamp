@@ -59,9 +59,9 @@ TBC (graphic + code + description)
   * Two separate joins tables that allow the user to collect albums and followers/followees. 
 
 - **Width-responsive CSS**
-  * The website has responsive CSS. 
-  * Using media queries, when a user shrinks or expand the profile page, the grid can scale from having three up to five columns.
-  * On the home page, image scaling is responsive to window size change, and the Notable Sets section will also scale based on window size.  
+ * The website has responsive CSS. 
+ * Using media queries, when a user shrinks or expand the profile page, the grid can scale from having three up to five columns.
+ * On the home page, image scaling is responsive to window size change, and the Notable Sets section will also scale based on window size.  
 
 - Logo design
   * I designed the terrapin logo featured in the header and footer using Adobe Photoshop.
