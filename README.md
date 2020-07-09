@@ -41,8 +41,8 @@ TBC (graphic + code + description)
   * Effectively logs in user as a fan or an artist 
   * Users can sign in using the demo log in
 <br/>- Modals
-  * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
-  * Implemented modals for user auth as well as other pop ups.
+       * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
+       * Implemented modals for user auth as well as other pop ups.
 <br/>- Profile Page (Editable)
   * Users can sign up as a fan or artist
   * Users can edit the information presented on their profile page, such as user name, location, website, and bio. 
