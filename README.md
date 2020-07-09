@@ -38,18 +38,18 @@ TBC (graphic + code + description)
 ### Features
 
 - User Authentication 
-  *  Effectively logs in user as a fan or an artist 
-  *  Users can sign in using the demo log in
-
+  * Effectively logs in user as a fan or an artist 
+  * Users can sign in using the demo log in
+  <br/>
 - Modals
-  *  Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
-  *  Implemented modals for user auth as well as other pop ups.
-
+  * Implemented draggable modals using an outside draggable library (React-draggable) in order to mimic user experience in the Bandcamp production environment. 
+  * Implemented modals for user auth as well as other pop ups.
+  <br/>
 - Profile Page (Editable)
-  *  Users can sign up as a fan or artist
-  *  Users can edit the information presented on their profile page, such as user name, location, website, and bio. 
-  *  Profile page edit button insights a change in the Redux state to open or close the edit function within the profile page.
-
+  * Users can sign up as a fan or artist
+  * Users can edit the information presented on their profile page, such as user name, location, website, and bio. 
+  * Profile page edit button insights a change in the Redux state to open or close the edit function within the profile page.
+  <br/>
 - Profile Page (Grid)
   * React NavLink tabs route the “grid” section of the page, mapping relevant props to print child components to the window (i.e., collections, discography, followers, and followees).
   * Tabs are only present if a user has one or more elements within those props. The exception to this is the Collections page, which will always appear even with no music, and provides a link to redirect to the home page so user is prompted to find music to add to their collection. 
