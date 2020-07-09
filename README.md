@@ -25,6 +25,7 @@ Jamcamp uses the Ruby on Rails API on the backend with React/Redux as the web fr
   * Database: PostgreSQL
   * Routing, Controllers, and Models: Rails
   * Auth: BCrypt
+  <p/>
 - **Frontend technologies**
   * React with Redux for state management
   * jQuery(only for AJAX requests)
@@ -49,27 +50,27 @@ TBC (graphic + code + description)
   * Users can sign up as a fan or artist
   * Users can edit the information presented on their profile page, such as user name, location, website, and bio. 
   * Profile page edit button insights a change in the Redux state to open or close the edit function within the profile page.
-  <br/>
+  <p/>
 - Profile Page (Grid)
   * React NavLink tabs route the “grid” section of the page, mapping relevant props to print child components to the window (i.e., collections, discography, followers, and followees).
   * Tabs are only present if a user has one or more elements within those props. The exception to this is the Collections page, which will always appear even with no music, and provides a link to redirect to the home page so user is prompted to find music to add to their collection. 
   * **Child elements in the grid mimic the UI of Bandcamp’s site: When a user removes a collect or a follow from their profile page, the database and state updates but those albums or users remain on the page, allowing users to re-add or re-follow in case their action was unintentional.**
-  <br/>
+  <p/>
 - Collections & Follows
   * Two separate joins tables that allow the user to collect albums and followers/followees.
-  <br/>
+  <p/>
 - **Width-responsive CSS**
   * The website has responsive CSS. 
   * Using media queries, when a user shrinks or expand the profile page, the grid can scale from having three up to five columns.
   * On the home page, image scaling is responsive to window size change, and the Notable Sets section will also scale based on window size.
-  <br/>
+  <p/>
 - Logo design
   * I designed the terrapin logo featured in the header and footer using Adobe Photoshop.
-  <br/>
+  <p/>
 - Redirects
   * When a user is not logged in and attempts to follow or collect an item, a modal will appear prompting the user to sign up, log in, or use the demo log-in. 
   * If a user types gibberish onto the end of the url, the user will be redirected to an error page with dancing bears, which prompts the user to return to the home page.
-  <br/>
+  <p/>
 - Audio Player
   *  Album pages feature a custom audio player for users to play Grateful Dead music, which will automatically load the first song in the queue. 
   * Users can set other songs onto the audio player by clicking on tracks in the album list. 
