@@ -250,8 +250,13 @@
 
 .user-tabs .active {
   border-bottom: 2px solid #333333;
+//   border-bottom: 2px solid #333333 !important;
   color: #333333;
   cursor: default;
+}
+
+.user-tabs .active:hover {
+  border-bottom: 2px solid #333333;
 }
 
 .hide-link {
