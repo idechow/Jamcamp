@@ -29,7 +29,7 @@ gem 'rails_12factor'
 gem 'aws-sdk-s3'
 
 # Use ActiveStorage variant
-gem "image_processing", "~> 1.0"
+gem "image_processing", "~> 1.12"
 gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
